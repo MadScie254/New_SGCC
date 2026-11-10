@@ -1,0 +1,21 @@
+{
+  "run_id": "run-20261110T114728-train-full-a31409",
+  "experiment_id": "train.full",
+  "experiment_version": 1,
+  "experiment_sha256": "3041ae8c636bc5d01863f2d205acc221dffde8bfccb2e8074e41e1ffca42cff3",
+  "title": "Full training run - the seven pipelines on the study's split",
+  "protocol": "original",
+  "state": "queued",
+  "created_at": "2026-11-10T11:47:28+00:00",
+  "created_by": "reproduction",
+  "started_at": null,
+  "finished_at": null,
+  "runtime_seconds": null,
+  "retry_of": null,
+  "seeded_from": [],
+  "parameters": {},
+  "progress": {
+    "stage": "queued",
+    "fraction": 0.0
+  }
+}

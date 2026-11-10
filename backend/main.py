@@ -13,7 +13,7 @@ from fastapi.responses import FileResponse, HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 
 from backend.dependencies.auth import current_user, load_api_keys, make_rate_limiter
-from backend.routers import admin, cases, customers, datasets, model, pipeline, predict, reports, research
+from backend.routers import admin, cases, customers, datasets, experiments, model, pipeline, predict, reports, research
 from backend.schemas import Health
 from backend.services import db
 from backend.services.blobstore import get_blobstore
@@ -21,6 +21,7 @@ from backend.services.config import environment, scoring_interval_minutes
 from backend.services.data import ModelUnavailable, get_pipeline_spec
 from backend.services.datasets import DatasetError, DatasetInUseError, UploadTooLargeError, purge_expired_datasets
 from backend.services.errors import NotFoundError
+from backend.services.experiments import RegistryError
 from backend.services.model import FeatureInputError, get_trained_model, integrity_problems
 from backend.services.operations import CasePermissionError, CaseTransitionError, PipelineBusyError, run_scoring_pipeline
 from backend.services.reports import ReportsUnavailable, purge_expired_reports, reports_status
@@ -109,7 +110,8 @@ async def security_headers(request: Request, call_next):
     return response
 
 
-for module in (model, research, customers, cases, pipeline, predict, datasets, reports, admin):
+CORE_ROUTERS = (model, research, customers, cases, pipeline, predict, datasets, reports, admin, experiments)
+for module in CORE_ROUTERS:
     app.include_router(module.router, dependencies=[Depends(current_user)])
 
 
@@ -130,6 +132,11 @@ def health():
 @app.exception_handler(NotFoundError)
 async def not_found(request: Request, exc: NotFoundError):
     return JSONResponse(status_code=404, content={"detail": str(exc)})
+
+
+@app.exception_handler(RegistryError)
+async def registry_error(request: Request, exc: RegistryError):
+    return JSONResponse(status_code=409 if "sealed" in str(exc) or "queued" in str(exc) else 400, content={"detail": str(exc)})
 
 
 @app.exception_handler(UploadTooLargeError)

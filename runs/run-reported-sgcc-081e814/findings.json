@@ -1,0 +1,1208 @@
+{
+  "run_id": "run-reported-sgcc-081e814",
+  "experiment_id": "reported.baseline",
+  "findings_sha256": "454a049be57615ac4deb0d6362723f8940af1136a172f7f856a8f1183a350a97",
+  "eligible_to_verify": false,
+  "eligibility_reasons": [
+    "This is the reported record itself"
+  ],
+  "checks": [
+    {
+      "finding_id": "T1-proposed-auc",
+      "reported": 0.828,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.8283196686456029,
+      "difference": 0.00031966864560295516,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-proposed-pr_auc",
+      "reported": 0.462,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.4616492558180186,
+      "difference": -0.00035074418198144386,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-proposed-recall",
+      "reported": 0.494,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.4944649446494465,
+      "difference": 0.00046494464944651925,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-proposed-precision",
+      "reported": 0.389,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.3889695210449927,
+      "difference": -3.0478955007295916e-05,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-proposed-f1",
+      "reported": 0.435,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.4354183590576767,
+      "difference": 0.00041835905767667603,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-proposed-mcc",
+      "reported": 0.379,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.37915646930846614,
+      "difference": 0.00015646930846613394,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-proposed-gmean",
+      "reported": 0.677,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.6772444429574626,
+      "difference": 0.00024444295746250955,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-xgboost-auc",
+      "reported": 0.85,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.8501039925259933,
+      "difference": 0.00010399252599335718,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-xgboost-pr_auc",
+      "reported": 0.513,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.5129670494330388,
+      "difference": -3.2950566961176264e-05,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-xgboost-recall",
+      "reported": 0.467,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.466789667896679,
+      "difference": -0.00021033210332105368,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-xgboost-precision",
+      "reported": 0.487,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.48653846153846153,
+      "difference": -0.0004615384615384577,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-xgboost-f1",
+      "reported": 0.476,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.4764595103578154,
+      "difference": 0.00045951035781544025,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-xgboost-mcc",
+      "reported": 0.429,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.42886610375096196,
+      "difference": -0.00013389624903803465,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-xgboost-gmean",
+      "reported": 0.667,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.6673477284606651,
+      "difference": 0.00034772846066510876,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-xgboost_default-auc",
+      "reported": 0.839,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.8390940178751632,
+      "difference": 9.401787516327698e-05,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-xgboost_default-pr_auc",
+      "reported": 0.488,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.48762126824707047,
+      "difference": -0.00037873175292951755,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-xgboost_default-recall",
+      "reported": 0.483,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.4833948339483395,
+      "difference": 0.00039483394833950136,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-xgboost_default-precision",
+      "reported": 0.439,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.4388609715242881,
+      "difference": -0.0001390284757118998,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-xgboost_default-f1",
+      "reported": 0.46,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.46005267778753295,
+      "difference": 5.267778753292873e-05,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-xgboost_default-mcc",
+      "reported": 0.408,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.40762133835165926,
+      "difference": -0.0003786616483407168,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-xgboost_default-gmean",
+      "reported": 0.675,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.674938401959865,
+      "difference": -6.159804013505799e-05,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-random_forest_smote-auc",
+      "reported": 0.812,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.8121411670773055,
+      "difference": 0.00014116707730549294,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-random_forest_smote-pr_auc",
+      "reported": 0.411,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.4114065046317059,
+      "difference": 0.00040650463170593953,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-random_forest_smote-recall",
+      "reported": 0.432,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.4317343173431734,
+      "difference": -0.00026568265682658243,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-random_forest_smote-precision",
+      "reported": 0.366,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.365625,
+      "difference": -0.0003750000000000142,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-random_forest_smote-f1",
+      "reported": 0.396,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.39593908629441626,
+      "difference": -6.091370558375386e-05,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-random_forest_smote-mcc",
+      "reported": 0.336,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.3358869217964428,
+      "difference": -0.00011307820355721532,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-random_forest_smote-gmean",
+      "reported": 0.634,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.6337078882919971,
+      "difference": -0.00029211170800291786,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-logistic_regression_smote-auc",
+      "reported": 0.754,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.7537985673974388,
+      "difference": -0.00020143260256122453,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-logistic_regression_smote-pr_auc",
+      "reported": 0.314,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.3138597977058659,
+      "difference": -0.00014020229413408414,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-logistic_regression_smote-recall",
+      "reported": 0.371,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.37084870848708484,
+      "difference": -0.00015129151291515264,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-logistic_regression_smote-precision",
+      "reported": 0.318,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.3180379746835443,
+      "difference": 3.7974683544272914e-05,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-logistic_regression_smote-f1",
+      "reported": 0.342,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.3424190800681431,
+      "difference": 0.00041908006814306287,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-logistic_regression_smote-mcc",
+      "reported": 0.277,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.27693106508429893,
+      "difference": -6.8934915701091e-05,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-logistic_regression_smote-gmean",
+      "reported": 0.586,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.5859668693380304,
+      "difference": -3.3130661969527075e-05,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-wide_deep_cnn-auc",
+      "reported": 0.88,
+      "tolerance": 0.03,
+      "decimals": 3,
+      "observed": 0.8795784320072303,
+      "difference": -0.00042156799276971135,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-wide_deep_cnn-pr_auc",
+      "reported": 0.538,
+      "tolerance": 0.03,
+      "decimals": 3,
+      "observed": 0.538450112268902,
+      "difference": 0.0004501122689020143,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-wide_deep_cnn-recall",
+      "reported": 0.52,
+      "tolerance": 0.06,
+      "decimals": 3,
+      "observed": 0.5202952029520295,
+      "difference": 0.0002952029520294497,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-wide_deep_cnn-precision",
+      "reported": 0.516,
+      "tolerance": 0.06,
+      "decimals": 3,
+      "observed": 0.5155393053016454,
+      "difference": -0.0004606946983546356,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-wide_deep_cnn-f1",
+      "reported": 0.518,
+      "tolerance": 0.06,
+      "decimals": 3,
+      "observed": 0.5179063360881543,
+      "difference": -9.366391184573164e-05,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-wide_deep_cnn-mcc",
+      "reported": 0.473,
+      "tolerance": 0.06,
+      "decimals": 3,
+      "observed": 0.472744276515228,
+      "difference": -0.0002557234847719858,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-wide_deep_cnn-gmean",
+      "reported": 0.705,
+      "tolerance": 0.06,
+      "decimals": 3,
+      "observed": 0.704684565830983,
+      "difference": -0.0003154341690169149,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-hybrid-auc",
+      "reported": 0.908,
+      "tolerance": 0.03,
+      "decimals": 3,
+      "observed": 0.9075023451472903,
+      "difference": -0.0004976548527096947,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-hybrid-pr_auc",
+      "reported": 0.617,
+      "tolerance": 0.03,
+      "decimals": 3,
+      "observed": 0.6166658581683113,
+      "difference": -0.0003341418316886724,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-hybrid-recall",
+      "reported": 0.611,
+      "tolerance": 0.06,
+      "decimals": 3,
+      "observed": 0.6107011070110702,
+      "difference": -0.00029889298892982197,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-hybrid-precision",
+      "reported": 0.525,
+      "tolerance": 0.06,
+      "decimals": 3,
+      "observed": 0.5245641838351822,
+      "difference": -0.00043581616481780383,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-hybrid-f1",
+      "reported": 0.564,
+      "tolerance": 0.06,
+      "decimals": 3,
+      "observed": 0.5643648763853367,
+      "difference": 0.00036487638533677647,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-hybrid-mcc",
+      "reported": 0.522,
+      "tolerance": 0.06,
+      "decimals": 3,
+      "observed": 0.522186217168482,
+      "difference": 0.00018621716848199465,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-hybrid-gmean",
+      "reported": 0.761,
+      "tolerance": 0.06,
+      "decimals": 3,
+      "observed": 0.7610447963061696,
+      "difference": 4.4796306169603284e-05,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T2-A-roc_auc",
+      "reported": 0.829,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.8288600798245067,
+      "difference": -0.00013992017549324665,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T2-A-pr_auc",
+      "reported": 0.438,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.4381687838773137,
+      "difference": 0.00016878387731367184,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T2-B-roc_auc",
+      "reported": 0.854,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.853684593042267,
+      "difference": -0.0003154069577330221,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T2-B-pr_auc",
+      "reported": 0.507,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.5066123112695852,
+      "difference": -0.00038768873041483687,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T2-C-roc_auc",
+      "reported": 0.847,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.8474179581226838,
+      "difference": 0.0004179581226838591,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T2-C-pr_auc",
+      "reported": 0.492,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.49211942340576736,
+      "difference": 0.00011942340576737154,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T2-D-roc_auc",
+      "reported": 0.83,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.8299563794528695,
+      "difference": -4.362054713047403e-05,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T2-D-pr_auc",
+      "reported": 0.453,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.45312876404170976,
+      "difference": 0.0001287640417097502,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T2-E-roc_auc",
+      "reported": 0.827,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.82694054478836,
+      "difference": -5.945521163996936e-05,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T2-E-pr_auc",
+      "reported": 0.42,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.41999428722830556,
+      "difference": -5.712771694421637e-06,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T2-F-roc_auc",
+      "reported": 0.855,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.8552075867160152,
+      "difference": 0.00020758671601517342,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T2-F-pr_auc",
+      "reported": 0.51,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.509858563516546,
+      "difference": -0.00014143648345399384,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T2-G-roc_auc",
+      "reported": 0.832,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.8321182668040479,
+      "difference": 0.00011826680404791734,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T2-G-pr_auc",
+      "reported": 0.46,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.46018352315840927,
+      "difference": 0.00018352315840924893,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-split-train",
+      "reported": 29660,
+      "tolerance": 0.0,
+      "decimals": 0,
+      "observed": 29660.0,
+      "difference": 0.0,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-split-validation",
+      "reported": 6356,
+      "tolerance": 0.0,
+      "decimals": 0,
+      "observed": 6356.0,
+      "difference": 0.0,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-split-test",
+      "reported": 6356,
+      "tolerance": 0.0,
+      "decimals": 0,
+      "observed": 6356.0,
+      "difference": 0.0,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-features",
+      "reported": 87,
+      "tolerance": 0.0,
+      "decimals": 0,
+      "observed": 87.0,
+      "difference": 0.0,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-hybrid-weight",
+      "reported": 0.55,
+      "tolerance": 0.1001,
+      "decimals": 2,
+      "observed": 0.55,
+      "difference": 0.0,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-hybrid-threshold",
+      "reported": 0.216,
+      "tolerance": 0.08,
+      "decimals": 3,
+      "observed": 0.2164084163995141,
+      "difference": 0.000408416399514111,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-val-hybrid",
+      "reported": 0.636,
+      "tolerance": 0.03,
+      "decimals": 3,
+      "observed": 0.6359771990550295,
+      "difference": -2.2800944970535753e-05,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-val-cnn",
+      "reported": 0.561,
+      "tolerance": 0.03,
+      "decimals": 3,
+      "observed": 0.561224517868767,
+      "difference": 0.00022451786876698243,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-val-xgboost",
+      "reported": 0.501,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.5010624256464766,
+      "difference": 6.242564647662707e-05,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-hybrid-tp",
+      "reported": 331,
+      "tolerance": 33.0,
+      "decimals": 0,
+      "observed": 331.0,
+      "difference": 0.0,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-hybrid-fp",
+      "reported": 300,
+      "tolerance": 120.0,
+      "decimals": 0,
+      "observed": 300.0,
+      "difference": 0.0,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-cv-xgboost",
+      "reported": 0.505,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.5047073081950391,
+      "difference": -0.0002926918049609428,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-cv-proposed",
+      "reported": 0.457,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.45732957757662546,
+      "difference": 0.0003295775766254394,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-enn-honest-removed",
+      "reported": 4539,
+      "tolerance": 0.0,
+      "decimals": 0,
+      "observed": 4539.0,
+      "difference": 0.0,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-smote-synthetic",
+      "reported": 11035,
+      "tolerance": 0.0,
+      "decimals": 0,
+      "observed": 11035.0,
+      "difference": 0.0,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-fisher-before",
+      "reported": 0.014,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.01436567958444357,
+      "difference": 0.0003656795844435689,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-fisher-after",
+      "reported": 0.022,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.02150409109890461,
+      "difference": -0.000495908901095389,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-noise-before",
+      "reported": 0.9,
+      "tolerance": 0.01,
+      "decimals": 2,
+      "observed": 0.9016393442622951,
+      "difference": 0.0016393442622950616,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-noise-after",
+      "reported": 0.23,
+      "tolerance": 0.01,
+      "decimals": 2,
+      "observed": 0.2252155172413793,
+      "difference": -0.004784482758620701,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-ece-proposed-raw",
+      "reported": 0.093,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.09279540864323399,
+      "difference": -0.0002045913567660096,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-ece-proposed-platt",
+      "reported": 0.007,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.00660723954659563,
+      "difference": -0.0003927604534043703,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-brier-proposed-raw",
+      "reported": 0.08,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.08008493305858723,
+      "difference": 8.493305858722766e-05,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-brier-proposed-platt",
+      "reported": 0.06,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.05995969812323277,
+      "difference": -4.0301876767227796e-05,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-ece-xgboost-raw",
+      "reported": 0.01,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.010312349209677336,
+      "difference": 0.0003123492096773362,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-ece-xgboost-platt",
+      "reported": 0.007,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.0070114428036500845,
+      "difference": 1.1442803650084377e-05,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-ece-hybrid-raw",
+      "reported": 0.025,
+      "tolerance": 0.015,
+      "decimals": 3,
+      "observed": 0.025336347613968586,
+      "difference": 0.00033634761396858504,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-ece-hybrid-platt",
+      "reported": 0.004,
+      "tolerance": 0.01,
+      "decimals": 3,
+      "observed": 0.004352884703501358,
+      "difference": 0.0003528847035013582,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-brier-hybrid-platt",
+      "reported": 0.049,
+      "tolerance": 0.005,
+      "decimals": 3,
+      "observed": 0.04907104052815177,
+      "difference": 7.104052815176676e-05,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-sig-xgb-prauc",
+      "reported": -0.051,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": -0.05131779361502026,
+      "difference": -0.00031779361502026066,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-sig-xgb-prauc-lo",
+      "reported": -0.076,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": -0.07620771460391618,
+      "difference": -0.00020771460391617869,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-sig-xgb-prauc-hi",
+      "reported": -0.027,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": -0.02650957189853971,
+      "difference": 0.0004904281014602892,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-sig-xgb-recall",
+      "reported": 0.028,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.02767527675276754,
+      "difference": -0.0003247232472324592,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-sig-xgb-recall-p",
+      "reported": 0.31,
+      "tolerance": 0.02,
+      "decimals": 2,
+      "observed": 0.3067693230676932,
+      "difference": -0.0032306769323067752,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-sig-default-prauc",
+      "reported": -0.026,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": -0.02597201242905195,
+      "difference": 2.7987570948049406e-05,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-sig-default-p",
+      "reported": 0.07,
+      "tolerance": 0.02,
+      "decimals": 2,
+      "observed": 0.07019298070192981,
+      "difference": 0.00019298070192980132,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-sig-rf-prauc",
+      "reported": 0.05,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.05024672836066746,
+      "difference": 0.00024672836066745585,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-sig-lr-prauc",
+      "reported": 0.148,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.14778945811215272,
+      "difference": -0.00021054188784727645,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-fair-prauc",
+      "reported": 0.504,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.5039943792834438,
+      "difference": -5.620716556187233e-06,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-grid-none",
+      "reported": 0.507,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.5066123112695852,
+      "difference": -0.00038768873041483687,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-grid-smote-1",
+      "reported": 0.445,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.44476410103888997,
+      "difference": -0.00023589896111003705,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-grid-smoteenn-1",
+      "reported": 0.411,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.41065195404425847,
+      "difference": -0.000348045955741505,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-splits-first",
+      "reported": 6,
+      "tolerance": 0.0,
+      "decimals": 0,
+      "observed": 6.0,
+      "difference": 0.0,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-miss-all",
+      "reported": 0.507,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.5066123112695852,
+      "difference": -0.00038768873041483687,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-miss-without",
+      "reported": 0.468,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.46838414375463594,
+      "difference": 0.00038414375463591277,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-miss-behaviour",
+      "reported": 0.4,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.3996455132135134,
+      "difference": -0.0003544867864866408,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-miss-only",
+      "reported": 0.333,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.33293753521053704,
+      "difference": -6.246478946297929e-05,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-history-3",
+      "reported": 0.274,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.2737438404996628,
+      "difference": -0.00025615950033719415,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-history-12",
+      "reported": 0.319,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.31934293213651693,
+      "difference": 0.0003429321365169269,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-history-24",
+      "reported": 0.396,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.39562214394382267,
+      "difference": -0.0003778560561773503,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-cnn-prauc",
+      "reported": 0.538,
+      "tolerance": 0.03,
+      "decimals": 3,
+      "observed": 0.538450112268902,
+      "difference": 0.0004501122689020143,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-cnn-params",
+      "reported": 299866,
+      "tolerance": 0.0,
+      "decimals": 0,
+      "observed": 299866.0,
+      "difference": 0.0,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-hybrid-splits-mean",
+      "reported": 0.633,
+      "tolerance": 0.015,
+      "decimals": 3,
+      "observed": 0.6331136492916697,
+      "difference": 0.00011364929166968185,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-hybrid-splits-wins",
+      "reported": 6,
+      "tolerance": 0.0,
+      "decimals": 0,
+      "observed": 6.0,
+      "difference": 0.0,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-hybrid-vs-xgb",
+      "reported": 0.104,
+      "tolerance": 0.03,
+      "decimals": 3,
+      "observed": 0.10369880873527249,
+      "difference": -0.00030119126472751,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-nested-hybrid",
+      "reported": 0.629,
+      "tolerance": 0.015,
+      "decimals": 3,
+      "observed": 0.629225847798541,
+      "difference": 0.00022584779854095682,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-nested-xgboost",
+      "reported": 0.507,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.5069394569556442,
+      "difference": -6.0543044355765296e-05,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-nested-wins",
+      "reported": 5,
+      "tolerance": 0.0,
+      "decimals": 0,
+      "observed": 5.0,
+      "difference": 0.0,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-seeds-hybrid",
+      "reported": 0.631,
+      "tolerance": 0.015,
+      "decimals": 3,
+      "observed": 0.6305575433216954,
+      "difference": -0.00044245667830455915,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-nomask-cnn",
+      "reported": 0.335,
+      "tolerance": 0.03,
+      "decimals": 3,
+      "observed": 0.33498680740167297,
+      "difference": -1.3192598327049776e-05,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-nomask-hybrid",
+      "reported": 0.525,
+      "tolerance": 0.03,
+      "decimals": 3,
+      "observed": 0.5247602696209528,
+      "difference": -0.0002397303790472316,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-behaviour-hybrid",
+      "reported": 0.433,
+      "tolerance": 0.03,
+      "decimals": 3,
+      "observed": 0.43261796142028214,
+      "difference": -0.00038203857971785826,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-behaviour-xgboost",
+      "reported": 0.404,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.40361328788156775,
+      "difference": -0.00038671211843227526,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-data-customers",
+      "reported": 42372,
+      "tolerance": 0.0,
+      "decimals": 0,
+      "observed": 42372.0,
+      "difference": 0.0,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-data-days",
+      "reported": 1034,
+      "tolerance": 0.0,
+      "decimals": 0,
+      "observed": 1034.0,
+      "difference": 0.0,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-data-theft",
+      "reported": 3615,
+      "tolerance": 0.0,
+      "decimals": 0,
+      "observed": 3615.0,
+      "difference": 0.0,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-data-honest",
+      "reported": 38757,
+      "tolerance": 0.0,
+      "decimals": 0,
+      "observed": 38757.0,
+      "difference": 0.0,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-data-missing",
+      "reported": 25.64,
+      "tolerance": 0.005,
+      "decimals": 2,
+      "observed": 25.64,
+      "difference": 0.0,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-data-over10",
+      "reported": 21375,
+      "tolerance": 0.0,
+      "decimals": 0,
+      "observed": 21375.0,
+      "difference": 0.0,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-data-missing-theft",
+      "reported": 31.5,
+      "tolerance": 0.05,
+      "decimals": 1,
+      "observed": 31.47,
+      "difference": -0.030000000000001137,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-data-missing-honest",
+      "reported": 25.1,
+      "tolerance": 0.05,
+      "decimals": 1,
+      "observed": 25.1,
+      "difference": 0.0,
+      "outcome": "exact"
+    }
+  ]
+}

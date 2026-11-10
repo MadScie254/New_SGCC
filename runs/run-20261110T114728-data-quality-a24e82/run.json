@@ -1,0 +1,65 @@
+{
+  "run_id": "run-20261110T114728-data-quality-a24e82",
+  "experiment_id": "data.quality",
+  "experiment_version": 1,
+  "experiment_sha256": "14eed24e494217babab9d2284fa07792fbbfe097aaaf973907177f65a1521b9b",
+  "title": "Data quality checklist (proposal Appendix A.1)",
+  "protocol": "original",
+  "state": "running",
+  "created_at": "2026-11-10T11:47:28+00:00",
+  "created_by": "reproduction",
+  "started_at": "2026-11-10T11:47:28+00:00",
+  "finished_at": null,
+  "runtime_seconds": null,
+  "retry_of": null,
+  "seeded_from": [],
+  "parameters": {},
+  "progress": {
+    "stage": "Preparing the workspace",
+    "fraction": 0.0
+  },
+  "runner_pid": 25672,
+  "command": [
+    "python.exe",
+    "C:\\Users\\MadScie254\\Documents\\GitHub\\New_SGCC\\scripts\\data_quality.py"
+  ],
+  "lineage": "rerun",
+  "inputs": {},
+  "config_sha256": "76fc1519d61e78b56c712ac60413211186ed83bc9b5bf0a64be84287e2ca12cc",
+  "dataset": {
+    "file": "sgcc_full.csv",
+    "bytes": 175194613,
+    "sha256": "99f8fd315626b1f729a9a03a97cb52ed097ab4d43e5771e21554c9e0c369b9b7",
+    "matches_registered": true
+  },
+  "environment": {
+    "python": "3.11.15",
+    "platform": "Windows-10-10.0.26300-SP0",
+    "machine": "AMD64",
+    "processor": "Intel64 Family 6 Model 158 Stepping 10, GenuineIntel",
+    "cpu_count": 12,
+    "threads": 4,
+    "libraries": {
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "scipy": "1.16.3",
+      "scikit-learn": "1.8.0",
+      "imbalanced-learn": "0.14.1",
+      "xgboost": "3.2.0",
+      "optuna": "4.6.0",
+      "torch": "2.14.0+cpu",
+      "onnx": "1.23.2",
+      "onnxruntime": "1.30.0",
+      "shap": "0.50.0",
+      "lime": "0.2.0.1"
+    }
+  },
+  "code": {
+    "commit": "2e6025e0d847a756b5985bc288df2881fa9f55e1",
+    "dirty": false,
+    "source_tree_sha256": "afeb3ce24a904f12fa18b74f1deb67a567d433004f601f7b27e9eb6783a8a810",
+    "files": 41
+  },
+  "findings_sha256": "454a049be57615ac4deb0d6362723f8940af1136a172f7f856a8f1183a350a97",
+  "child_pid": 29092
+}

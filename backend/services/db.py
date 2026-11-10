@@ -101,6 +101,33 @@ audit_log = Table(
     Column("detail", Text),
 )
 
+# GridSentinel X: the experiment registry's index. The run directories on disk are the record;
+# this table keeps each run's seal hash in a second place, so a run whose files and seal.json were
+# both replaced no longer matches, and lets the registry be queried without reading every run.
+experiment_runs = Table(
+    "experiment_runs", metadata,
+    Column("run_id", String(120), primary_key=True),
+    Column("experiment_id", String(64), nullable=False, index=True),
+    Column("protocol", String(16), nullable=False),
+    Column("state", String(16), nullable=False),
+    Column("created_at", String(32), nullable=False, index=True),
+    Column("created_by", String(64), nullable=False),
+    Column("sealed_at", String(32)),
+    Column("seal_sha256", String(64)),
+    Column("indexed_at", String(32), nullable=False),
+)
+
+# Every operating threshold ever published, with who published it and the validation evidence shown.
+threshold_history = Table(
+    "threshold_history", metadata,
+    Column("id", Integer, primary_key=True, autoincrement=True),
+    Column("at", String(32), nullable=False, index=True),
+    Column("actor", String(64), nullable=False),
+    Column("threshold", Float),
+    Column("previous", Float),
+    Column("evidence", JSON),
+)
+
 
 def now() -> str:
     """UTC timestamp in ISO format; milliseconds keep "newest first" well defined."""
