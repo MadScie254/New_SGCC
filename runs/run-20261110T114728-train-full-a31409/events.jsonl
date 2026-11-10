@@ -13,3 +13,5 @@
 {"at": "2026-11-10T11:53:59.604+00:00", "level": "info", "message": "2026-11-10 14:53:59,602 INFO src.modeling: Trial 4/40: average_precision=0.3300 (best 0.4345)", "stage": "Optuna tuning"}
 {"at": "2026-11-10T11:54:05.696+00:00", "level": "info", "message": "2026-11-10 14:54:05,694 INFO src.modeling: Trial 5/40: average_precision=0.3477 (best 0.4345)", "stage": "Optuna tuning"}
 {"at": "2026-11-10T11:54:52.179+00:00", "level": "info", "message": "2026-11-10 14:54:52,178 INFO src.modeling: Trial 6/40: average_precision=0.4506 (best 0.4506)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T11:55:34.240+00:00", "level": "info", "message": "2026-11-10 14:55:34,239 INFO src.modeling: Trial 7/40: average_precision=0.4160 (best 0.4506)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T11:55:52.093+00:00", "level": "info", "message": "2026-11-10 14:55:52,093 INFO src.modeling: Trial 8/40: average_precision=0.3471 (best 0.4506)", "stage": "Optuna tuning"}
