@@ -1,0 +1,38 @@
+{"at": "2026-11-10T13:00:03.078+00:00", "level": "info", "message": "Run started: Wide & Deep CNN baseline on the study's split", "stage": "start"}
+{"at": "2026-11-10T13:00:03.865+00:00", "level": "info", "message": "Dataset sgcc_full.csv sha256 99f8fd315626b1f7... (matches the registered release)"}
+{"at": "2026-11-10T13:01:56.140+00:00", "level": "info", "message": "epoch 1: loss 1.1970, validation PR-AUC 0.2163", "stage": "Training the CNN"}
+{"at": "2026-11-10T13:02:16.868+00:00", "level": "info", "message": "epoch 2: loss 1.0845, validation PR-AUC 0.2900", "stage": "Training the CNN"}
+{"at": "2026-11-10T13:02:38.416+00:00", "level": "info", "message": "epoch 3: loss 1.0036, validation PR-AUC 0.3221", "stage": "Training the CNN"}
+{"at": "2026-11-10T13:02:59.841+00:00", "level": "info", "message": "epoch 4: loss 0.9441, validation PR-AUC 0.3649", "stage": "Training the CNN"}
+{"at": "2026-11-10T13:03:21.130+00:00", "level": "info", "message": "epoch 5: loss 0.8969, validation PR-AUC 0.3674", "stage": "Training the CNN"}
+{"at": "2026-11-10T13:03:42.876+00:00", "level": "info", "message": "epoch 6: loss 0.8393, validation PR-AUC 0.4037", "stage": "Training the CNN"}
+{"at": "2026-11-10T13:04:04.189+00:00", "level": "info", "message": "epoch 7: loss 0.7829, validation PR-AUC 0.4232", "stage": "Training the CNN"}
+{"at": "2026-11-10T13:04:25.664+00:00", "level": "info", "message": "epoch 8: loss 0.7335, validation PR-AUC 0.4581", "stage": "Training the CNN"}
+{"at": "2026-11-10T13:04:51.229+00:00", "level": "info", "message": "epoch 9: loss 0.6879, validation PR-AUC 0.4782", "stage": "Training the CNN"}
+{"at": "2026-11-10T13:05:13.519+00:00", "level": "info", "message": "epoch 10: loss 0.6516, validation PR-AUC 0.4875", "stage": "Training the CNN"}
+{"at": "2026-11-10T13:05:36.496+00:00", "level": "info", "message": "epoch 11: loss 0.5987, validation PR-AUC 0.4869", "stage": "Training the CNN"}
+{"at": "2026-11-10T13:05:58.471+00:00", "level": "info", "message": "epoch 12: loss 0.5695, validation PR-AUC 0.5075", "stage": "Training the CNN"}
+{"at": "2026-11-10T13:06:22.240+00:00", "level": "info", "message": "epoch 13: loss 0.5344, validation PR-AUC 0.5123", "stage": "Training the CNN"}
+{"at": "2026-11-10T13:06:47.810+00:00", "level": "info", "message": "epoch 14: loss 0.4952, validation PR-AUC 0.5239", "stage": "Training the CNN"}
+{"at": "2026-11-10T13:07:11.250+00:00", "level": "info", "message": "epoch 15: loss 0.4821, validation PR-AUC 0.5405", "stage": "Training the CNN"}
+{"at": "2026-11-10T13:07:34.378+00:00", "level": "info", "message": "epoch 16: loss 0.4462, validation PR-AUC 0.5390", "stage": "Training the CNN"}
+{"at": "2026-11-10T13:07:58.100+00:00", "level": "info", "message": "epoch 17: loss 0.4260, validation PR-AUC 0.5398", "stage": "Training the CNN"}
+{"at": "2026-11-10T13:08:21.543+00:00", "level": "info", "message": "epoch 18: loss 0.4003, validation PR-AUC 0.5429", "stage": "Training the CNN"}
+{"at": "2026-11-10T13:08:46.737+00:00", "level": "info", "message": "epoch 19: loss 0.3831, validation PR-AUC 0.5280", "stage": "Training the CNN"}
+{"at": "2026-11-10T13:09:14.363+00:00", "level": "info", "message": "epoch 20: loss 0.3645, validation PR-AUC 0.5445", "stage": "Training the CNN"}
+{"at": "2026-11-10T13:09:38.059+00:00", "level": "info", "message": "epoch 21: loss 0.3483, validation PR-AUC 0.5488", "stage": "Training the CNN"}
+{"at": "2026-11-10T13:10:01.905+00:00", "level": "info", "message": "epoch 22: loss 0.3444, validation PR-AUC 0.5366", "stage": "Training the CNN"}
+{"at": "2026-11-10T13:10:25.790+00:00", "level": "info", "message": "epoch 23: loss 0.3213, validation PR-AUC 0.5435", "stage": "Training the CNN"}
+{"at": "2026-11-10T13:10:49.205+00:00", "level": "info", "message": "epoch 24: loss 0.3022, validation PR-AUC 0.5453", "stage": "Training the CNN"}
+{"at": "2026-11-10T13:11:13.303+00:00", "level": "info", "message": "epoch 25: loss 0.2967, validation PR-AUC 0.5449", "stage": "Training the CNN"}
+{"at": "2026-11-10T13:11:36.647+00:00", "level": "info", "message": "epoch 26: loss 0.2895, validation PR-AUC 0.5228", "stage": "Training the CNN"}
+{"at": "2026-11-10T13:11:59.883+00:00", "level": "info", "message": "epoch 27: loss 0.2895, validation PR-AUC 0.5560", "stage": "Training the CNN"}
+{"at": "2026-11-10T13:12:24.601+00:00", "level": "info", "message": "epoch 28: loss 0.2722, validation PR-AUC 0.5506", "stage": "Training the CNN"}
+{"at": "2026-11-10T13:12:49.119+00:00", "level": "info", "message": "epoch 29: loss 0.2709, validation PR-AUC 0.5483", "stage": "Training the CNN"}
+{"at": "2026-11-10T13:13:13.765+00:00", "level": "info", "message": "epoch 30: loss 0.2613, validation PR-AUC 0.5443", "stage": "Training the CNN"}
+{"at": "2026-11-10T13:13:38.599+00:00", "level": "info", "message": "epoch 31: loss 0.2354, validation PR-AUC 0.5309", "stage": "Training the CNN"}
+{"at": "2026-11-10T13:14:03.313+00:00", "level": "info", "message": "epoch 32: loss 0.2317, validation PR-AUC 0.5280", "stage": "Training the CNN"}
+{"at": "2026-11-10T13:14:27.909+00:00", "level": "info", "message": "epoch 33: loss 0.2519, validation PR-AUC 0.5423", "stage": "Training the CNN"}
+{"at": "2026-11-10T13:14:49.629+00:00", "level": "info", "message": "test: PR-AUC 0.5713, ROC-AUC 0.8773, recall 0.5129, precision 0.5549; 780 s training", "stage": "Scored"}
+{"at": "2026-11-10T13:14:50.913+00:00", "level": "info", "message": "wrote fig-5-25-extension-pr-curves", "stage": "Scored"}
+{"at": "2026-11-10T13:14:52.027+00:00", "level": "info", "message": "Run succeeded after 889 s"}

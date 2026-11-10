@@ -23,3 +23,185 @@
 {"at": "2026-11-10T11:59:04.935+00:00", "level": "info", "message": "2026-11-10 14:59:04,934 INFO src.modeling: Trial 14/40: average_precision=0.4337 (best 0.4506)", "stage": "Optuna tuning"}
 {"at": "2026-11-10T11:59:29.365+00:00", "level": "info", "message": "2026-11-10 14:59:29,364 INFO src.modeling: Trial 15/40: average_precision=0.4461 (best 0.4506)", "stage": "Optuna tuning"}
 {"at": "2026-11-10T11:59:50.714+00:00", "level": "info", "message": "2026-11-10 14:59:50,713 INFO src.modeling: Trial 16/40: average_precision=0.4355 (best 0.4506)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:01:42.662+00:00", "level": "info", "message": "2026-11-10 15:01:42,661 INFO src.modeling: Trial 17/40: average_precision=0.4142 (best 0.4506)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:02:10.249+00:00", "level": "info", "message": "2026-11-10 15:02:10,247 INFO src.modeling: Trial 18/40: average_precision=0.4480 (best 0.4506)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:02:26.209+00:00", "level": "info", "message": "2026-11-10 15:02:26,207 INFO src.modeling: Trial 19/40: average_precision=0.4328 (best 0.4506)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:02:39.658+00:00", "level": "info", "message": "2026-11-10 15:02:39,657 INFO src.modeling: Trial 20/40: average_precision=0.4271 (best 0.4506)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:02:51.296+00:00", "level": "info", "message": "2026-11-10 15:02:51,295 INFO src.modeling: Trial 21/40: average_precision=0.4313 (best 0.4506)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:03:12.860+00:00", "level": "info", "message": "2026-11-10 15:03:12,859 INFO src.modeling: Trial 22/40: average_precision=0.4460 (best 0.4506)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:03:36.124+00:00", "level": "info", "message": "2026-11-10 15:03:36,124 INFO src.modeling: Trial 23/40: average_precision=0.4498 (best 0.4506)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:03:48.443+00:00", "level": "info", "message": "2026-11-10 15:03:48,442 INFO src.modeling: Trial 24/40: average_precision=0.4353 (best 0.4506)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:04:04.908+00:00", "level": "info", "message": "2026-11-10 15:04:04,907 INFO src.modeling: Trial 25/40: average_precision=0.4200 (best 0.4506)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:04:28.182+00:00", "level": "info", "message": "2026-11-10 15:04:28,181 INFO src.modeling: Trial 26/40: average_precision=0.4507 (best 0.4507)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:04:51.168+00:00", "level": "info", "message": "2026-11-10 15:04:51,167 INFO src.modeling: Trial 27/40: average_precision=0.4461 (best 0.4507)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:05:19.681+00:00", "level": "info", "message": "2026-11-10 15:05:19,680 INFO src.modeling: Trial 28/40: average_precision=0.4489 (best 0.4507)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:05:45.643+00:00", "level": "info", "message": "2026-11-10 15:05:45,642 INFO src.modeling: Trial 29/40: average_precision=0.4459 (best 0.4507)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:06:08.354+00:00", "level": "info", "message": "2026-11-10 15:06:08,353 INFO src.modeling: Trial 30/40: average_precision=0.4384 (best 0.4507)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:06:39.439+00:00", "level": "info", "message": "2026-11-10 15:06:39,438 INFO src.modeling: Trial 31/40: average_precision=0.4498 (best 0.4507)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:07:09.319+00:00", "level": "info", "message": "2026-11-10 15:07:09,317 INFO src.modeling: Trial 32/40: average_precision=0.4486 (best 0.4507)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:07:26.460+00:00", "level": "info", "message": "2026-11-10 15:07:26,459 INFO src.modeling: Trial 33/40: average_precision=0.4322 (best 0.4507)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:08:17.328+00:00", "level": "info", "message": "2026-11-10 15:08:17,327 INFO src.modeling: Trial 34/40: average_precision=0.4517 (best 0.4517)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:08:59.941+00:00", "level": "info", "message": "2026-11-10 15:08:59,940 INFO src.modeling: Trial 35/40: average_precision=0.4520 (best 0.4520)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:09:44.508+00:00", "level": "info", "message": "2026-11-10 15:09:44,507 INFO src.modeling: Trial 36/40: average_precision=0.4505 (best 0.4520)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:10:09.535+00:00", "level": "info", "message": "2026-11-10 15:10:09,534 INFO src.modeling: Trial 37/40: average_precision=0.4377 (best 0.4520)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:10:35.021+00:00", "level": "info", "message": "2026-11-10 15:10:35,020 INFO src.modeling: Trial 38/40: average_precision=0.4402 (best 0.4520)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:11:13.604+00:00", "level": "info", "message": "2026-11-10 15:11:13,603 INFO src.modeling: Trial 39/40: average_precision=0.4471 (best 0.4520)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:11:29.369+00:00", "level": "info", "message": "2026-11-10 15:11:29,368 INFO src.modeling: Trial 40/40: average_precision=0.4089 (best 0.4520)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:11:29.389+00:00", "level": "info", "message": "2026-11-10 15:11:29,370 INFO src.modeling: Best CV average_precision: 0.4520 with {'n_estimators': 450, 'learning_rate': 0.0897493045259221, 'max_depth': 8, 'min_child_weight': 19.95814598940523, 'subsample': 0.8079403850452648, 'colsample_bytree': 0.8647578361190602, 'gamma': 1.2862902188907008, 'reg_alpha': 4.178476617506582, 'reg_lambda': 0.19761517554017186, 'scale_pos_weight': 1.0081384648378267}", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:11:29.520+00:00", "level": "info", "message": "2026-11-10 15:11:29,519 INFO src.modeling: Tuning XGBoost (none): 40 trials, 5-fold CV on average_precision", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:12:04.050+00:00", "level": "info", "message": "2026-11-10 15:12:04,049 INFO src.modeling: Trial 1/40: average_precision=0.4448 (best 0.4448)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:13:25.288+00:00", "level": "info", "message": "2026-11-10 15:13:25,286 INFO src.modeling: Trial 2/40: average_precision=0.4798 (best 0.4798)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:13:35.176+00:00", "level": "info", "message": "2026-11-10 15:13:35,175 INFO src.modeling: Trial 3/40: average_precision=0.4628 (best 0.4798)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:13:43.346+00:00", "level": "info", "message": "2026-11-10 15:13:43,345 INFO src.modeling: Trial 4/40: average_precision=0.4548 (best 0.4798)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:14:13.829+00:00", "level": "info", "message": "2026-11-10 15:14:13,827 INFO src.modeling: Trial 5/40: average_precision=0.4627 (best 0.4798)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:14:23.209+00:00", "level": "info", "message": "2026-11-10 15:14:23,208 INFO src.modeling: Trial 6/40: average_precision=0.4618 (best 0.4798)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:14:35.220+00:00", "level": "info", "message": "2026-11-10 15:14:35,219 INFO src.modeling: Trial 7/40: average_precision=0.4653 (best 0.4798)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:15:03.235+00:00", "level": "info", "message": "2026-11-10 15:15:03,234 INFO src.modeling: Trial 8/40: average_precision=0.4870 (best 0.4870)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:15:26.325+00:00", "level": "info", "message": "2026-11-10 15:15:26,324 INFO src.modeling: Trial 9/40: average_precision=0.4529 (best 0.4870)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:16:16.146+00:00", "level": "info", "message": "2026-11-10 15:16:16,145 INFO src.modeling: Trial 10/40: average_precision=0.4835 (best 0.4870)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:16:41.900+00:00", "level": "info", "message": "2026-11-10 15:16:41,899 INFO src.modeling: Trial 11/40: average_precision=0.4905 (best 0.4905)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:17:08.359+00:00", "level": "info", "message": "2026-11-10 15:17:08,358 INFO src.modeling: Trial 12/40: average_precision=0.4853 (best 0.4905)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:17:38.097+00:00", "level": "info", "message": "2026-11-10 15:17:38,096 INFO src.modeling: Trial 13/40: average_precision=0.4843 (best 0.4905)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:17:56.289+00:00", "level": "info", "message": "2026-11-10 15:17:56,288 INFO src.modeling: Trial 14/40: average_precision=0.4713 (best 0.4905)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:18:15.719+00:00", "level": "info", "message": "2026-11-10 15:18:15,717 INFO src.modeling: Trial 15/40: average_precision=0.4869 (best 0.4905)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:18:34.530+00:00", "level": "info", "message": "2026-11-10 15:18:34,529 INFO src.modeling: Trial 16/40: average_precision=0.4903 (best 0.4905)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:19:05.487+00:00", "level": "info", "message": "2026-11-10 15:19:05,486 INFO src.modeling: Trial 17/40: average_precision=0.4904 (best 0.4905)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:19:41.088+00:00", "level": "info", "message": "2026-11-10 15:19:41,087 INFO src.modeling: Trial 18/40: average_precision=0.4925 (best 0.4925)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:20:31.503+00:00", "level": "info", "message": "2026-11-10 15:20:31,502 INFO src.modeling: Trial 19/40: average_precision=0.4849 (best 0.4925)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:21:20.868+00:00", "level": "info", "message": "2026-11-10 15:21:20,867 INFO src.modeling: Trial 20/40: average_precision=0.4961 (best 0.4961)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:22:09.958+00:00", "level": "info", "message": "2026-11-10 15:22:09,956 INFO src.modeling: Trial 21/40: average_precision=0.4834 (best 0.4961)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:22:42.094+00:00", "level": "info", "message": "2026-11-10 15:22:42,093 INFO src.modeling: Trial 22/40: average_precision=0.4881 (best 0.4961)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:23:26.577+00:00", "level": "info", "message": "2026-11-10 15:23:26,576 INFO src.modeling: Trial 23/40: average_precision=0.4858 (best 0.4961)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:24:07.427+00:00", "level": "info", "message": "2026-11-10 15:24:07,426 INFO src.modeling: Trial 24/40: average_precision=0.4958 (best 0.4961)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:25:05.982+00:00", "level": "info", "message": "2026-11-10 15:25:05,981 INFO src.modeling: Trial 25/40: average_precision=0.4914 (best 0.4961)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:25:48.294+00:00", "level": "info", "message": "2026-11-10 15:25:48,293 INFO src.modeling: Trial 26/40: average_precision=0.4778 (best 0.4961)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:26:20.313+00:00", "level": "info", "message": "2026-11-10 15:26:20,312 INFO src.modeling: Trial 27/40: average_precision=0.4950 (best 0.4961)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:27:03.078+00:00", "level": "info", "message": "2026-11-10 15:27:03,077 INFO src.modeling: Trial 28/40: average_precision=0.4908 (best 0.4961)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:27:35.689+00:00", "level": "info", "message": "2026-11-10 15:27:35,688 INFO src.modeling: Trial 29/40: average_precision=0.4971 (best 0.4971)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:28:22.457+00:00", "level": "info", "message": "2026-11-10 15:28:22,456 INFO src.modeling: Trial 30/40: average_precision=0.4967 (best 0.4971)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:29:20.807+00:00", "level": "info", "message": "2026-11-10 15:29:20,806 INFO src.modeling: Trial 31/40: average_precision=0.4980 (best 0.4980)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:30:18.275+00:00", "level": "info", "message": "2026-11-10 15:30:18,274 INFO src.modeling: Trial 32/40: average_precision=0.4998 (best 0.4998)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:31:16.019+00:00", "level": "info", "message": "2026-11-10 15:31:16,018 INFO src.modeling: Trial 33/40: average_precision=0.4965 (best 0.4998)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:32:16.969+00:00", "level": "info", "message": "2026-11-10 15:32:16,968 INFO src.modeling: Trial 34/40: average_precision=0.4862 (best 0.4998)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:33:08.654+00:00", "level": "info", "message": "2026-11-10 15:33:08,654 INFO src.modeling: Trial 35/40: average_precision=0.4963 (best 0.4998)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:34:05.618+00:00", "level": "info", "message": "2026-11-10 15:34:05,618 INFO src.modeling: Trial 36/40: average_precision=0.4980 (best 0.4998)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:35:02.200+00:00", "level": "info", "message": "2026-11-10 15:35:02,199 INFO src.modeling: Trial 37/40: average_precision=0.4958 (best 0.4998)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:35:47.465+00:00", "level": "info", "message": "2026-11-10 15:35:47,464 INFO src.modeling: Trial 38/40: average_precision=0.5035 (best 0.5035)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:36:14.693+00:00", "level": "info", "message": "2026-11-10 15:36:14,693 INFO src.modeling: Trial 39/40: average_precision=0.4770 (best 0.5035)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:37:10.784+00:00", "level": "info", "message": "2026-11-10 15:37:10,783 INFO src.modeling: Trial 40/40: average_precision=0.4983 (best 0.5035)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:37:10.802+00:00", "level": "info", "message": "2026-11-10 15:37:10,783 INFO src.modeling: Best CV average_precision: 0.5035 with {'n_estimators': 400, 'learning_rate': 0.03151347126356073, 'max_depth': 9, 'min_child_weight': 13.456703527208825, 'subsample': 0.9984011407259392, 'colsample_bytree': 0.444217003345363, 'gamma': 1.3121615202543921, 'reg_alpha': 0.5018232011438374, 'reg_lambda': 0.7305562166286795, 'scale_pos_weight': 4.740819076649796}", "stage": "Optuna tuning"}
+{"at": "2026-11-10T12:37:29.264+00:00", "level": "info", "message": "2026-11-10 15:37:29,263 INFO __main__: proposed: validation PR-AUC 0.4516", "stage": "Fitting pipelines"}
+{"at": "2026-11-10T12:37:50.935+00:00", "level": "info", "message": "2026-11-10 15:37:50,934 INFO __main__: xgboost: validation PR-AUC 0.5018", "stage": "Fitting pipelines"}
+{"at": "2026-11-10T12:37:53.055+00:00", "level": "info", "message": "2026-11-10 15:37:53,054 INFO __main__: xgboost_default: validation PR-AUC 0.4583", "stage": "Fitting pipelines"}
+{"at": "2026-11-10T12:38:24.245+00:00", "level": "info", "message": "2026-11-10 15:38:24,244 INFO __main__: random_forest_smote: validation PR-AUC 0.3945", "stage": "Fitting pipelines"}
+{"at": "2026-11-10T12:38:26.290+00:00", "level": "info", "message": "2026-11-10 15:38:26,289 INFO __main__: logistic_regression_smote: validation PR-AUC 0.3139", "stage": "Fitting pipelines"}
+{"at": "2026-11-10T12:39:26.090+00:00", "level": "info", "message": "2026-11-10 15:39:26,089 INFO __main__: epoch 1: loss 1.1970, validation PR-AUC 0.2163", "stage": "Fitting pipelines"}
+{"at": "2026-11-10T12:39:47.124+00:00", "level": "info", "message": "2026-11-10 15:39:47,123 INFO __main__: epoch 2: loss 1.0845, validation PR-AUC 0.2900", "stage": "Fitting pipelines"}
+{"at": "2026-11-10T12:40:08.422+00:00", "level": "info", "message": "2026-11-10 15:40:08,422 INFO __main__: epoch 3: loss 1.0036, validation PR-AUC 0.3221", "stage": "Fitting pipelines"}
+{"at": "2026-11-10T12:40:30.307+00:00", "level": "info", "message": "2026-11-10 15:40:30,306 INFO __main__: epoch 4: loss 0.9441, validation PR-AUC 0.3649", "stage": "Fitting pipelines"}
+{"at": "2026-11-10T12:40:51.902+00:00", "level": "info", "message": "2026-11-10 15:40:51,901 INFO __main__: epoch 5: loss 0.8969, validation PR-AUC 0.3674", "stage": "Fitting pipelines"}
+{"at": "2026-11-10T12:41:13.708+00:00", "level": "info", "message": "2026-11-10 15:41:13,707 INFO __main__: epoch 6: loss 0.8393, validation PR-AUC 0.4037", "stage": "Fitting pipelines"}
+{"at": "2026-11-10T12:41:35.092+00:00", "level": "info", "message": "2026-11-10 15:41:35,091 INFO __main__: epoch 7: loss 0.7829, validation PR-AUC 0.4232", "stage": "Fitting pipelines"}
+{"at": "2026-11-10T12:41:56.734+00:00", "level": "info", "message": "2026-11-10 15:41:56,733 INFO __main__: epoch 8: loss 0.7335, validation PR-AUC 0.4581", "stage": "Fitting pipelines"}
+{"at": "2026-11-10T12:42:18.620+00:00", "level": "info", "message": "2026-11-10 15:42:18,619 INFO __main__: epoch 9: loss 0.6879, validation PR-AUC 0.4782", "stage": "Fitting pipelines"}
+{"at": "2026-11-10T12:42:40.714+00:00", "level": "info", "message": "2026-11-10 15:42:40,713 INFO __main__: epoch 10: loss 0.6516, validation PR-AUC 0.4875", "stage": "Fitting pipelines"}
+{"at": "2026-11-10T12:43:03.296+00:00", "level": "info", "message": "2026-11-10 15:43:03,295 INFO __main__: epoch 11: loss 0.5987, validation PR-AUC 0.4869", "stage": "Fitting pipelines"}
+{"at": "2026-11-10T12:43:25.485+00:00", "level": "info", "message": "2026-11-10 15:43:25,484 INFO __main__: epoch 12: loss 0.5695, validation PR-AUC 0.5075", "stage": "Fitting pipelines"}
+{"at": "2026-11-10T12:43:48.115+00:00", "level": "info", "message": "2026-11-10 15:43:48,114 INFO __main__: epoch 13: loss 0.5344, validation PR-AUC 0.5123", "stage": "Fitting pipelines"}
+{"at": "2026-11-10T12:44:11.564+00:00", "level": "info", "message": "2026-11-10 15:44:11,563 INFO __main__: epoch 14: loss 0.4952, validation PR-AUC 0.5239", "stage": "Fitting pipelines"}
+{"at": "2026-11-10T12:44:34.725+00:00", "level": "info", "message": "2026-11-10 15:44:34,725 INFO __main__: epoch 15: loss 0.4821, validation PR-AUC 0.5405", "stage": "Fitting pipelines"}
+{"at": "2026-11-10T12:44:57.825+00:00", "level": "info", "message": "2026-11-10 15:44:57,824 INFO __main__: epoch 16: loss 0.4462, validation PR-AUC 0.5390", "stage": "Fitting pipelines"}
+{"at": "2026-11-10T12:45:21.510+00:00", "level": "info", "message": "2026-11-10 15:45:21,509 INFO __main__: epoch 17: loss 0.4260, validation PR-AUC 0.5398", "stage": "Fitting pipelines"}
+{"at": "2026-11-10T12:45:45.188+00:00", "level": "info", "message": "2026-11-10 15:45:45,187 INFO __main__: epoch 18: loss 0.4003, validation PR-AUC 0.5429", "stage": "Fitting pipelines"}
+{"at": "2026-11-10T12:46:08.853+00:00", "level": "info", "message": "2026-11-10 15:46:08,853 INFO __main__: epoch 19: loss 0.3831, validation PR-AUC 0.5280", "stage": "Fitting pipelines"}
+{"at": "2026-11-10T12:46:33.092+00:00", "level": "info", "message": "2026-11-10 15:46:33,091 INFO __main__: epoch 20: loss 0.3645, validation PR-AUC 0.5445", "stage": "Fitting pipelines"}
+{"at": "2026-11-10T12:46:56.548+00:00", "level": "info", "message": "2026-11-10 15:46:56,547 INFO __main__: epoch 21: loss 0.3483, validation PR-AUC 0.5488", "stage": "Fitting pipelines"}
+{"at": "2026-11-10T12:47:20.389+00:00", "level": "info", "message": "2026-11-10 15:47:20,388 INFO __main__: epoch 22: loss 0.3444, validation PR-AUC 0.5366", "stage": "Fitting pipelines"}
+{"at": "2026-11-10T12:47:43.804+00:00", "level": "info", "message": "2026-11-10 15:47:43,803 INFO __main__: epoch 23: loss 0.3213, validation PR-AUC 0.5435", "stage": "Fitting pipelines"}
+{"at": "2026-11-10T12:48:07.316+00:00", "level": "info", "message": "2026-11-10 15:48:07,315 INFO __main__: epoch 24: loss 0.3022, validation PR-AUC 0.5453", "stage": "Fitting pipelines"}
+{"at": "2026-11-10T12:48:31.071+00:00", "level": "info", "message": "2026-11-10 15:48:31,070 INFO __main__: epoch 25: loss 0.2967, validation PR-AUC 0.5449", "stage": "Fitting pipelines"}
+{"at": "2026-11-10T12:48:54.246+00:00", "level": "info", "message": "2026-11-10 15:48:54,246 INFO __main__: epoch 26: loss 0.2895, validation PR-AUC 0.5228", "stage": "Fitting pipelines"}
+{"at": "2026-11-10T12:49:17.565+00:00", "level": "info", "message": "2026-11-10 15:49:17,563 INFO __main__: epoch 27: loss 0.2895, validation PR-AUC 0.5560", "stage": "Fitting pipelines"}
+{"at": "2026-11-10T12:49:41.908+00:00", "level": "info", "message": "2026-11-10 15:49:41,907 INFO __main__: epoch 28: loss 0.2722, validation PR-AUC 0.5506", "stage": "Fitting pipelines"}
+{"at": "2026-11-10T12:50:06.657+00:00", "level": "info", "message": "2026-11-10 15:50:06,656 INFO __main__: epoch 29: loss 0.2709, validation PR-AUC 0.5483", "stage": "Fitting pipelines"}
+{"at": "2026-11-10T12:50:31.277+00:00", "level": "info", "message": "2026-11-10 15:50:31,276 INFO __main__: epoch 30: loss 0.2613, validation PR-AUC 0.5443", "stage": "Fitting pipelines"}
+{"at": "2026-11-10T12:50:56.055+00:00", "level": "info", "message": "2026-11-10 15:50:56,055 INFO __main__: epoch 31: loss 0.2354, validation PR-AUC 0.5309", "stage": "Fitting pipelines"}
+{"at": "2026-11-10T12:51:22.217+00:00", "level": "info", "message": "2026-11-10 15:51:22,216 INFO __main__: epoch 32: loss 0.2317, validation PR-AUC 0.5280", "stage": "Fitting pipelines"}
+{"at": "2026-11-10T12:51:47.891+00:00", "level": "info", "message": "2026-11-10 15:51:47,890 INFO __main__: epoch 33: loss 0.2519, validation PR-AUC 0.5423", "stage": "Fitting pipelines"}
+{"at": "2026-11-10T12:51:50.395+00:00", "level": "info", "message": "2026-11-10 15:51:50,394 INFO __main__: Sequence model: validation PR-AUC 0.5560; hybrid (w=0.60): 0.6342", "stage": "Fitting pipelines"}
+{"at": "2026-11-10T12:51:50.402+00:00", "level": "info", "message": "2026-11-10 15:51:50,394 INFO __main__: Serving hybrid", "stage": "Scoring the test customers"}
+{"at": "2026-11-10T12:51:55.121+00:00", "level": "info", "message": "2026-11-10 15:51:55,120 INFO src.modeling: Saved model to C:\\Users\\MadScie254\\Documents\\GitHub\\New_SGCC\\runs\\run-20261110T114728-train-full-a31409\\workspace\\.staging\\models\\xgb_best.ubj", "stage": "Scoring the test customers"}
+{"at": "2026-11-10T12:52:03.238+00:00", "level": "info", "message": "2026-11-10 15:52:03,237 INFO __main__: Wrote 3000 unlabelled customers to C:\\Users\\MadScie254\\Documents\\GitHub\\New_SGCC\\runs\\run-20261110T114728-train-full-a31409\\workspace\\.staging\\data\\sgcc_demo.csv.gz (3.6 MB)", "stage": "Scoring the test customers"}
+{"at": "2026-11-10T12:52:03.423+00:00", "level": "info", "message": "2026-11-10 15:52:03,422 INFO __main__: Published 16 files under C:\\Users\\MadScie254\\Documents\\GitHub\\New_SGCC\\runs\\run-20261110T114728-train-full-a31409\\workspace", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.518+00:00", "level": "info", "message": "{", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.520+00:00", "level": "info", "message": "  \"served\": \"hybrid\",", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.521+00:00", "level": "info", "message": "  \"published_to\": \"C:\\\\Users\\\\MadScie254\\\\Documents\\\\GitHub\\\\New_SGCC\\\\runs\\\\run-20261110T114728-train-full-a31409\\\\workspace\",", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.522+00:00", "level": "info", "message": "  \"validation_pr_auc\": {", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.523+00:00", "level": "info", "message": "    \"proposed\": 0.4516,", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.524+00:00", "level": "info", "message": "    \"xgboost\": 0.5018,", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.525+00:00", "level": "info", "message": "    \"xgboost_default\": 0.4583,", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.526+00:00", "level": "info", "message": "    \"random_forest_smote\": 0.3945,", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.527+00:00", "level": "info", "message": "    \"logistic_regression_smote\": 0.3139,", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.528+00:00", "level": "info", "message": "    \"wide_deep_cnn\": 0.556,", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.529+00:00", "level": "info", "message": "    \"hybrid\": 0.6342", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.531+00:00", "level": "info", "message": "  },", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.532+00:00", "level": "info", "message": "  \"test\": {", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.533+00:00", "level": "info", "message": "    \"proposed\": {", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.534+00:00", "level": "info", "message": "      \"auc\": 0.8357,", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.535+00:00", "level": "info", "message": "      \"pr_auc\": 0.4669,", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.537+00:00", "level": "info", "message": "      \"recall\": 0.452,", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.538+00:00", "level": "info", "message": "      \"precision\": 0.4383,", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.539+00:00", "level": "info", "message": "      \"f1\": 0.445,", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.540+00:00", "level": "info", "message": "      \"mcc\": 0.3925", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.541+00:00", "level": "info", "message": "    },", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.542+00:00", "level": "info", "message": "    \"xgboost\": {", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.543+00:00", "level": "info", "message": "      \"auc\": 0.8532,", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.544+00:00", "level": "info", "message": "      \"pr_auc\": 0.5138,", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.545+00:00", "level": "info", "message": "      \"recall\": 0.4428,", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.546+00:00", "level": "info", "message": "      \"precision\": 0.5053,", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.548+00:00", "level": "info", "message": "      \"f1\": 0.472,", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.549+00:00", "level": "info", "message": "      \"mcc\": 0.4274", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.550+00:00", "level": "info", "message": "    },", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.551+00:00", "level": "info", "message": "    \"xgboost_default\": {", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.552+00:00", "level": "info", "message": "      \"auc\": 0.8391,", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.553+00:00", "level": "info", "message": "      \"pr_auc\": 0.4876,", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.554+00:00", "level": "info", "message": "      \"recall\": 0.4834,", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.555+00:00", "level": "info", "message": "      \"precision\": 0.4389,", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.556+00:00", "level": "info", "message": "      \"f1\": 0.4601,", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.558+00:00", "level": "info", "message": "      \"mcc\": 0.4076", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.559+00:00", "level": "info", "message": "    },", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.560+00:00", "level": "info", "message": "    \"random_forest_smote\": {", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.561+00:00", "level": "info", "message": "      \"auc\": 0.8121,", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.562+00:00", "level": "info", "message": "      \"pr_auc\": 0.4114,", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.563+00:00", "level": "info", "message": "      \"recall\": 0.4317,", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.565+00:00", "level": "info", "message": "      \"precision\": 0.3656,", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.566+00:00", "level": "info", "message": "      \"f1\": 0.3959,", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.567+00:00", "level": "info", "message": "      \"mcc\": 0.3359", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.569+00:00", "level": "info", "message": "    },", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.571+00:00", "level": "info", "message": "    \"logistic_regression_smote\": {", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.572+00:00", "level": "info", "message": "      \"auc\": 0.7526,", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.573+00:00", "level": "info", "message": "      \"pr_auc\": 0.3115,", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.574+00:00", "level": "info", "message": "      \"recall\": 0.3727,", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.575+00:00", "level": "info", "message": "      \"precision\": 0.3186,", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.576+00:00", "level": "info", "message": "      \"f1\": 0.3435,", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.578+00:00", "level": "info", "message": "      \"mcc\": 0.2781", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.579+00:00", "level": "info", "message": "    },", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.580+00:00", "level": "info", "message": "    \"wide_deep_cnn\": {", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.581+00:00", "level": "info", "message": "      \"auc\": 0.8773,", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.583+00:00", "level": "info", "message": "      \"pr_auc\": 0.5713,", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.584+00:00", "level": "info", "message": "      \"recall\": 0.5129,", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.585+00:00", "level": "info", "message": "      \"precision\": 0.5549,", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.586+00:00", "level": "info", "message": "      \"f1\": 0.5331,", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.587+00:00", "level": "info", "message": "      \"mcc\": 0.4919", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.588+00:00", "level": "info", "message": "    },", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.589+00:00", "level": "info", "message": "    \"hybrid\": {", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.590+00:00", "level": "info", "message": "      \"auc\": 0.9092,", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.591+00:00", "level": "info", "message": "      \"pr_auc\": 0.6392,", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.593+00:00", "level": "info", "message": "      \"recall\": 0.5055,", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.594+00:00", "level": "info", "message": "      \"precision\": 0.6765,", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.595+00:00", "level": "info", "message": "      \"f1\": 0.5787,", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.596+00:00", "level": "info", "message": "      \"mcc\": 0.5523", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.597+00:00", "level": "info", "message": "    }", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.599+00:00", "level": "info", "message": "  }", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:03.600+00:00", "level": "info", "message": "}", "stage": "Publishing"}
+{"at": "2026-11-10T12:52:04.560+00:00", "level": "info", "message": "Run succeeded after 3742 s"}

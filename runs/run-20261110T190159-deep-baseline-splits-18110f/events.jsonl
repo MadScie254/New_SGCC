@@ -1,0 +1,139 @@
+{"at": "2026-11-10T19:02:01.349+00:00", "level": "info", "message": "Run started: Wide & Deep CNN on the five other random splits", "stage": "start"}
+{"at": "2026-11-10T19:02:02.393+00:00", "level": "info", "message": "Dataset sgcc_full.csv sha256 99f8fd315626b1f7... (matches the registered release)"}
+{"at": "2026-11-10T19:03:14.083+00:00", "level": "info", "message": "epoch 1: loss 1.1974, validation PR-AUC 0.2172", "stage": "Starting"}
+{"at": "2026-11-10T19:03:41.689+00:00", "level": "info", "message": "epoch 2: loss 1.0988, validation PR-AUC 0.3422", "stage": "Starting"}
+{"at": "2026-11-10T19:04:09.393+00:00", "level": "info", "message": "epoch 3: loss 1.0155, validation PR-AUC 0.3832", "stage": "Starting"}
+{"at": "2026-11-10T19:04:38.544+00:00", "level": "info", "message": "epoch 4: loss 0.9491, validation PR-AUC 0.4319", "stage": "Starting"}
+{"at": "2026-11-10T19:05:10.644+00:00", "level": "info", "message": "epoch 5: loss 0.8810, validation PR-AUC 0.4486", "stage": "Starting"}
+{"at": "2026-11-10T19:05:35.060+00:00", "level": "info", "message": "epoch 6: loss 0.8352, validation PR-AUC 0.4729", "stage": "Starting"}
+{"at": "2026-11-10T19:05:57.605+00:00", "level": "info", "message": "epoch 7: loss 0.7861, validation PR-AUC 0.5005", "stage": "Starting"}
+{"at": "2026-11-10T19:06:22.007+00:00", "level": "info", "message": "epoch 8: loss 0.7402, validation PR-AUC 0.5159", "stage": "Starting"}
+{"at": "2026-11-10T19:06:45.040+00:00", "level": "info", "message": "epoch 9: loss 0.6944, validation PR-AUC 0.5126", "stage": "Starting"}
+{"at": "2026-11-10T19:07:07.923+00:00", "level": "info", "message": "epoch 10: loss 0.6528, validation PR-AUC 0.5262", "stage": "Starting"}
+{"at": "2026-11-10T19:07:30.444+00:00", "level": "info", "message": "epoch 11: loss 0.6171, validation PR-AUC 0.5278", "stage": "Starting"}
+{"at": "2026-11-10T19:07:53.737+00:00", "level": "info", "message": "epoch 12: loss 0.5822, validation PR-AUC 0.5366", "stage": "Starting"}
+{"at": "2026-11-10T19:08:17.145+00:00", "level": "info", "message": "epoch 13: loss 0.5470, validation PR-AUC 0.5323", "stage": "Starting"}
+{"at": "2026-11-10T19:08:40.821+00:00", "level": "info", "message": "epoch 14: loss 0.5271, validation PR-AUC 0.5325", "stage": "Starting"}
+{"at": "2026-11-10T19:09:08.806+00:00", "level": "info", "message": "epoch 15: loss 0.4868, validation PR-AUC 0.5460", "stage": "Starting"}
+{"at": "2026-11-10T19:09:33.257+00:00", "level": "info", "message": "epoch 16: loss 0.4723, validation PR-AUC 0.5573", "stage": "Starting"}
+{"at": "2026-11-10T19:09:56.899+00:00", "level": "info", "message": "epoch 17: loss 0.4654, validation PR-AUC 0.5596", "stage": "Starting"}
+{"at": "2026-11-10T19:10:20.919+00:00", "level": "info", "message": "epoch 18: loss 0.4340, validation PR-AUC 0.5674", "stage": "Starting"}
+{"at": "2026-11-10T19:10:45.469+00:00", "level": "info", "message": "epoch 19: loss 0.4124, validation PR-AUC 0.5578", "stage": "Starting"}
+{"at": "2026-11-10T19:11:09.776+00:00", "level": "info", "message": "epoch 20: loss 0.4050, validation PR-AUC 0.5757", "stage": "Starting"}
+{"at": "2026-11-10T19:11:33.630+00:00", "level": "info", "message": "epoch 21: loss 0.3862, validation PR-AUC 0.5634", "stage": "Starting"}
+{"at": "2026-11-10T19:11:56.341+00:00", "level": "info", "message": "epoch 22: loss 0.3833, validation PR-AUC 0.5720", "stage": "Starting"}
+{"at": "2026-11-10T19:12:19.045+00:00", "level": "info", "message": "epoch 23: loss 0.3587, validation PR-AUC 0.5680", "stage": "Starting"}
+{"at": "2026-11-10T19:12:42.223+00:00", "level": "info", "message": "epoch 24: loss 0.3454, validation PR-AUC 0.5673", "stage": "Starting"}
+{"at": "2026-11-10T19:13:05.478+00:00", "level": "info", "message": "epoch 25: loss 0.3272, validation PR-AUC 0.5769", "stage": "Starting"}
+{"at": "2026-11-10T19:13:29.991+00:00", "level": "info", "message": "epoch 26: loss 0.3254, validation PR-AUC 0.5796", "stage": "Starting"}
+{"at": "2026-11-10T19:13:53.614+00:00", "level": "info", "message": "epoch 27: loss 0.3057, validation PR-AUC 0.5778", "stage": "Starting"}
+{"at": "2026-11-10T19:14:17.495+00:00", "level": "info", "message": "epoch 28: loss 0.3031, validation PR-AUC 0.5766", "stage": "Starting"}
+{"at": "2026-11-10T19:14:41.878+00:00", "level": "info", "message": "epoch 29: loss 0.2934, validation PR-AUC 0.5700", "stage": "Starting"}
+{"at": "2026-11-10T19:15:06.130+00:00", "level": "info", "message": "epoch 30: loss 0.2949, validation PR-AUC 0.5673", "stage": "Starting"}
+{"at": "2026-11-10T19:15:30.842+00:00", "level": "info", "message": "epoch 31: loss 0.2820, validation PR-AUC 0.5811", "stage": "Starting"}
+{"at": "2026-11-10T19:15:56.215+00:00", "level": "info", "message": "epoch 32: loss 0.2638, validation PR-AUC 0.5683", "stage": "Starting"}
+{"at": "2026-11-10T19:16:21.075+00:00", "level": "info", "message": "epoch 33: loss 0.2698, validation PR-AUC 0.5742", "stage": "Starting"}
+{"at": "2026-11-10T19:16:45.767+00:00", "level": "info", "message": "epoch 34: loss 0.2567, validation PR-AUC 0.5702", "stage": "Starting"}
+{"at": "2026-11-10T19:17:10.540+00:00", "level": "info", "message": "epoch 35: loss 0.2521, validation PR-AUC 0.5870", "stage": "Starting"}
+{"at": "2026-11-10T19:17:36.804+00:00", "level": "info", "message": "epoch 36: loss 0.2451, validation PR-AUC 0.5742", "stage": "Starting"}
+{"at": "2026-11-10T19:18:01.353+00:00", "level": "info", "message": "epoch 37: loss 0.2468, validation PR-AUC 0.5710", "stage": "Starting"}
+{"at": "2026-11-10T19:18:26.575+00:00", "level": "info", "message": "epoch 38: loss 0.2348, validation PR-AUC 0.5670", "stage": "Starting"}
+{"at": "2026-11-10T19:18:52.712+00:00", "level": "info", "message": "epoch 39: loss 0.2235, validation PR-AUC 0.5744", "stage": "Starting"}
+{"at": "2026-11-10T19:19:17.497+00:00", "level": "info", "message": "epoch 40: loss 0.2215, validation PR-AUC 0.5633", "stage": "Starting"}
+{"at": "2026-11-10T19:19:42.694+00:00", "level": "info", "message": "epoch 41: loss 0.2129, validation PR-AUC 0.5717", "stage": "Starting"}
+{"at": "2026-11-10T19:19:47.959+00:00", "level": "info", "message": "seed 1: PR-AUC 0.5780 (standard XGBoost 0.4971)", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:20:11.842+00:00", "level": "info", "message": "epoch 1: loss 1.1905, validation PR-AUC 0.2375", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:20:36.759+00:00", "level": "info", "message": "epoch 2: loss 1.0988, validation PR-AUC 0.3216", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:20:58.718+00:00", "level": "info", "message": "epoch 3: loss 1.0201, validation PR-AUC 0.3537", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:21:21.222+00:00", "level": "info", "message": "epoch 4: loss 0.9617, validation PR-AUC 0.3940", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:21:43.151+00:00", "level": "info", "message": "epoch 5: loss 0.9057, validation PR-AUC 0.4218", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:22:05.510+00:00", "level": "info", "message": "epoch 6: loss 0.8443, validation PR-AUC 0.4378", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:22:27.619+00:00", "level": "info", "message": "epoch 7: loss 0.7888, validation PR-AUC 0.4730", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:22:49.792+00:00", "level": "info", "message": "epoch 8: loss 0.7344, validation PR-AUC 0.4903", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:23:11.896+00:00", "level": "info", "message": "epoch 9: loss 0.6771, validation PR-AUC 0.4981", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:23:38.135+00:00", "level": "info", "message": "epoch 10: loss 0.6353, validation PR-AUC 0.5204", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:24:01.507+00:00", "level": "info", "message": "epoch 11: loss 0.6010, validation PR-AUC 0.5323", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:24:24.012+00:00", "level": "info", "message": "epoch 12: loss 0.5676, validation PR-AUC 0.5305", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:24:47.078+00:00", "level": "info", "message": "epoch 13: loss 0.5428, validation PR-AUC 0.5476", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:25:11.867+00:00", "level": "info", "message": "epoch 14: loss 0.4975, validation PR-AUC 0.5415", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:25:38.904+00:00", "level": "info", "message": "epoch 15: loss 0.4881, validation PR-AUC 0.5455", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:26:06.721+00:00", "level": "info", "message": "epoch 16: loss 0.4549, validation PR-AUC 0.5655", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:26:32.520+00:00", "level": "info", "message": "epoch 17: loss 0.4357, validation PR-AUC 0.5309", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:26:58.467+00:00", "level": "info", "message": "epoch 18: loss 0.4144, validation PR-AUC 0.5605", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:27:24.279+00:00", "level": "info", "message": "epoch 19: loss 0.3993, validation PR-AUC 0.5501", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:27:49.799+00:00", "level": "info", "message": "epoch 20: loss 0.3807, validation PR-AUC 0.5385", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:28:15.766+00:00", "level": "info", "message": "epoch 21: loss 0.3733, validation PR-AUC 0.5541", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:28:41.499+00:00", "level": "info", "message": "epoch 22: loss 0.3539, validation PR-AUC 0.5557", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:28:46.865+00:00", "level": "info", "message": "seed 2: PR-AUC 0.5404 (standard XGBoost 0.5036)", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:29:10.599+00:00", "level": "info", "message": "epoch 1: loss 1.2015, validation PR-AUC 0.1977", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:29:31.897+00:00", "level": "info", "message": "epoch 2: loss 1.0818, validation PR-AUC 0.2880", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:29:53.669+00:00", "level": "info", "message": "epoch 3: loss 1.0040, validation PR-AUC 0.3524", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:30:15.516+00:00", "level": "info", "message": "epoch 4: loss 0.9339, validation PR-AUC 0.3837", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:30:37.036+00:00", "level": "info", "message": "epoch 5: loss 0.8688, validation PR-AUC 0.4097", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:30:59.058+00:00", "level": "info", "message": "epoch 6: loss 0.8074, validation PR-AUC 0.4298", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:31:20.976+00:00", "level": "info", "message": "epoch 7: loss 0.7564, validation PR-AUC 0.4533", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:31:43.003+00:00", "level": "info", "message": "epoch 8: loss 0.6917, validation PR-AUC 0.4713", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:32:04.403+00:00", "level": "info", "message": "epoch 9: loss 0.6542, validation PR-AUC 0.4745", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:32:26.957+00:00", "level": "info", "message": "epoch 10: loss 0.5965, validation PR-AUC 0.4946", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:32:50.135+00:00", "level": "info", "message": "epoch 11: loss 0.5646, validation PR-AUC 0.4960", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:33:11.923+00:00", "level": "info", "message": "epoch 12: loss 0.5313, validation PR-AUC 0.4895", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:33:34.045+00:00", "level": "info", "message": "epoch 13: loss 0.4944, validation PR-AUC 0.5135", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:33:56.323+00:00", "level": "info", "message": "epoch 14: loss 0.4655, validation PR-AUC 0.5181", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:34:19.113+00:00", "level": "info", "message": "epoch 15: loss 0.4443, validation PR-AUC 0.5107", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:34:44.895+00:00", "level": "info", "message": "epoch 16: loss 0.4218, validation PR-AUC 0.5074", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:35:08.419+00:00", "level": "info", "message": "epoch 17: loss 0.4147, validation PR-AUC 0.5209", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:35:32.550+00:00", "level": "info", "message": "epoch 18: loss 0.3835, validation PR-AUC 0.5091", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:35:56.359+00:00", "level": "info", "message": "epoch 19: loss 0.3682, validation PR-AUC 0.5055", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:36:20.060+00:00", "level": "info", "message": "epoch 20: loss 0.3876, validation PR-AUC 0.5021", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:36:43.644+00:00", "level": "info", "message": "epoch 21: loss 0.3511, validation PR-AUC 0.5127", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:37:09.004+00:00", "level": "info", "message": "epoch 22: loss 0.3406, validation PR-AUC 0.5083", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:37:36.269+00:00", "level": "info", "message": "epoch 23: loss 0.3291, validation PR-AUC 0.5136", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:37:41.229+00:00", "level": "info", "message": "seed 3: PR-AUC 0.5639 (standard XGBoost 0.5343)", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:38:05.342+00:00", "level": "info", "message": "epoch 1: loss 1.2014, validation PR-AUC 0.1929", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:38:27.206+00:00", "level": "info", "message": "epoch 2: loss 1.0761, validation PR-AUC 0.3237", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:38:49.582+00:00", "level": "info", "message": "epoch 3: loss 0.9987, validation PR-AUC 0.3308", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:39:11.202+00:00", "level": "info", "message": "epoch 4: loss 0.9543, validation PR-AUC 0.3992", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:39:32.329+00:00", "level": "info", "message": "epoch 5: loss 0.8838, validation PR-AUC 0.4193", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:39:54.030+00:00", "level": "info", "message": "epoch 6: loss 0.8352, validation PR-AUC 0.4580", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:40:15.858+00:00", "level": "info", "message": "epoch 7: loss 0.7882, validation PR-AUC 0.4967", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:40:37.206+00:00", "level": "info", "message": "epoch 8: loss 0.7373, validation PR-AUC 0.4991", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:40:58.675+00:00", "level": "info", "message": "epoch 9: loss 0.6941, validation PR-AUC 0.5217", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:41:20.646+00:00", "level": "info", "message": "epoch 10: loss 0.6528, validation PR-AUC 0.5259", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:41:42.053+00:00", "level": "info", "message": "epoch 11: loss 0.6008, validation PR-AUC 0.5421", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:42:03.400+00:00", "level": "info", "message": "epoch 12: loss 0.5696, validation PR-AUC 0.5457", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:42:26.110+00:00", "level": "info", "message": "epoch 13: loss 0.5353, validation PR-AUC 0.5562", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:42:49.486+00:00", "level": "info", "message": "epoch 14: loss 0.5047, validation PR-AUC 0.5562", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:43:14.515+00:00", "level": "info", "message": "epoch 15: loss 0.4857, validation PR-AUC 0.5388", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:43:38.390+00:00", "level": "info", "message": "epoch 16: loss 0.4665, validation PR-AUC 0.5851", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:44:02.562+00:00", "level": "info", "message": "epoch 17: loss 0.4441, validation PR-AUC 0.5752", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:44:27.259+00:00", "level": "info", "message": "epoch 18: loss 0.4201, validation PR-AUC 0.5700", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:44:52.063+00:00", "level": "info", "message": "epoch 19: loss 0.4020, validation PR-AUC 0.5643", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:45:17.416+00:00", "level": "info", "message": "epoch 20: loss 0.3891, validation PR-AUC 0.5759", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:45:43.406+00:00", "level": "info", "message": "epoch 21: loss 0.3794, validation PR-AUC 0.5713", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:46:09.853+00:00", "level": "info", "message": "epoch 22: loss 0.3561, validation PR-AUC 0.5662", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:46:15.114+00:00", "level": "info", "message": "seed 4: PR-AUC 0.5668 (standard XGBoost 0.5026)", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:46:38.144+00:00", "level": "info", "message": "epoch 1: loss 1.1995, validation PR-AUC 0.2485", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:46:59.624+00:00", "level": "info", "message": "epoch 2: loss 1.1001, validation PR-AUC 0.3203", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:47:21.548+00:00", "level": "info", "message": "epoch 3: loss 1.0036, validation PR-AUC 0.3945", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:47:43.546+00:00", "level": "info", "message": "epoch 4: loss 0.9475, validation PR-AUC 0.4130", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:48:05.163+00:00", "level": "info", "message": "epoch 5: loss 0.8874, validation PR-AUC 0.4469", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:48:26.661+00:00", "level": "info", "message": "epoch 6: loss 0.8444, validation PR-AUC 0.4757", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:48:48.075+00:00", "level": "info", "message": "epoch 7: loss 0.7984, validation PR-AUC 0.4945", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:49:09.564+00:00", "level": "info", "message": "epoch 8: loss 0.7404, validation PR-AUC 0.5192", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:49:31.069+00:00", "level": "info", "message": "epoch 9: loss 0.6901, validation PR-AUC 0.5185", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:49:52.411+00:00", "level": "info", "message": "epoch 10: loss 0.6613, validation PR-AUC 0.5337", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:50:14.357+00:00", "level": "info", "message": "epoch 11: loss 0.6171, validation PR-AUC 0.5329", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:50:35.925+00:00", "level": "info", "message": "epoch 12: loss 0.5814, validation PR-AUC 0.5465", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:50:57.562+00:00", "level": "info", "message": "epoch 13: loss 0.5426, validation PR-AUC 0.5473", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:51:20.965+00:00", "level": "info", "message": "epoch 14: loss 0.5142, validation PR-AUC 0.5485", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:51:44.414+00:00", "level": "info", "message": "epoch 15: loss 0.5057, validation PR-AUC 0.5592", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:52:07.700+00:00", "level": "info", "message": "epoch 16: loss 0.4703, validation PR-AUC 0.5323", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:52:31.802+00:00", "level": "info", "message": "epoch 17: loss 0.4466, validation PR-AUC 0.5500", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:52:55.002+00:00", "level": "info", "message": "epoch 18: loss 0.4199, validation PR-AUC 0.5390", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:53:19.619+00:00", "level": "info", "message": "epoch 19: loss 0.4021, validation PR-AUC 0.5336", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:53:46.604+00:00", "level": "info", "message": "epoch 20: loss 0.3938, validation PR-AUC 0.5544", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:54:10.017+00:00", "level": "info", "message": "epoch 21: loss 0.3744, validation PR-AUC 0.5468", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:54:15.346+00:00", "level": "info", "message": "seed 5: PR-AUC 0.5656 (standard XGBoost 0.5043)", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:54:15.374+00:00", "level": "info", "message": "mean PR-AUC 0.5643 \u00b1 0.0128; above standard XGBoost on 6 of 6 splits", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:54:16.981+00:00", "level": "info", "message": "wrote fig-5-25-extension-pr-curves", "stage": "CNN on other splits"}
+{"at": "2026-11-10T19:54:19.959+00:00", "level": "info", "message": "Run succeeded after 3137 s"}

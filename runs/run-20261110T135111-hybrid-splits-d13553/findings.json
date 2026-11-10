@@ -1,0 +1,36 @@
+{
+  "run_id": "run-20261110T135111-hybrid-splits-d13553",
+  "experiment_id": "hybrid.splits",
+  "findings_sha256": "454a049be57615ac4deb0d6362723f8940af1136a172f7f856a8f1183a350a97",
+  "eligible_to_verify": true,
+  "eligibility_reasons": [],
+  "checks": [
+    {
+      "finding_id": "F-hybrid-splits-mean",
+      "reported": 0.633,
+      "tolerance": 0.015,
+      "decimals": 3,
+      "observed": 0.6312644015903605,
+      "difference": -0.0017355984096395494,
+      "outcome": "within_tolerance"
+    },
+    {
+      "finding_id": "F-hybrid-splits-wins",
+      "reported": 6,
+      "tolerance": 0.0,
+      "decimals": 0,
+      "observed": 6.0,
+      "difference": 0.0,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-hybrid-vs-xgb",
+      "reported": 0.104,
+      "tolerance": 0.03,
+      "decimals": 3,
+      "observed": null,
+      "difference": null,
+      "outcome": "missing"
+    }
+  ]
+}

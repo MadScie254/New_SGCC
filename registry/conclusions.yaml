@@ -1,0 +1,158 @@
+# GridSentinel X - Conclusions of the original study, and whether each holds in a rerun
+#
+# NOT PREDECLARED. This file was written on 2026-11-10, AFTER the first rerun of the study had
+# finished and its numbers had been seen. The findings ledger (findings.yaml) checks reported
+# numbers against tolerances fixed beforehand; this file asks a different, coarser question that
+# became necessary once it was clear that the tuned models do not reproduce digit for digit: does
+# each qualitative claim the study draws from its numbers still hold?
+#
+# Each check is mechanical (a sign, a significance test at alpha = 0.05, an ordering, a count) and
+# is evaluated the same way on the reported record and on the newest sealed rerun. Because the
+# checks were chosen after seeing the rerun, agreement here is weaker evidence than a predeclared
+# check, and a reader should weigh it accordingly.
+#
+# Check types:
+#   significant: {artifact, path, direction}   the comparison at `path` has p_holm < alpha and a
+#                                              95% interval excluding zero, with the given sign
+#   not_significant: {artifact, path}          the opposite
+#   greater: {artifact, a, b}                  value at path a > value at path b
+#   drop_at_least: {artifact, a, b, amount}    a - b >= amount
+#   equals: {artifact, path, value}
+#   is_max: {artifact, path, key, field}       among the mapping at `path`, `key` has the largest `field`
+#   increasing: {artifact, path, keys, field}  `field` rises along `keys`
+
+alpha: 0.05
+
+conclusions:
+  - id: C01
+    statement: The proposed pipeline (SMOTE+ENN + tuned XGBoost) has a significantly lower test PR-AUC than standard tuned XGBoost.
+    source: "README.md, Significance; docs/proposal-alignment.md section 1"
+    thesis: [SO4, RQ4]
+    experiment: stats.significance
+    check: {type: significant, artifact: artifacts/significance.json, path: [comparisons, xgboost, pr_auc], direction: negative}
+  - id: C02
+    statement: The proposed pipeline's recall advantage over standard XGBoost is not significant.
+    source: "README.md, Significance"
+    thesis: [SO4, RQ4]
+    experiment: stats.significance
+    check: {type: not_significant, artifact: artifacts/significance.json, path: [comparisons, xgboost, recall]}
+  - id: C03
+    statement: Against untreated default XGBoost, the proposed pipeline's PR-AUC difference is not significant.
+    source: "README.md, Significance"
+    thesis: [SO4, RQ4]
+    experiment: stats.significance
+    check: {type: not_significant, artifact: artifacts/significance.json, path: [comparisons, xgboost_default, pr_auc]}
+  - id: C04
+    statement: The proposed pipeline has a significantly higher PR-AUC than random forest + SMOTE.
+    source: "README.md, Significance"
+    thesis: [SO4, RQ4]
+    experiment: stats.significance
+    check: {type: significant, artifact: artifacts/significance.json, path: [comparisons, random_forest_smote, pr_auc], direction: positive}
+  - id: C05
+    statement: The proposed pipeline has a significantly higher PR-AUC than logistic regression + SMOTE.
+    source: "README.md, Significance"
+    thesis: [SO4, RQ4]
+    experiment: stats.significance
+    check: {type: significant, artifact: artifacts/significance.json, path: [comparisons, logistic_regression_smote, pr_auc], direction: positive}
+  - id: C06
+    statement: SMOTE+ENN on raw readings, tuned like the others, is level with standard XGBoost (no significant PR-AUC difference), so the cleaning step, not the resampling, explains the proposed pipeline's deficit.
+    source: "README.md, Stress tests; docs/proposal-alignment.md section 1"
+    thesis: [SO1, RQ2]
+    experiment: resampling.study
+    check: {type: not_significant, artifact: artifacts/resampling_study.json, path: [fair_test, bootstrap, comparisons, xgboost, pr_auc]}
+  - id: C07
+    statement: SMOTE+ENN on raw readings is significantly above the proposed pipeline on cleaned readings.
+    source: "README.md, Stress tests"
+    thesis: [SO1, RQ2]
+    experiment: resampling.study
+    check: {type: significant, artifact: artifacts/resampling_study.json, path: [fair_test, bootstrap, comparisons, proposed, pr_auc], direction: positive}
+  - id: C08
+    statement: In cross-validation no resampling setting beats no resampling.
+    source: "README.md, Stress tests"
+    thesis: [SO1, RQ2]
+    experiment: resampling.study
+    check: {type: is_max, artifact: artifacts/resampling_study.json, path: [grid, variants], key: "No resampling", field: pr_auc}
+  - id: C09
+    statement: Standard XGBoost ranks first on PR-AUC among the study pipelines on all six random splits.
+    source: "README.md, Stress tests"
+    thesis: [SO4, RQ4]
+    experiment: robustness.splits
+    check: {type: equals, artifact: artifacts/robustness.json, path: [splits, ranked_first_on_pr_auc, xgboost], value: 6}
+  - id: C10
+    statement: All 87 features beat the 25 core features in cross-validation.
+    source: "README.md, ablation"
+    thesis: [SO3, RQ3]
+    experiment: ablation.components
+    check: {type: greater, artifact: artifacts/ablation.json, a: [variants, "B. Raw, all features (standard XGBoost)", pr_auc], b: [variants, "A. Raw, 25 core features", pr_auc]}
+  - id: C11
+    statement: Tuned hyperparameters beat XGBoost's defaults in cross-validation.
+    source: "README.md, ablation"
+    thesis: [SO3, RQ3]
+    experiment: ablation.components
+    check: {type: greater, artifact: artifacts/ablation.json, a: [variants, "B. Raw, all features (standard XGBoost)", pr_auc], b: [variants, "G. B with default hyperparameters", pr_auc]}
+  - id: C12
+    statement: Cleaning the readings lowers cross-validated PR-AUC.
+    source: "README.md, ablation"
+    thesis: [SO2, RQ1]
+    experiment: ablation.components
+    check: {type: greater, artifact: artifacts/ablation.json, a: [variants, "B. Raw, all features (standard XGBoost)", pr_auc], b: [variants, "C. Cleaned, all features", pr_auc]}
+  - id: C13
+    statement: Adding ENN to SMOTE lowers cross-validated PR-AUC further.
+    source: "README.md, ablation"
+    thesis: [SO1, RQ2]
+    experiment: ablation.components
+    check: {type: greater, artifact: artifacts/ablation.json, a: [variants, "D. Cleaned + SMOTE", pr_auc], b: [variants, "E. Cleaned + SMOTE+ENN (proposed)", pr_auc]}
+  - id: C14
+    statement: Detection quality rises with the length of meter history.
+    source: "README.md, Stress tests"
+    thesis: ["Fig 5.24"]
+    experiment: history.length
+    check: {type: increasing, artifact: artifacts/history_length.json, path: [windows], keys: ["3", "6", "12", "18", "24", "34"], field: pr_auc}
+  - id: C15
+    statement: On the study's split alone, the CNN's PR-AUC advantage over standard XGBoost is not significant.
+    source: "README.md, Stress tests (+0.025, not significant alone)"
+    thesis: [RQ4]
+    experiment: deep.baseline
+    check: {type: not_significant, artifact: artifacts/deep_baseline.json, path: [bootstrap, comparisons, xgboost, pr_auc]}
+  - id: C16
+    statement: The hybrid has a significantly higher test PR-AUC than standard XGBoost.
+    source: "README.md, Served model"
+    thesis: [RQ4]
+    experiment: hybrid.significance
+    check: {type: significant, artifact: artifacts/hybrid_study.json, path: [served_split, comparisons, xgboost, pr_auc], direction: positive}
+  - id: C17
+    statement: The hybrid has a significantly higher test PR-AUC than the CNN alone.
+    source: "README.md, Served model"
+    thesis: [RQ4]
+    experiment: hybrid.significance
+    check: {type: significant, artifact: artifacts/hybrid_study.json, path: [served_split, comparisons, wide_deep_cnn, pr_auc], direction: positive}
+  - id: C18
+    statement: The hybrid has the higher PR-AUC than standard XGBoost on all six random splits.
+    source: "README.md, Served model"
+    thesis: [RQ4]
+    experiment: hybrid.splits
+    check: {type: equals, artifact: artifacts/hybrid_study.json, path: [hybrid_higher_pr_auc_than, xgboost], value: 6}
+  - id: C19
+    statement: In nested cross-validation the hybrid is best on all five outer folds.
+    source: "README.md, Checks of the served hybrid"
+    thesis: ["Fig 5.27"]
+    experiment: nested.cv
+    check: {type: equals, artifact: artifacts/nested_cv.json, path: [summary, hybrid_higher_pr_auc_than, xgboost], value: 5}
+  - id: C20
+    statement: Most of the CNN's performance comes from its missing-reading channel (removing it costs at least 0.15 PR-AUC).
+    source: "README.md, Checks of the served hybrid"
+    thesis: ["Shortcut-learning check"]
+    experiment: cnn.checks
+    check: {type: drop_at_least, artifact: artifacts/cnn_checks.json, a: [variants, full, cnn, pr_auc], b: [variants, no_mask, cnn, pr_auc], amount: 0.15}
+  - id: C21
+    statement: With no missing-reading information in either part, the hybrid is still above XGBoost alone.
+    source: "README.md, Checks of the served hybrid"
+    thesis: ["Shortcut-learning check"]
+    experiment: cnn.checks
+    check: {type: greater, artifact: artifacts/cnn_checks.json, a: [variants, no_mask_no_september, hybrid_behaviour_only, pr_auc], b: [xgboost_behaviour_only, pr_auc]}
+  - id: C22
+    statement: Consumption behaviour alone (no missing-reading features) still detects theft well above chance in cross-validation.
+    source: "README.md, Stress tests"
+    thesis: ["Shortcut-learning check"]
+    experiment: robustness.splits
+    check: {type: drop_at_least, artifact: artifacts/robustness.json, a: [missingness, variants, "Consumption behaviour only", pr_auc], b: [missingness, base_rate], amount: 0.2}

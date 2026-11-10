@@ -1,0 +1,10 @@
+{
+  "run_id": "run-20261110T190159-numerics-threads-073170",
+  "experiment_id": "numerics.threads",
+  "findings_sha256": "2aaf21d1a18d2489cf51da5e91e6d215d94f646a53e66c7d896b1b0e15eb162c",
+  "eligible_to_verify": false,
+  "eligibility_reasons": [
+    "The experiment is exploratory, not part of the original protocol"
+  ],
+  "checks": []
+}

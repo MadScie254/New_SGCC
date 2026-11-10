@@ -227,3 +227,32 @@ export const PHASE_LABEL: Record<Experiment["phase"], string> = {
   documented_extension: "Documented extension",
   new: "Added by GridSentinel X",
 };
+
+export interface ConclusionSide {
+  holds: boolean | null;
+  detail: Record<string, number | string | boolean | number[] | string[] | null>;
+}
+
+export interface Conclusion {
+  id: string;
+  statement: string;
+  source: string;
+  thesis: string[];
+  experiment: string;
+  check: Record<string, unknown> & { type: string };
+  reported: ConclusionSide;
+  rerun: ConclusionSide;
+  rerun_run_id: string | null;
+  outcome: "holds" | "does_not_hold" | "not_rerun" | "not_supported_by_reported_record";
+}
+
+export interface Conclusions {
+  predeclared: boolean;
+  written: string;
+  alpha: number;
+  sha256: string;
+  summary: { conclusions: number; holds: number; does_not_hold: number; not_rerun: number; not_supported_by_reported_record: number };
+  conclusions: Conclusion[];
+}
+
+export const getConclusions = () => httpGet<Conclusions>("/conclusions");

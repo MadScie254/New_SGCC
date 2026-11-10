@@ -1,0 +1,54 @@
+{
+  "run_id": "run-20261110T135111-robustness-splits-8eb888",
+  "experiment_id": "robustness.splits",
+  "findings_sha256": "454a049be57615ac4deb0d6362723f8940af1136a172f7f856a8f1183a350a97",
+  "eligible_to_verify": true,
+  "eligibility_reasons": [],
+  "checks": [
+    {
+      "finding_id": "F-splits-first",
+      "reported": 6,
+      "tolerance": 0.0,
+      "decimals": 0,
+      "observed": 6.0,
+      "difference": 0.0,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-miss-all",
+      "reported": 0.507,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.5031579118694589,
+      "difference": -0.003842088130541099,
+      "outcome": "discrepant"
+    },
+    {
+      "finding_id": "F-miss-without",
+      "reported": 0.468,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.45616911090066586,
+      "difference": -0.011830889099334163,
+      "outcome": "discrepant"
+    },
+    {
+      "finding_id": "F-miss-behaviour",
+      "reported": 0.4,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.39088081730829843,
+      "difference": -0.009119182691701588,
+      "outcome": "discrepant"
+    },
+    {
+      "finding_id": "F-miss-only",
+      "reported": 0.333,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.3449545505572317,
+      "difference": 0.011954550557231658,
+      "outcome": "discrepant"
+    }
+  ]
+}

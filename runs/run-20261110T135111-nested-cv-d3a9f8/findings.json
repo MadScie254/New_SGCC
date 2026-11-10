@@ -1,0 +1,36 @@
+{
+  "run_id": "run-20261110T135111-nested-cv-d3a9f8",
+  "experiment_id": "nested.cv",
+  "findings_sha256": "454a049be57615ac4deb0d6362723f8940af1136a172f7f856a8f1183a350a97",
+  "eligible_to_verify": true,
+  "eligibility_reasons": [],
+  "checks": [
+    {
+      "finding_id": "F-nested-hybrid",
+      "reported": 0.629,
+      "tolerance": 0.015,
+      "decimals": 3,
+      "observed": 0.6273005667662102,
+      "difference": -0.0016994332337898488,
+      "outcome": "within_tolerance"
+    },
+    {
+      "finding_id": "F-nested-xgboost",
+      "reported": 0.507,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.5078907287404869,
+      "difference": 0.0008907287404869013,
+      "outcome": "within_tolerance"
+    },
+    {
+      "finding_id": "F-nested-wins",
+      "reported": 5,
+      "tolerance": 0.0,
+      "decimals": 0,
+      "observed": 5.0,
+      "difference": 0.0,
+      "outcome": "exact"
+    }
+  ]
+}

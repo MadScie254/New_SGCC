@@ -26,6 +26,11 @@
 #                  on validation: 0.06.
 #   count          integers that must match exactly.
 #   hardware       timings. Recorded, never verified: they depend on the machine.
+#
+# Amendments (none changes a reported value or a tolerance):
+#   2026-11-10, after the first reruns: F-hybrid-vs-xgb now names the experiment hybrid.significance.
+#   The statistic is written by `scripts/hybrid_study.py --significance`, a separate invocation that
+#   the first registration of hybrid.splits did not include, so the finding could not be checked.
 
 tolerances:
   deterministic: 0.002
@@ -132,7 +137,7 @@ findings:
   - {id: F-cnn-params, claim: "The CNN has 299,866 parameters", source: "README.md, Served model", thesis: [RQ4], experiment: deep.baseline, artifact: artifacts/deep_baseline.json, path: [architecture, parameters], reported: 299866, class: count}
   - {id: F-hybrid-splits-mean, claim: "Hybrid PR-AUC on six random splits, mean 0.633", source: "README.md, Served model", thesis: [RQ4], experiment: hybrid.splits, artifact: artifacts/hybrid_study.json, path: [summary, hybrid, mean, pr_auc], reported: 0.633, decimals: 3, tolerance: 0.015, class: stochastic, note: "A mean of six runs; half the single-run tolerance."}
   - {id: F-hybrid-splits-wins, claim: "The hybrid has the higher PR-AUC than standard XGBoost on all six splits", source: "README.md, Served model", thesis: [RQ4], experiment: hybrid.splits, artifact: artifacts/hybrid_study.json, path: [hybrid_higher_pr_auc_than, xgboost], reported: 6, class: count}
-  - {id: F-hybrid-vs-xgb, claim: "Hybrid minus standard XGBoost on the study's split, PR-AUC +0.104", source: "README.md, Served model", thesis: [RQ4], experiment: hybrid.splits, artifact: artifacts/hybrid_study.json, path: [served_split, comparisons, xgboost, pr_auc, difference], reported: 0.104, decimals: 3, class: stochastic_ranking}
+  - {id: F-hybrid-vs-xgb, claim: "Hybrid minus standard XGBoost on the study's split, PR-AUC +0.104", source: "README.md, Served model", thesis: [RQ4], experiment: hybrid.significance, artifact: artifacts/hybrid_study.json, path: [served_split, comparisons, xgboost, pr_auc, difference], reported: 0.104, decimals: 3, class: stochastic_ranking}
   - {id: F-nested-hybrid, claim: "Nested cross-validation, hybrid PR-AUC 0.629 (mean of five outer folds)", source: "README.md, Checks of the served hybrid", thesis: ["Fig 5.27"], experiment: nested.cv, artifact: artifacts/nested_cv.json, path: [summary, per_model, hybrid, mean, pr_auc], reported: 0.629, decimals: 3, tolerance: 0.015, class: stochastic, note: "A mean of five folds."}
   - {id: F-nested-xgboost, claim: "Nested cross-validation, XGBoost PR-AUC 0.507", source: "README.md, Checks of the served hybrid", thesis: ["Fig 5.27"], experiment: nested.cv, artifact: artifacts/nested_cv.json, path: [summary, per_model, xgboost, mean, pr_auc], reported: 0.507, decimals: 3, class: deterministic}
   - {id: F-nested-wins, claim: "The hybrid is best on all five outer folds", source: "README.md, Checks of the served hybrid", thesis: ["Fig 5.27"], experiment: nested.cv, artifact: artifacts/nested_cv.json, path: [summary, hybrid_higher_pr_auc_than, xgboost], reported: 5, class: count}

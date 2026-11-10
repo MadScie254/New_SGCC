@@ -1,0 +1,11 @@
+{"at": "2026-11-10T12:52:06.334+00:00", "level": "info", "message": "Run started: One-change-at-a-time ablation on the development customers", "stage": "start"}
+{"at": "2026-11-10T12:52:07.028+00:00", "level": "info", "message": "Dataset sgcc_full.csv sha256 99f8fd315626b1f7... (matches the registered release)"}
+{"at": "2026-11-10T12:53:49.445+00:00", "level": "info", "message": "A. Raw, 25 core features {'roc_auc': 0.8288, 'roc_auc_sd': 0.0068, 'pr_auc': 0.4366, 'pr_auc_sd': 0.0077}", "stage": "Ablation variants"}
+{"at": "2026-11-10T12:55:13.836+00:00", "level": "info", "message": "B. Raw, all features (standard XGBoost) {'roc_auc': 0.8524, 'roc_auc_sd': 0.0069, 'pr_auc': 0.5032, 'pr_auc_sd': 0.01}", "stage": "Ablation variants"}
+{"at": "2026-11-10T12:56:28.823+00:00", "level": "info", "message": "C. Cleaned, all features {'roc_auc': 0.8485, 'roc_auc_sd': 0.0043, 'pr_auc': 0.4915, 'pr_auc_sd': 0.0105}", "stage": "Ablation variants"}
+{"at": "2026-11-10T12:57:21.655+00:00", "level": "info", "message": "D. Cleaned + SMOTE {'roc_auc': 0.8317, 'roc_auc_sd': 0.0059, 'pr_auc': 0.4606, 'pr_auc_sd': 0.0156}", "stage": "Ablation variants"}
+{"at": "2026-11-10T12:58:36.616+00:00", "level": "info", "message": "E. Cleaned + SMOTE+ENN (proposed) {'roc_auc': 0.8287, 'roc_auc_sd': 0.0086, 'pr_auc': 0.4257, 'pr_auc_sd': 0.0091}", "stage": "Ablation variants"}
+{"at": "2026-11-10T12:59:36.527+00:00", "level": "info", "message": "F. B with scale_pos_weight = 1 {'roc_auc': 0.8554, 'roc_auc_sd': 0.0067, 'pr_auc': 0.5089, 'pr_auc_sd': 0.0102}", "stage": "Ablation variants"}
+{"at": "2026-11-10T12:59:57.970+00:00", "level": "info", "message": "G. B with default hyperparameters {'roc_auc': 0.8321, 'roc_auc_sd': 0.01, 'pr_auc': 0.4602, 'pr_auc_sd': 0.0113}", "stage": "Ablation variants"}
+{"at": "2026-11-10T13:00:00.620+00:00", "level": "info", "message": "wrote fig-5-6-ablation", "stage": "Ablation variants"}
+{"at": "2026-11-10T13:00:02.848+00:00", "level": "info", "message": "Run succeeded after 475 s"}

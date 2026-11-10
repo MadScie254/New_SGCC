@@ -1,0 +1,13 @@
+{"at": "2026-11-10T13:51:11.829+00:00", "level": "info", "message": "Run started: CNN training seeds and the missing-reading channel", "stage": "start"}
+{"at": "2026-11-10T13:51:12.584+00:00", "level": "info", "message": "Dataset sgcc_full.csv sha256 99f8fd315626b1f7... (matches the registered release)"}
+{"at": "2026-11-10T14:04:55.393+00:00", "level": "info", "message": "seed 42: cnn 0.5713, hybrid 0.6392", "stage": "Training seeds"}
+{"at": "2026-11-10T14:14:51.829+00:00", "level": "info", "message": "seed 1: cnn 0.5562, hybrid 0.6315", "stage": "Training seeds"}
+{"at": "2026-11-10T14:25:30.554+00:00", "level": "info", "message": "seed 2: cnn 0.5673, hybrid 0.6324", "stage": "Training seeds"}
+{"at": "2026-11-10T14:35:03.709+00:00", "level": "info", "message": "seed 3: cnn 0.5643, hybrid 0.6388", "stage": "Training seeds"}
+{"at": "2026-11-10T14:43:42.966+00:00", "level": "info", "message": "seed 4: cnn 0.5596, hybrid 0.6333", "stage": "Training seeds"}
+{"at": "2026-11-10T14:56:25.640+00:00", "level": "info", "message": "Served inputs (readings and missing-reading channel): cnn 0.5713, hybrid 0.6392", "stage": "Missing-reading variants"}
+{"at": "2026-11-10T15:05:40.912+00:00", "level": "info", "message": "No missing-reading channel: cnn 0.3232, hybrid 0.5260", "stage": "Missing-reading variants"}
+{"at": "2026-11-10T15:16:28.349+00:00", "level": "info", "message": "No missing-reading channel, September 2016 replaced: cnn 0.3415, hybrid 0.5244", "stage": "Missing-reading variants"}
+{"at": "2026-11-10T15:16:28.366+00:00", "level": "info", "message": "seed summary {'cnn': (0.5637, 0.006), 'hybrid': (0.635, 0.0036)}", "stage": "Missing-reading variants"}
+{"at": "2026-11-10T15:16:29.937+00:00", "level": "info", "message": "wrote fig-5-28-cnn-checks", "stage": "Missing-reading variants"}
+{"at": "2026-11-10T15:16:33.092+00:00", "level": "info", "message": "Run succeeded after 5119 s"}

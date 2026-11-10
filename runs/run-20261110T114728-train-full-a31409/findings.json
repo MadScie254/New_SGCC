@@ -1,0 +1,702 @@
+{
+  "run_id": "run-20261110T114728-train-full-a31409",
+  "experiment_id": "train.full",
+  "findings_sha256": "454a049be57615ac4deb0d6362723f8940af1136a172f7f856a8f1183a350a97",
+  "eligible_to_verify": true,
+  "eligibility_reasons": [],
+  "checks": [
+    {
+      "finding_id": "T1-proposed-auc",
+      "reported": 0.828,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.8357008531385623,
+      "difference": 0.007700853138562391,
+      "outcome": "discrepant"
+    },
+    {
+      "finding_id": "T1-proposed-pr_auc",
+      "reported": 0.462,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.4669206930659934,
+      "difference": 0.004920693065993353,
+      "outcome": "discrepant"
+    },
+    {
+      "finding_id": "T1-proposed-recall",
+      "reported": 0.494,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.45202952029520294,
+      "difference": -0.04197047970479706,
+      "outcome": "discrepant"
+    },
+    {
+      "finding_id": "T1-proposed-precision",
+      "reported": 0.389,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.43828264758497315,
+      "difference": 0.04928264758497314,
+      "outcome": "discrepant"
+    },
+    {
+      "finding_id": "T1-proposed-f1",
+      "reported": 0.435,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.44504995458673935,
+      "difference": 0.010049954586739351,
+      "outcome": "discrepant"
+    },
+    {
+      "finding_id": "T1-proposed-mcc",
+      "reported": 0.379,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.3924972592784075,
+      "difference": 0.013497259278407503,
+      "outcome": "discrepant"
+    },
+    {
+      "finding_id": "T1-proposed-gmean",
+      "reported": 0.677,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.6539239292664093,
+      "difference": -0.023076070733590748,
+      "outcome": "discrepant"
+    },
+    {
+      "finding_id": "T1-xgboost-auc",
+      "reported": 0.85,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.853246934172128,
+      "difference": 0.0032469341721280687,
+      "outcome": "discrepant"
+    },
+    {
+      "finding_id": "T1-xgboost-pr_auc",
+      "reported": 0.513,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.5138133728189593,
+      "difference": 0.0008133728189593237,
+      "outcome": "within_tolerance"
+    },
+    {
+      "finding_id": "T1-xgboost-recall",
+      "reported": 0.467,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.44280442804428044,
+      "difference": -0.024195571955719586,
+      "outcome": "discrepant"
+    },
+    {
+      "finding_id": "T1-xgboost-precision",
+      "reported": 0.487,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.5052631578947369,
+      "difference": 0.01826315789473687,
+      "outcome": "discrepant"
+    },
+    {
+      "finding_id": "T1-xgboost-f1",
+      "reported": 0.476,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.471976401179941,
+      "difference": -0.004023598820058982,
+      "outcome": "discrepant"
+    },
+    {
+      "finding_id": "T1-xgboost-mcc",
+      "reported": 0.429,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.4273722083994716,
+      "difference": -0.0016277916005283943,
+      "outcome": "within_tolerance"
+    },
+    {
+      "finding_id": "T1-xgboost-gmean",
+      "reported": 0.667,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.6518484611064331,
+      "difference": -0.015151538893566907,
+      "outcome": "discrepant"
+    },
+    {
+      "finding_id": "T1-xgboost_default-auc",
+      "reported": 0.839,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.8390940178751632,
+      "difference": 9.401787516327698e-05,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-xgboost_default-pr_auc",
+      "reported": 0.488,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.48762126824707047,
+      "difference": -0.00037873175292951755,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-xgboost_default-recall",
+      "reported": 0.483,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.4833948339483395,
+      "difference": 0.00039483394833950136,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-xgboost_default-precision",
+      "reported": 0.439,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.4388609715242881,
+      "difference": -0.0001390284757118998,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-xgboost_default-f1",
+      "reported": 0.46,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.46005267778753295,
+      "difference": 5.267778753292873e-05,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-xgboost_default-mcc",
+      "reported": 0.408,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.40762133835165926,
+      "difference": -0.0003786616483407168,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-xgboost_default-gmean",
+      "reported": 0.675,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.674938401959865,
+      "difference": -6.159804013505799e-05,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-random_forest_smote-auc",
+      "reported": 0.812,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.8121410084069881,
+      "difference": 0.0001410084069880524,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-random_forest_smote-pr_auc",
+      "reported": 0.411,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.41140422139109795,
+      "difference": 0.00040422139109796973,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-random_forest_smote-recall",
+      "reported": 0.432,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.4317343173431734,
+      "difference": -0.00026568265682658243,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-random_forest_smote-precision",
+      "reported": 0.366,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.365625,
+      "difference": -0.0003750000000000142,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-random_forest_smote-f1",
+      "reported": 0.396,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.39593908629441626,
+      "difference": -6.091370558375386e-05,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-random_forest_smote-mcc",
+      "reported": 0.336,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.3358869217964428,
+      "difference": -0.00011307820355721532,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-random_forest_smote-gmean",
+      "reported": 0.634,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.6337078882919971,
+      "difference": -0.00029211170800291786,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T1-logistic_regression_smote-auc",
+      "reported": 0.754,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.7525958463919005,
+      "difference": -0.0014041536080995343,
+      "outcome": "within_tolerance"
+    },
+    {
+      "finding_id": "T1-logistic_regression_smote-pr_auc",
+      "reported": 0.314,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.31147891173984527,
+      "difference": -0.0025210882601547357,
+      "outcome": "discrepant"
+    },
+    {
+      "finding_id": "T1-logistic_regression_smote-recall",
+      "reported": 0.371,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.3726937269372694,
+      "difference": 0.0016937269372693797,
+      "outcome": "within_tolerance"
+    },
+    {
+      "finding_id": "T1-logistic_regression_smote-precision",
+      "reported": 0.318,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.3186119873817035,
+      "difference": 0.0006119873817034827,
+      "outcome": "within_tolerance"
+    },
+    {
+      "finding_id": "T1-logistic_regression_smote-f1",
+      "reported": 0.342,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.3435374149659864,
+      "difference": 0.0015374149659863612,
+      "outcome": "within_tolerance"
+    },
+    {
+      "finding_id": "T1-logistic_regression_smote-mcc",
+      "reported": 0.277,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.2781015013863422,
+      "difference": 0.0011015013863421852,
+      "outcome": "within_tolerance"
+    },
+    {
+      "finding_id": "T1-logistic_regression_smote-gmean",
+      "reported": 0.586,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.5873681245949832,
+      "difference": 0.0013681245949832554,
+      "outcome": "within_tolerance"
+    },
+    {
+      "finding_id": "T1-wide_deep_cnn-auc",
+      "reported": 0.88,
+      "tolerance": 0.03,
+      "decimals": 3,
+      "observed": 0.8773341990385848,
+      "difference": -0.002665800961415221,
+      "outcome": "within_tolerance"
+    },
+    {
+      "finding_id": "T1-wide_deep_cnn-pr_auc",
+      "reported": 0.538,
+      "tolerance": 0.03,
+      "decimals": 3,
+      "observed": 0.5712675087132322,
+      "difference": 0.03326750871323214,
+      "outcome": "discrepant"
+    },
+    {
+      "finding_id": "T1-wide_deep_cnn-recall",
+      "reported": 0.52,
+      "tolerance": 0.06,
+      "decimals": 3,
+      "observed": 0.5129151291512916,
+      "difference": -0.007084870848708458,
+      "outcome": "within_tolerance"
+    },
+    {
+      "finding_id": "T1-wide_deep_cnn-precision",
+      "reported": 0.516,
+      "tolerance": 0.06,
+      "decimals": 3,
+      "observed": 0.5548902195608783,
+      "difference": 0.038890219560878236,
+      "outcome": "within_tolerance"
+    },
+    {
+      "finding_id": "T1-wide_deep_cnn-f1",
+      "reported": 0.518,
+      "tolerance": 0.06,
+      "decimals": 3,
+      "observed": 0.5330776605944392,
+      "difference": 0.015077660594439157,
+      "outcome": "within_tolerance"
+    },
+    {
+      "finding_id": "T1-wide_deep_cnn-mcc",
+      "reported": 0.473,
+      "tolerance": 0.06,
+      "decimals": 3,
+      "observed": 0.49186447596595745,
+      "difference": 0.018864475965957472,
+      "outcome": "within_tolerance"
+    },
+    {
+      "finding_id": "T1-wide_deep_cnn-gmean",
+      "reported": 0.705,
+      "tolerance": 0.06,
+      "decimals": 3,
+      "observed": 0.7023118351866834,
+      "difference": -0.0026881648133165736,
+      "outcome": "within_tolerance"
+    },
+    {
+      "finding_id": "T1-hybrid-auc",
+      "reported": 0.908,
+      "tolerance": 0.03,
+      "decimals": 3,
+      "observed": 0.9092359770346929,
+      "difference": 0.0012359770346929144,
+      "outcome": "within_tolerance"
+    },
+    {
+      "finding_id": "T1-hybrid-pr_auc",
+      "reported": 0.617,
+      "tolerance": 0.03,
+      "decimals": 3,
+      "observed": 0.639150857450048,
+      "difference": 0.022150857450047967,
+      "outcome": "within_tolerance"
+    },
+    {
+      "finding_id": "T1-hybrid-recall",
+      "reported": 0.611,
+      "tolerance": 0.06,
+      "decimals": 3,
+      "observed": 0.5055350553505535,
+      "difference": -0.10546494464944645,
+      "outcome": "discrepant"
+    },
+    {
+      "finding_id": "T1-hybrid-precision",
+      "reported": 0.525,
+      "tolerance": 0.06,
+      "decimals": 3,
+      "observed": 0.6765432098765433,
+      "difference": 0.15154320987654324,
+      "outcome": "discrepant"
+    },
+    {
+      "finding_id": "T1-hybrid-f1",
+      "reported": 0.564,
+      "tolerance": 0.06,
+      "decimals": 3,
+      "observed": 0.5786694825765576,
+      "difference": 0.014669482576557646,
+      "outcome": "within_tolerance"
+    },
+    {
+      "finding_id": "T1-hybrid-mcc",
+      "reported": 0.522,
+      "tolerance": 0.06,
+      "decimals": 3,
+      "observed": 0.55228685961486,
+      "difference": 0.030286859614859996,
+      "outcome": "within_tolerance"
+    },
+    {
+      "finding_id": "T1-hybrid-gmean",
+      "reported": 0.761,
+      "tolerance": 0.06,
+      "decimals": 3,
+      "observed": 0.7029540743237732,
+      "difference": -0.058045925676226795,
+      "outcome": "within_tolerance"
+    },
+    {
+      "finding_id": "F-split-train",
+      "reported": 29660,
+      "tolerance": 0.0,
+      "decimals": 0,
+      "observed": 29660.0,
+      "difference": 0.0,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-split-validation",
+      "reported": 6356,
+      "tolerance": 0.0,
+      "decimals": 0,
+      "observed": 6356.0,
+      "difference": 0.0,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-split-test",
+      "reported": 6356,
+      "tolerance": 0.0,
+      "decimals": 0,
+      "observed": 6356.0,
+      "difference": 0.0,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-features",
+      "reported": 87,
+      "tolerance": 0.0,
+      "decimals": 0,
+      "observed": 87.0,
+      "difference": 0.0,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-hybrid-weight",
+      "reported": 0.55,
+      "tolerance": 0.1001,
+      "decimals": 2,
+      "observed": 0.6,
+      "difference": 0.04999999999999993,
+      "outcome": "within_tolerance"
+    },
+    {
+      "finding_id": "F-hybrid-threshold",
+      "reported": 0.216,
+      "tolerance": 0.08,
+      "decimals": 3,
+      "observed": 0.3300836801360999,
+      "difference": 0.1140836801360999,
+      "outcome": "discrepant"
+    },
+    {
+      "finding_id": "F-val-hybrid",
+      "reported": 0.636,
+      "tolerance": 0.03,
+      "decimals": 3,
+      "observed": 0.6342035478491684,
+      "difference": -0.0017964521508315734,
+      "outcome": "within_tolerance"
+    },
+    {
+      "finding_id": "F-val-cnn",
+      "reported": 0.561,
+      "tolerance": 0.03,
+      "decimals": 3,
+      "observed": 0.5560305876270899,
+      "difference": -0.004969412372910154,
+      "outcome": "within_tolerance"
+    },
+    {
+      "finding_id": "F-val-xgboost",
+      "reported": 0.501,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.501785126783325,
+      "difference": 0.0007851267833249853,
+      "outcome": "within_tolerance"
+    },
+    {
+      "finding_id": "F-hybrid-tp",
+      "reported": 331,
+      "tolerance": 33.0,
+      "decimals": 0,
+      "observed": 274.0,
+      "difference": -57.0,
+      "outcome": "discrepant"
+    },
+    {
+      "finding_id": "F-hybrid-fp",
+      "reported": 300,
+      "tolerance": 120.0,
+      "decimals": 0,
+      "observed": 131.0,
+      "difference": -169.0,
+      "outcome": "discrepant"
+    },
+    {
+      "finding_id": "F-cv-xgboost",
+      "reported": 0.505,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.5035243856013343,
+      "difference": -0.0014756143986657255,
+      "outcome": "within_tolerance"
+    },
+    {
+      "finding_id": "F-cv-proposed",
+      "reported": 0.457,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.4519951740424542,
+      "difference": -0.005004825957545811,
+      "outcome": "discrepant"
+    },
+    {
+      "finding_id": "F-enn-honest-removed",
+      "reported": 4539,
+      "tolerance": 0.0,
+      "decimals": 0,
+      "observed": 4539.0,
+      "difference": 0.0,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-smote-synthetic",
+      "reported": 11035,
+      "tolerance": 0.0,
+      "decimals": 0,
+      "observed": 11035.0,
+      "difference": 0.0,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-fisher-before",
+      "reported": 0.014,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.01436567958444357,
+      "difference": 0.0003656795844435689,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-fisher-after",
+      "reported": 0.022,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.02150409109890461,
+      "difference": -0.000495908901095389,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-noise-before",
+      "reported": 0.9,
+      "tolerance": 0.01,
+      "decimals": 2,
+      "observed": 0.9016393442622951,
+      "difference": 0.0016393442622950616,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-noise-after",
+      "reported": 0.23,
+      "tolerance": 0.01,
+      "decimals": 2,
+      "observed": 0.2252155172413793,
+      "difference": -0.004784482758620701,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-ece-proposed-raw",
+      "reported": 0.093,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.04971341181150755,
+      "difference": -0.04328658818849245,
+      "outcome": "discrepant"
+    },
+    {
+      "finding_id": "F-ece-proposed-platt",
+      "reported": 0.007,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.006138504717522224,
+      "difference": -0.0008614952824777759,
+      "outcome": "within_tolerance"
+    },
+    {
+      "finding_id": "F-brier-proposed-raw",
+      "reported": 0.08,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.06884349219606446,
+      "difference": -0.01115650780393554,
+      "outcome": "discrepant"
+    },
+    {
+      "finding_id": "F-brier-proposed-platt",
+      "reported": 0.06,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.05972052094082129,
+      "difference": -0.0002794790591787097,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-ece-xgboost-raw",
+      "reported": 0.01,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.05898536033937186,
+      "difference": 0.048985360339371856,
+      "outcome": "discrepant"
+    },
+    {
+      "finding_id": "F-ece-xgboost-platt",
+      "reported": 0.007,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.009977111946479208,
+      "difference": 0.0029771119464792077,
+      "outcome": "discrepant"
+    },
+    {
+      "finding_id": "F-ece-hybrid-raw",
+      "reported": 0.025,
+      "tolerance": 0.015,
+      "decimals": 3,
+      "observed": 0.028855134724003362,
+      "difference": 0.0038551347240033604,
+      "outcome": "within_tolerance"
+    },
+    {
+      "finding_id": "F-ece-hybrid-platt",
+      "reported": 0.004,
+      "tolerance": 0.01,
+      "decimals": 3,
+      "observed": 0.010235172644057088,
+      "difference": 0.006235172644057088,
+      "outcome": "within_tolerance"
+    },
+    {
+      "finding_id": "F-brier-hybrid-platt",
+      "reported": 0.049,
+      "tolerance": 0.005,
+      "decimals": 3,
+      "observed": 0.04776714575530293,
+      "difference": -0.0012328542446970736,
+      "outcome": "within_tolerance"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{"at": "2026-11-10T18:40:23.214+00:00", "level": "info", "message": "Run started: Six random splits, and reliance on missing-reading features", "stage": "start"}
+{"at": "2026-11-10T18:40:24.142+00:00", "level": "info", "message": "Dataset sgcc_full.csv sha256 99f8fd315626b1f7... (matches the registered release)"}
+{"at": "2026-11-10T18:42:03.586+00:00", "level": "info", "message": "All features (served model's inputs): PR-AUC 0.5032 \u00b1 0.0100", "stage": "Missing-reading variants"}
+{"at": "2026-11-10T18:43:22.548+00:00", "level": "info", "message": "Without missing-reading features: PR-AUC 0.4562 \u00b1 0.0112", "stage": "Missing-reading variants"}
+{"at": "2026-11-10T18:44:33.647+00:00", "level": "info", "message": "Consumption behaviour only: PR-AUC 0.3909 \u00b1 0.0145", "stage": "Missing-reading variants"}
+{"at": "2026-11-10T18:44:40.022+00:00", "level": "info", "message": "Missing-reading features only: PR-AUC 0.3450 \u00b1 0.0106", "stage": "Missing-reading variants"}
+{"at": "2026-11-10T18:44:59.023+00:00", "level": "info", "message": "seed 42 proposed: PR-AUC 0.4669", "stage": "Repeated splits"}
+{"at": "2026-11-10T18:45:20.386+00:00", "level": "info", "message": "seed 42 xgboost: PR-AUC 0.5138", "stage": "Repeated splits"}
+{"at": "2026-11-10T18:45:22.677+00:00", "level": "info", "message": "seed 42 xgboost_default: PR-AUC 0.4876", "stage": "Repeated splits"}
+{"at": "2026-11-10T18:45:54.778+00:00", "level": "info", "message": "seed 42 random_forest_smote: PR-AUC 0.4114", "stage": "Repeated splits"}
+{"at": "2026-11-10T18:45:56.884+00:00", "level": "info", "message": "seed 42 logistic_regression_smote: PR-AUC 0.3115", "stage": "Repeated splits"}
+{"at": "2026-11-10T18:46:12.230+00:00", "level": "info", "message": "seed 42 xgboost_smote_enn_raw: PR-AUC 0.4801", "stage": "Repeated splits"}
+{"at": "2026-11-10T18:46:28.575+00:00", "level": "info", "message": "seed 1 proposed: PR-AUC 0.4447", "stage": "Repeated splits"}
+{"at": "2026-11-10T18:46:52.671+00:00", "level": "info", "message": "seed 1 xgboost: PR-AUC 0.4971", "stage": "Repeated splits"}
+{"at": "2026-11-10T18:46:55.007+00:00", "level": "info", "message": "seed 1 xgboost_default: PR-AUC 0.4515", "stage": "Repeated splits"}
+{"at": "2026-11-10T18:47:27.951+00:00", "level": "info", "message": "seed 1 random_forest_smote: PR-AUC 0.3944", "stage": "Repeated splits"}
+{"at": "2026-11-10T18:47:30.055+00:00", "level": "info", "message": "seed 1 logistic_regression_smote: PR-AUC 0.3007", "stage": "Repeated splits"}
+{"at": "2026-11-10T18:47:50.584+00:00", "level": "info", "message": "seed 1 xgboost_smote_enn_raw: PR-AUC 0.4573", "stage": "Repeated splits"}
+{"at": "2026-11-10T18:48:11.857+00:00", "level": "info", "message": "seed 2 proposed: PR-AUC 0.4608", "stage": "Repeated splits"}
+{"at": "2026-11-10T18:48:35.838+00:00", "level": "info", "message": "seed 2 xgboost: PR-AUC 0.5036", "stage": "Repeated splits"}
+{"at": "2026-11-10T18:48:38.100+00:00", "level": "info", "message": "seed 2 xgboost_default: PR-AUC 0.4570", "stage": "Repeated splits"}
+{"at": "2026-11-10T18:49:11.255+00:00", "level": "info", "message": "seed 2 random_forest_smote: PR-AUC 0.4099", "stage": "Repeated splits"}
+{"at": "2026-11-10T18:49:13.379+00:00", "level": "info", "message": "seed 2 logistic_regression_smote: PR-AUC 0.3133", "stage": "Repeated splits"}
+{"at": "2026-11-10T18:49:35.957+00:00", "level": "info", "message": "seed 2 xgboost_smote_enn_raw: PR-AUC 0.4670", "stage": "Repeated splits"}
+{"at": "2026-11-10T18:49:55.356+00:00", "level": "info", "message": "seed 3 proposed: PR-AUC 0.4776", "stage": "Repeated splits"}
+{"at": "2026-11-10T18:50:19.287+00:00", "level": "info", "message": "seed 3 xgboost: PR-AUC 0.5343", "stage": "Repeated splits"}
+{"at": "2026-11-10T18:50:21.596+00:00", "level": "info", "message": "seed 3 xgboost_default: PR-AUC 0.4839", "stage": "Repeated splits"}
+{"at": "2026-11-10T18:50:54.338+00:00", "level": "info", "message": "seed 3 random_forest_smote: PR-AUC 0.4245", "stage": "Repeated splits"}
+{"at": "2026-11-10T18:50:56.181+00:00", "level": "info", "message": "seed 3 logistic_regression_smote: PR-AUC 0.3048", "stage": "Repeated splits"}
+{"at": "2026-11-10T18:51:14.298+00:00", "level": "info", "message": "seed 3 xgboost_smote_enn_raw: PR-AUC 0.4818", "stage": "Repeated splits"}
+{"at": "2026-11-10T18:51:35.402+00:00", "level": "info", "message": "seed 4 proposed: PR-AUC 0.4371", "stage": "Repeated splits"}
+{"at": "2026-11-10T18:51:58.320+00:00", "level": "info", "message": "seed 4 xgboost: PR-AUC 0.5026", "stage": "Repeated splits"}
+{"at": "2026-11-10T18:52:00.578+00:00", "level": "info", "message": "seed 4 xgboost_default: PR-AUC 0.4562", "stage": "Repeated splits"}
+{"at": "2026-11-10T18:52:32.200+00:00", "level": "info", "message": "seed 4 random_forest_smote: PR-AUC 0.4162", "stage": "Repeated splits"}
+{"at": "2026-11-10T18:52:34.292+00:00", "level": "info", "message": "seed 4 logistic_regression_smote: PR-AUC 0.3089", "stage": "Repeated splits"}
+{"at": "2026-11-10T18:52:55.294+00:00", "level": "info", "message": "seed 4 xgboost_smote_enn_raw: PR-AUC 0.4760", "stage": "Repeated splits"}
+{"at": "2026-11-10T18:53:16.031+00:00", "level": "info", "message": "seed 5 proposed: PR-AUC 0.4508", "stage": "Repeated splits"}
+{"at": "2026-11-10T18:53:39.672+00:00", "level": "info", "message": "seed 5 xgboost: PR-AUC 0.5043", "stage": "Repeated splits"}
+{"at": "2026-11-10T18:53:41.945+00:00", "level": "info", "message": "seed 5 xgboost_default: PR-AUC 0.4645", "stage": "Repeated splits"}
+{"at": "2026-11-10T18:54:13.922+00:00", "level": "info", "message": "seed 5 random_forest_smote: PR-AUC 0.3972", "stage": "Repeated splits"}
+{"at": "2026-11-10T18:54:16.202+00:00", "level": "info", "message": "seed 5 logistic_regression_smote: PR-AUC 0.3074", "stage": "Repeated splits"}
+{"at": "2026-11-10T18:54:37.119+00:00", "level": "info", "message": "seed 5 xgboost_smote_enn_raw: PR-AUC 0.4841", "stage": "Repeated splits"}
+{"at": "2026-11-10T18:54:38.362+00:00", "level": "info", "message": "wrote fig-5-22-split-stability", "stage": "Repeated splits"}
+{"at": "2026-11-10T18:54:38.823+00:00", "level": "info", "message": "wrote fig-5-23-missingness", "stage": "Repeated splits"}
+{"at": "2026-11-10T18:54:39.350+00:00", "level": "info", "message": "Run succeeded after 856 s"}

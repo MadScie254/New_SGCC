@@ -1,0 +1,18 @@
+{
+  "run_id": "run-20261110T190159-hybrid-significance-5e7dec",
+  "experiment_id": "hybrid.significance",
+  "findings_sha256": "2aaf21d1a18d2489cf51da5e91e6d215d94f646a53e66c7d896b1b0e15eb162c",
+  "eligible_to_verify": true,
+  "eligibility_reasons": [],
+  "checks": [
+    {
+      "finding_id": "F-hybrid-vs-xgb",
+      "reported": 0.104,
+      "tolerance": 0.03,
+      "decimals": 3,
+      "observed": 0.12533748463108862,
+      "difference": 0.02133748463108863,
+      "outcome": "within_tolerance"
+    }
+  ]
+}

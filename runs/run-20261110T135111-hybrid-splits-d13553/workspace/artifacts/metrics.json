@@ -1,0 +1,129 @@
+{
+  "threshold": 0.3300836801360999,
+  "recall": 0.5055350553505535,
+  "precision": 0.6765432098765433,
+  "f1": 0.5786694825765576,
+  "accuracy": 0.9372246696035242,
+  "auc": 0.9092359770346929,
+  "pr_auc": 0.639150857450048,
+  "gmean": 0.7029540743237732,
+  "mcc": 0.55228685961486,
+  "specificity": 0.977468180254558,
+  "confusion_matrix": {
+    "tn": 5683,
+    "fp": 131,
+    "fn": 268,
+    "tp": 274
+  },
+  "support": {
+    "class_0": 5814,
+    "class_1": 542
+  },
+  "at_threshold_0_5": {
+    "threshold": 0.5,
+    "recall": 0.4114391143911439,
+    "precision": 0.8050541516245487,
+    "f1": 0.5445665445665445,
+    "accuracy": 0.9413152926368785,
+    "auc": 0.9092359770346929,
+    "pr_auc": 0.639150857450048,
+    "gmean": 0.6384494486394411,
+    "mcc": 0.5501366233697271,
+    "specificity": 0.9907120743034056,
+    "confusion_matrix": {
+      "tn": 5760,
+      "fp": 54,
+      "fn": 319,
+      "tp": 223
+    },
+    "support": {
+      "class_0": 5814,
+      "class_1": 542
+    }
+  },
+  "validation_pr_auc": 0.6342035478491684,
+  "training_time": 800.29,
+  "inference_ms_per_customer": 0.3861110289491098,
+  "model_size_mb": 3.5802389999999997,
+  "served": true,
+  "weight_sequence": 0.6,
+  "pipeline": "hybrid",
+  "pipeline_label": "Hybrid: CNN + XGBoost",
+  "model_version": "3.0.0",
+  "trained_at": "2026-11-10T12:51:55+00:00",
+  "quick_mode": false,
+  "device": "cpu",
+  "cv_best_score": 0.5035243856013343,
+  "cv_fold_scores": [
+    0.449335,
+    0.511805,
+    0.503742,
+    0.515599,
+    0.537141
+  ],
+  "cv_metric": "average_precision",
+  "n_trials": 40,
+  "train_customers": 29660,
+  "validation_customers": 6356,
+  "test_customers": 6356,
+  "population_customers": 3000,
+  "n_features": 87,
+  "calibration": {
+    "validation": {
+      "brier": 0.048243376168272754,
+      "log_loss": 0.17843100366241418,
+      "ece": 0.010289290641109105,
+      "mean_predicted": 0.08545104730007719,
+      "observed_rate": 0.08543108873505349
+    },
+    "test": {
+      "brier": 0.04776714575530293,
+      "log_loss": 0.17099847447561264,
+      "ece": 0.010235172644057088,
+      "mean_predicted": 0.08631431193890345,
+      "observed_rate": 0.08527375707992448
+    }
+  },
+  "stages": [
+    {
+      "name": "Load",
+      "seconds": 16.86
+    },
+    {
+      "name": "Clean",
+      "seconds": 15.37
+    },
+    {
+      "name": "Features",
+      "seconds": 61.34
+    },
+    {
+      "name": "Split",
+      "seconds": 0.07
+    },
+    {
+      "name": "Resample",
+      "seconds": 20.06
+    },
+    {
+      "name": "Tune",
+      "seconds": 2710.34
+    },
+    {
+      "name": "Validate",
+      "seconds": 75.47
+    },
+    {
+      "name": "Sequence",
+      "seconds": 804.11
+    },
+    {
+      "name": "Evaluate",
+      "seconds": 4.71
+    },
+    {
+      "name": "Publish",
+      "seconds": 8.14
+    }
+  ]
+}

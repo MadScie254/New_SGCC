@@ -1,0 +1,27 @@
+{
+  "run_id": "run-20261110T125206-deep-baseline-ce9f81",
+  "experiment_id": "deep.baseline",
+  "findings_sha256": "454a049be57615ac4deb0d6362723f8940af1136a172f7f856a8f1183a350a97",
+  "eligible_to_verify": true,
+  "eligibility_reasons": [],
+  "checks": [
+    {
+      "finding_id": "F-cnn-prauc",
+      "reported": 0.538,
+      "tolerance": 0.03,
+      "decimals": 3,
+      "observed": 0.5712675087132322,
+      "difference": 0.03326750871323214,
+      "outcome": "discrepant"
+    },
+    {
+      "finding_id": "F-cnn-params",
+      "reported": 299866,
+      "tolerance": 0.0,
+      "decimals": 0,
+      "observed": 299866.0,
+      "difference": 0.0,
+      "outcome": "exact"
+    }
+  ]
+}

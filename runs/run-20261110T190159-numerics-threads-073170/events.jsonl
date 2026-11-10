@@ -1,0 +1,9 @@
+{"at": "2026-11-10T19:54:53.308+00:00", "level": "info", "message": "Run started: Numerical noise floor - the tuned XGBoost pipelines at different thread counts", "stage": "start"}
+{"at": "2026-11-10T19:54:53.959+00:00", "level": "info", "message": "Dataset sgcc_full.csv sha256 99f8fd315626b1f7... (matches the registered release)"}
+{"at": "2026-11-10T19:56:26.621+00:00", "level": "info", "message": "threads 1: xgboost PR-AUC 0.5132 (385 trees), proposed PR-AUC 0.4651 (446 trees)", "stage": "Thread counts"}
+{"at": "2026-11-10T19:57:36.548+00:00", "level": "info", "message": "threads 2: xgboost PR-AUC 0.5098 (398 trees), proposed PR-AUC 0.4742 (445 trees)", "stage": "Thread counts"}
+{"at": "2026-11-10T19:58:35.451+00:00", "level": "info", "message": "threads 4: xgboost PR-AUC 0.5138 (316 trees), proposed PR-AUC 0.4669 (283 trees)", "stage": "Thread counts"}
+{"at": "2026-11-10T19:59:49.250+00:00", "level": "info", "message": "threads 8: xgboost PR-AUC 0.5153 (400 trees), proposed PR-AUC 0.4683 (403 trees)", "stage": "Thread counts"}
+{"at": "2026-11-10T20:01:05.160+00:00", "level": "info", "message": "threads 12: xgboost PR-AUC 0.5178 (393 trees), proposed PR-AUC 0.4684 (447 trees)", "stage": "Thread counts"}
+{"at": "2026-11-10T20:01:05.175+00:00", "level": "info", "message": "wrote numerical_variability.json", "stage": "Thread counts"}
+{"at": "2026-11-10T20:01:05.301+00:00", "level": "info", "message": "Run succeeded after 372 s"}

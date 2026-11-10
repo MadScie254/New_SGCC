@@ -1,0 +1,54 @@
+{
+  "run_id": "run-20261110T135111-cnn-checks-7a6156",
+  "experiment_id": "cnn.checks",
+  "findings_sha256": "454a049be57615ac4deb0d6362723f8940af1136a172f7f856a8f1183a350a97",
+  "eligible_to_verify": true,
+  "eligibility_reasons": [],
+  "checks": [
+    {
+      "finding_id": "F-seeds-hybrid",
+      "reported": 0.631,
+      "tolerance": 0.015,
+      "decimals": 3,
+      "observed": 0.6350438224422918,
+      "difference": 0.0040438224422918445,
+      "outcome": "within_tolerance"
+    },
+    {
+      "finding_id": "F-nomask-cnn",
+      "reported": 0.335,
+      "tolerance": 0.03,
+      "decimals": 3,
+      "observed": 0.3231891958703195,
+      "difference": -0.011810804129680497,
+      "outcome": "within_tolerance"
+    },
+    {
+      "finding_id": "F-nomask-hybrid",
+      "reported": 0.525,
+      "tolerance": 0.03,
+      "decimals": 3,
+      "observed": 0.5260086608557336,
+      "difference": 0.0010086608557335897,
+      "outcome": "within_tolerance"
+    },
+    {
+      "finding_id": "F-behaviour-hybrid",
+      "reported": 0.433,
+      "tolerance": 0.03,
+      "decimals": 3,
+      "observed": 0.43560572806463643,
+      "difference": 0.0026057280646364367,
+      "outcome": "within_tolerance"
+    },
+    {
+      "finding_id": "F-behaviour-xgboost",
+      "reported": 0.404,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.4027884194176922,
+      "difference": -0.001211580582307803,
+      "outcome": "within_tolerance"
+    }
+  ]
+}

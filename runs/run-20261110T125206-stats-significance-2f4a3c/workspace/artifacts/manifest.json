@@ -1,0 +1,72 @@
+{
+  "published_at": "2026-11-10T12:52:03+00:00",
+  "model_version": "3.0.0",
+  "pipeline": "hybrid",
+  "quick_mode": false,
+  "files": {
+    "models/xgb_best.ubj": {
+      "sha256": "22a9e7c7bc3fed49b95ef0f7074ffb0428034c32efe8320433ce4b392cd3e10e",
+      "bytes": 2380839
+    },
+    "models/sequence.onnx": {
+      "sha256": "ef5ca109e4c53a72d5320e60f0f1b1a6898df6640f710e6c0e2380fe99c8aaaa",
+      "bytes": 1202699
+    },
+    "artifacts/pipeline.json": {
+      "sha256": "526565ca66ff9bbdfcc2c9e1b5ccb44e3313f1f14e1698e277c74e9f24ea61f2",
+      "bytes": 3877
+    },
+    "artifacts/sequence.json": {
+      "sha256": "3f6ad343ad92e10474a37e4ba5c11e304167c36b998250089627a50284929e5e",
+      "bytes": 4503
+    },
+    "artifacts/calibration.json": {
+      "sha256": "c1e32f5150357b93709bdbe5d1bff48f30f8f75e4d8e9b61782c2b4409900908",
+      "bytes": 42399
+    },
+    "artifacts/best_params.json": {
+      "sha256": "3bc94b174a741863b34796a98050d1db62e3f2e64b8ee589c12ee3aa76298fd9",
+      "bytes": 355
+    },
+    "artifacts/tuning.json": {
+      "sha256": "b52709af2c3b0e7cc9650576da8710bfe2fe15e6ecd0dce514f3c34a77cdde2d",
+      "bytes": 3432
+    },
+    "models/baselines/comparison_results.json": {
+      "sha256": "323b049a0223979fde77d346455713c566f2cce4d1af7871c51183cc3e01eb25",
+      "bytes": 10447
+    },
+    "artifacts/resampling.json": {
+      "sha256": "5ebe3dbe8b0de8435c39bfec926a175cbcf94cd738e592ff0b753fe813e09378",
+      "bytes": 1792
+    },
+    "artifacts/preprocessing_log.json": {
+      "sha256": "decfbbbceed7495009028b10b650053f0e9ef84c04b615b3dce19ee32abffe4f",
+      "bytes": 344
+    },
+    "artifacts/learning_curves.json": {
+      "sha256": "ce2128e8587b0169fe3a2fe9e0715c224b7cfb609f9e3c35fe7a01f51b93a883",
+      "bytes": 38142
+    },
+    "artifacts/feature_importance.csv": {
+      "sha256": "edec36ef5d722a4396fae148c237cfe448b59f44e4f82aa2f167b6ba6c568ec0",
+      "bytes": 3119
+    },
+    "artifacts/predictions/validation.csv.gz": {
+      "sha256": "03462920358d4faacfab843fadf492332289c6e3dc983da9810e3a7d80ef9248",
+      "bytes": 577722
+    },
+    "artifacts/predictions/test.csv.gz": {
+      "sha256": "27213abb385997cc8e47c57042c1270ea3453b2b59be2f2f49818c95c708ea9b",
+      "bytes": 575913
+    },
+    "data/sgcc_demo.csv.gz": {
+      "sha256": "a5ff32210ce566344a42377e205f98d3b6d9836a6e57d25074dd51437a837a20",
+      "bytes": 3628191
+    },
+    "artifacts/metrics.json": {
+      "sha256": "5f54ec15cb2027f4fdbbf42cb540fd1a21df9e7ab821e9d1e0011631b0cdb0fe",
+      "bytes": 2925
+    }
+  }
+}

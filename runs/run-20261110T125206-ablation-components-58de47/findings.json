@@ -1,0 +1,135 @@
+{
+  "run_id": "run-20261110T125206-ablation-components-58de47",
+  "experiment_id": "ablation.components",
+  "findings_sha256": "454a049be57615ac4deb0d6362723f8940af1136a172f7f856a8f1183a350a97",
+  "eligible_to_verify": true,
+  "eligibility_reasons": [],
+  "checks": [
+    {
+      "finding_id": "T2-A-roc_auc",
+      "reported": 0.829,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.8287825018273303,
+      "difference": -0.0002174981726696945,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T2-A-pr_auc",
+      "reported": 0.438,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.4365592182941921,
+      "difference": -0.0014407817058079142,
+      "outcome": "within_tolerance"
+    },
+    {
+      "finding_id": "T2-B-roc_auc",
+      "reported": 0.854,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.8524206557012913,
+      "difference": -0.0015793442987086515,
+      "outcome": "within_tolerance"
+    },
+    {
+      "finding_id": "T2-B-pr_auc",
+      "reported": 0.507,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.5031579118694589,
+      "difference": -0.003842088130541099,
+      "outcome": "discrepant"
+    },
+    {
+      "finding_id": "T2-C-roc_auc",
+      "reported": 0.847,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.8485299004731994,
+      "difference": 0.0015299004731994525,
+      "outcome": "within_tolerance"
+    },
+    {
+      "finding_id": "T2-C-pr_auc",
+      "reported": 0.492,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.491462738000513,
+      "difference": -0.0005372619994870043,
+      "outcome": "within_tolerance"
+    },
+    {
+      "finding_id": "T2-D-roc_auc",
+      "reported": 0.83,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.8316920680186264,
+      "difference": 0.0016920680186264248,
+      "outcome": "within_tolerance"
+    },
+    {
+      "finding_id": "T2-D-pr_auc",
+      "reported": 0.453,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.46056143923691606,
+      "difference": 0.0075614392369160455,
+      "outcome": "discrepant"
+    },
+    {
+      "finding_id": "T2-E-roc_auc",
+      "reported": 0.827,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.8286722644078983,
+      "difference": 0.0016722644078983606,
+      "outcome": "within_tolerance"
+    },
+    {
+      "finding_id": "T2-E-pr_auc",
+      "reported": 0.42,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.42572580925612485,
+      "difference": 0.00572580925612487,
+      "outcome": "discrepant"
+    },
+    {
+      "finding_id": "T2-F-roc_auc",
+      "reported": 0.855,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.8553705446054248,
+      "difference": 0.00037054460542484957,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T2-F-pr_auc",
+      "reported": 0.51,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.5089189828910146,
+      "difference": -0.0010810171089854492,
+      "outcome": "within_tolerance"
+    },
+    {
+      "finding_id": "T2-G-roc_auc",
+      "reported": 0.832,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.8321182420861165,
+      "difference": 0.00011824208611654896,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "T2-G-pr_auc",
+      "reported": 0.46,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.4601834831838474,
+      "difference": 0.00018348318384736606,
+      "outcome": "exact"
+    }
+  ]
+}

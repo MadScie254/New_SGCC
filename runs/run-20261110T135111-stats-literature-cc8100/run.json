@@ -1,0 +1,234 @@
+{
+  "run_id": "run-20261110T135111-stats-literature-cc8100",
+  "experiment_id": "stats.literature",
+  "experiment_version": 1,
+  "experiment_sha256": "840e03783c0c5db4974f79ae4170cad4df5aa2719d68164e1495753a0d367411",
+  "title": "Ranking metrics used in the SGCC literature, and budget value",
+  "protocol": "original",
+  "state": "succeeded",
+  "created_at": "2026-11-10T13:51:11+00:00",
+  "created_by": "reproduction",
+  "started_at": "2026-11-10T18:54:39+00:00",
+  "finished_at": "2026-11-10T18:55:36+00:00",
+  "runtime_seconds": 57.0,
+  "retry_of": null,
+  "seeded_from": [
+    "run-20261110T114728-train-full-a31409",
+    "run-20261110T125206-resampling-study-a3f41c",
+    "run-20261110T125206-deep-baseline-ce9f81"
+  ],
+  "parameters": {
+    "resamples": 2000
+  },
+  "progress": {
+    "stage": "Finished",
+    "fraction": 1.0
+  },
+  "runner_pid": 5480,
+  "command": [
+    "python.exe",
+    "C:\\Users\\MadScie254\\Documents\\GitHub\\New_SGCC\\scripts\\literature_metrics.py",
+    "--resamples",
+    "2000"
+  ],
+  "lineage": "rerun",
+  "inputs": {
+    "artifacts/best_params.json": {
+      "sha256": "3bc94b174a741863b34796a98050d1db62e3f2e64b8ee589c12ee3aa76298fd9",
+      "from": "run-20261110T125206-deep-baseline-ce9f81"
+    },
+    "artifacts/calibration.json": {
+      "sha256": "c1e32f5150357b93709bdbe5d1bff48f30f8f75e4d8e9b61782c2b4409900908",
+      "from": "run-20261110T125206-deep-baseline-ce9f81"
+    },
+    "artifacts/feature_importance.csv": {
+      "sha256": "edec36ef5d722a4396fae148c237cfe448b59f44e4f82aa2f167b6ba6c568ec0",
+      "from": "run-20261110T125206-deep-baseline-ce9f81"
+    },
+    "artifacts/learning_curves.json": {
+      "sha256": "ce2128e8587b0169fe3a2fe9e0715c224b7cfb609f9e3c35fe7a01f51b93a883",
+      "from": "run-20261110T125206-deep-baseline-ce9f81"
+    },
+    "artifacts/manifest.json": {
+      "sha256": "4888eda048e573160d89bd8369355e19b530d139d9a3236374fcdb61c1df195d",
+      "from": "run-20261110T125206-deep-baseline-ce9f81"
+    },
+    "artifacts/metrics.json": {
+      "sha256": "5f54ec15cb2027f4fdbbf42cb540fd1a21df9e7ab821e9d1e0011631b0cdb0fe",
+      "from": "run-20261110T125206-deep-baseline-ce9f81"
+    },
+    "artifacts/pipeline.json": {
+      "sha256": "526565ca66ff9bbdfcc2c9e1b5ccb44e3313f1f14e1698e277c74e9f24ea61f2",
+      "from": "run-20261110T125206-deep-baseline-ce9f81"
+    },
+    "artifacts/predictions/test.csv.gz": {
+      "sha256": "27213abb385997cc8e47c57042c1270ea3453b2b59be2f2f49818c95c708ea9b",
+      "from": "run-20261110T125206-deep-baseline-ce9f81"
+    },
+    "artifacts/predictions/validation.csv.gz": {
+      "sha256": "03462920358d4faacfab843fadf492332289c6e3dc983da9810e3a7d80ef9248",
+      "from": "run-20261110T125206-deep-baseline-ce9f81"
+    },
+    "artifacts/preprocessing_log.json": {
+      "sha256": "decfbbbceed7495009028b10b650053f0e9ef84c04b615b3dce19ee32abffe4f",
+      "from": "run-20261110T125206-deep-baseline-ce9f81"
+    },
+    "artifacts/resampling.json": {
+      "sha256": "5ebe3dbe8b0de8435c39bfec926a175cbcf94cd738e592ff0b753fe813e09378",
+      "from": "run-20261110T125206-deep-baseline-ce9f81"
+    },
+    "artifacts/sequence.json": {
+      "sha256": "3f6ad343ad92e10474a37e4ba5c11e304167c36b998250089627a50284929e5e",
+      "from": "run-20261110T125206-deep-baseline-ce9f81"
+    },
+    "artifacts/tuning.json": {
+      "sha256": "b52709af2c3b0e7cc9650576da8710bfe2fe15e6ecd0dce514f3c34a77cdde2d",
+      "from": "run-20261110T125206-deep-baseline-ce9f81"
+    },
+    "models/baselines/comparison_results.json": {
+      "sha256": "323b049a0223979fde77d346455713c566f2cce4d1af7871c51183cc3e01eb25",
+      "from": "run-20261110T125206-deep-baseline-ce9f81"
+    },
+    "models/sequence.onnx": {
+      "sha256": "ef5ca109e4c53a72d5320e60f0f1b1a6898df6640f710e6c0e2380fe99c8aaaa",
+      "from": "run-20261110T125206-deep-baseline-ce9f81"
+    },
+    "models/xgb_best.ubj": {
+      "sha256": "22a9e7c7bc3fed49b95ef0f7074ffb0428034c32efe8320433ce4b392cd3e10e",
+      "from": "run-20261110T125206-deep-baseline-ce9f81"
+    },
+    "artifacts/predictions/extensions_test.csv.gz": {
+      "sha256": "f67e449a47bd54da66baf8ef2c2797e3c17ba2c8dd77240ddbe74bc6b7f8230b",
+      "from": "run-20261110T125206-deep-baseline-ce9f81"
+    },
+    "artifacts/predictions/extensions_validation.csv.gz": {
+      "sha256": "9981990416889cc3c3f84bdbb56b3262fe8e2fe92a93ee92dc22f03c29147719",
+      "from": "run-20261110T125206-deep-baseline-ce9f81"
+    },
+    "artifacts/resampling_study.json": {
+      "sha256": "6792ee7f323487d5c0cc693067778db2074ba12cbc76c79dc105d1f9f345ebbc",
+      "from": "run-20261110T125206-resampling-study-a3f41c"
+    },
+    "artifacts/deep_baseline.json": {
+      "sha256": "2e3bbc93813be9a02d2ab25b8dbcfaf1fa95ae049eedae30dd1b7ad79e71fb47",
+      "from": "run-20261110T125206-deep-baseline-ce9f81"
+    }
+  },
+  "config_sha256": "76fc1519d61e78b56c712ac60413211186ed83bc9b5bf0a64be84287e2ca12cc",
+  "dataset": null,
+  "environment": {
+    "python": "3.11.15",
+    "platform": "Windows-10-10.0.26300-SP0",
+    "machine": "AMD64",
+    "processor": "Intel64 Family 6 Model 158 Stepping 10, GenuineIntel",
+    "cpu_count": 12,
+    "threads": 4,
+    "libraries": {
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "scipy": "1.16.3",
+      "scikit-learn": "1.8.0",
+      "imbalanced-learn": "0.14.1",
+      "xgboost": "3.2.0",
+      "optuna": "4.6.0",
+      "torch": "2.14.0+cpu",
+      "onnx": "1.23.2",
+      "onnxruntime": "1.30.0",
+      "shap": "0.50.0",
+      "lime": "0.2.0.1"
+    }
+  },
+  "code": {
+    "commit": "5198f9db54ef4c64897d2df00a6b22c30bcd6cb3",
+    "dirty": true,
+    "source_tree_sha256": "afeb3ce24a904f12fa18b74f1deb67a567d433004f601f7b27e9eb6783a8a810",
+    "files": 41
+  },
+  "findings_sha256": "454a049be57615ac4deb0d6362723f8940af1136a172f7f856a8f1183a350a97",
+  "child_pid": 5656,
+  "exit_code": 0,
+  "error": null,
+  "outputs": {
+    "artifacts/literature_metrics.json": {
+      "sha256": "0169be219f66e7ade9960bdd9b7b1d1402c5871c30c92778cc786ec6686cd74a",
+      "bytes": 19111
+    }
+  },
+  "eligible_to_verify": true,
+  "eligibility_reasons": [],
+  "fingerprints": {
+    "feature_schema": {
+      "count": 87,
+      "sha256": "8989108dbf5bd29a76cda2e80a9c82239cf24e0a2d5723b04951ec94ace19be3",
+      "order_matters": true
+    },
+    "served_pipeline": "hybrid",
+    "calibration": {
+      "method": "platt",
+      "a": 1.5101790362731513,
+      "b": 0.8596278334216094
+    },
+    "threshold": 0.3300836801360999,
+    "blend": {
+      "weight_sequence": 0.6,
+      "on": "calibrated probabilities",
+      "recalibrated": "platt on validation"
+    },
+    "trained_on": {
+      "code": {
+        "commit": "d3fdcad25d3e4c5a443dcf94fc8d9439184466c1",
+        "dirty": true
+      },
+      "data_file": "sgcc_full.csv",
+      "data_sha256": "99f8fd315626b1f729a9a03a97cb52ed097ab4d43e5771e21554c9e0c369b9b7",
+      "quick_mode": false,
+      "device": "cpu",
+      "libraries": {
+        "python": "3.11.15",
+        "xgboost": "3.2.0",
+        "scikit-learn": "1.8.0",
+        "imbalanced-learn": "0.14.1",
+        "numpy": "2.3.5",
+        "pandas": "2.2.3",
+        "scipy": "1.16.3",
+        "optuna": "4.6.0"
+      }
+    },
+    "split": {
+      "seed": 42,
+      "train": 29660,
+      "validation": 6356,
+      "test": 6356,
+      "validation_ids_sha256": "5d0a00690425f9a0d1bc4d7c27fcb60b421a62998c6062c1e43dc937c6c84823",
+      "validation_duplicates": 0,
+      "test_ids_sha256": "6224e54840b9143473aef026afdb167998369a3edd73a0e208bd4613bd262a55",
+      "test_duplicates": 0
+    },
+    "hyperparameters": {
+      "proposed": {
+        "n_estimators": 450,
+        "learning_rate": 0.0897493045259221,
+        "max_depth": 8,
+        "min_child_weight": 19.95814598940523,
+        "subsample": 0.8079403850452648,
+        "colsample_bytree": 0.8647578361190602,
+        "gamma": 1.2862902188907008,
+        "reg_alpha": 4.178476617506582,
+        "reg_lambda": 0.19761517554017186,
+        "scale_pos_weight": 1.0081384648378267
+      },
+      "xgboost": {
+        "n_estimators": 400,
+        "learning_rate": 0.03151347126356073,
+        "max_depth": 9,
+        "min_child_weight": 13.456703527208825,
+        "subsample": 0.9984011407259392,
+        "colsample_bytree": 0.444217003345363,
+        "gamma": 1.3121615202543921,
+        "reg_alpha": 0.5018232011438374,
+        "reg_lambda": 0.7305562166286795,
+        "scale_pos_weight": 4.740819076649796
+      }
+    }
+  }
+}

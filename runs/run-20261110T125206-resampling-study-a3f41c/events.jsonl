@@ -1,0 +1,62 @@
+{"at": "2026-11-10T13:17:50.470+00:00", "level": "info", "message": "Run started: SMOTE+ENN on raw readings, and the resampling sensitivity grid", "stage": "start"}
+{"at": "2026-11-10T13:17:51.148+00:00", "level": "info", "message": "Dataset sgcc_full.csv sha256 99f8fd315626b1f7... (matches the registered release)"}
+{"at": "2026-11-10T13:17:59.104+00:00", "level": "info", "message": "2026-11-10 16:17:59,102 Loading data from C:\\Users\\MadScie254\\Documents\\GitHub\\New_SGCC\\data\\sgcc_full.csv...", "stage": "Starting"}
+{"at": "2026-11-10T13:18:06.696+00:00", "level": "info", "message": "2026-11-10 16:18:06,695 Loaded 42372 customers x 1034 days (25.6% missing)", "stage": "Starting"}
+{"at": "2026-11-10T13:18:27.295+00:00", "level": "info", "message": "2026-11-10 16:18:27,294 Tuning XGBoost (smote_enn): 40 trials, 5-fold CV on average_precision", "stage": "Starting"}
+{"at": "2026-11-10T13:18:43.779+00:00", "level": "info", "message": "2026-11-10 16:18:43,778 Trial 1/40: average_precision=0.4508 (best 0.4508)", "stage": "Tuning the fair test"}
+{"at": "2026-11-10T13:18:51.690+00:00", "level": "info", "message": "2026-11-10 16:18:51,689 Trial 2/40: average_precision=0.4349 (best 0.4508)", "stage": "Tuning the fair test"}
+{"at": "2026-11-10T13:19:08.967+00:00", "level": "info", "message": "2026-11-10 16:19:08,966 Trial 3/40: average_precision=0.3986 (best 0.4508)", "stage": "Tuning the fair test"}
+{"at": "2026-11-10T13:19:18.598+00:00", "level": "info", "message": "2026-11-10 16:19:18,597 Trial 4/40: average_precision=0.3531 (best 0.4508)", "stage": "Tuning the fair test"}
+{"at": "2026-11-10T13:19:23.228+00:00", "level": "info", "message": "2026-11-10 16:19:23,227 Trial 5/40: average_precision=0.3703 (best 0.4508)", "stage": "Tuning the fair test"}
+{"at": "2026-11-10T13:19:55.221+00:00", "level": "info", "message": "2026-11-10 16:19:55,220 Trial 6/40: average_precision=0.4700 (best 0.4700)", "stage": "Tuning the fair test"}
+{"at": "2026-11-10T13:20:25.248+00:00", "level": "info", "message": "2026-11-10 16:20:25,248 Trial 7/40: average_precision=0.4331 (best 0.4700)", "stage": "Tuning the fair test"}
+{"at": "2026-11-10T13:20:35.807+00:00", "level": "info", "message": "2026-11-10 16:20:35,806 Trial 8/40: average_precision=0.3679 (best 0.4700)", "stage": "Tuning the fair test"}
+{"at": "2026-11-10T13:20:52.819+00:00", "level": "info", "message": "2026-11-10 16:20:52,818 Trial 9/40: average_precision=0.4562 (best 0.4700)", "stage": "Tuning the fair test"}
+{"at": "2026-11-10T13:21:03.425+00:00", "level": "info", "message": "2026-11-10 16:21:03,424 Trial 10/40: average_precision=0.4473 (best 0.4700)", "stage": "Tuning the fair test"}
+{"at": "2026-11-10T13:21:21.116+00:00", "level": "info", "message": "2026-11-10 16:21:21,115 Trial 11/40: average_precision=0.4422 (best 0.4700)", "stage": "Tuning the fair test"}
+{"at": "2026-11-10T13:21:43.054+00:00", "level": "info", "message": "2026-11-10 16:21:43,053 Trial 12/40: average_precision=0.4626 (best 0.4700)", "stage": "Tuning the fair test"}
+{"at": "2026-11-10T13:22:06.994+00:00", "level": "info", "message": "2026-11-10 16:22:06,993 Trial 13/40: average_precision=0.4494 (best 0.4700)", "stage": "Tuning the fair test"}
+{"at": "2026-11-10T13:22:34.967+00:00", "level": "info", "message": "2026-11-10 16:22:34,966 Trial 14/40: average_precision=0.4484 (best 0.4700)", "stage": "Tuning the fair test"}
+{"at": "2026-11-10T13:22:54.242+00:00", "level": "info", "message": "2026-11-10 16:22:54,241 Trial 15/40: average_precision=0.4650 (best 0.4700)", "stage": "Tuning the fair test"}
+{"at": "2026-11-10T13:23:19.011+00:00", "level": "info", "message": "2026-11-10 16:23:19,009 Trial 16/40: average_precision=0.4601 (best 0.4700)", "stage": "Tuning the fair test"}
+{"at": "2026-11-10T13:23:35.555+00:00", "level": "info", "message": "2026-11-10 16:23:35,554 Trial 17/40: average_precision=0.4476 (best 0.4700)", "stage": "Tuning the fair test"}
+{"at": "2026-11-10T13:23:52.174+00:00", "level": "info", "message": "2026-11-10 16:23:52,174 Trial 18/40: average_precision=0.4640 (best 0.4700)", "stage": "Tuning the fair test"}
+{"at": "2026-11-10T13:24:29.472+00:00", "level": "info", "message": "2026-11-10 16:24:29,471 Trial 19/40: average_precision=0.4653 (best 0.4700)", "stage": "Tuning the fair test"}
+{"at": "2026-11-10T13:25:05.523+00:00", "level": "info", "message": "2026-11-10 16:25:05,522 Trial 20/40: average_precision=0.4554 (best 0.4700)", "stage": "Tuning the fair test"}
+{"at": "2026-11-10T13:25:54.903+00:00", "level": "info", "message": "2026-11-10 16:25:54,902 Trial 21/40: average_precision=0.4538 (best 0.4700)", "stage": "Tuning the fair test"}
+{"at": "2026-11-10T13:26:16.644+00:00", "level": "info", "message": "2026-11-10 16:26:16,643 Trial 22/40: average_precision=0.4659 (best 0.4700)", "stage": "Tuning the fair test"}
+{"at": "2026-11-10T13:26:59.655+00:00", "level": "info", "message": "2026-11-10 16:26:59,655 Trial 23/40: average_precision=0.4309 (best 0.4700)", "stage": "Tuning the fair test"}
+{"at": "2026-11-10T13:27:31.662+00:00", "level": "info", "message": "2026-11-10 16:27:31,661 Trial 24/40: average_precision=0.4677 (best 0.4700)", "stage": "Tuning the fair test"}
+{"at": "2026-11-10T13:27:49.704+00:00", "level": "info", "message": "2026-11-10 16:27:49,703 Trial 25/40: average_precision=0.4554 (best 0.4700)", "stage": "Tuning the fair test"}
+{"at": "2026-11-10T13:28:04.884+00:00", "level": "info", "message": "2026-11-10 16:28:04,883 Trial 26/40: average_precision=0.4592 (best 0.4700)", "stage": "Tuning the fair test"}
+{"at": "2026-11-10T13:28:18.851+00:00", "level": "info", "message": "2026-11-10 16:28:18,850 Trial 27/40: average_precision=0.4361 (best 0.4700)", "stage": "Tuning the fair test"}
+{"at": "2026-11-10T13:28:45.743+00:00", "level": "info", "message": "2026-11-10 16:28:45,742 Trial 28/40: average_precision=0.4697 (best 0.4700)", "stage": "Tuning the fair test"}
+{"at": "2026-11-10T13:29:08.375+00:00", "level": "info", "message": "2026-11-10 16:29:08,374 Trial 29/40: average_precision=0.4665 (best 0.4700)", "stage": "Tuning the fair test"}
+{"at": "2026-11-10T13:29:21.188+00:00", "level": "info", "message": "2026-11-10 16:29:21,187 Trial 30/40: average_precision=0.4526 (best 0.4700)", "stage": "Tuning the fair test"}
+{"at": "2026-11-10T13:29:59.945+00:00", "level": "info", "message": "2026-11-10 16:29:59,944 Trial 31/40: average_precision=0.4666 (best 0.4700)", "stage": "Tuning the fair test"}
+{"at": "2026-11-10T13:30:42.149+00:00", "level": "info", "message": "2026-11-10 16:30:42,149 Trial 32/40: average_precision=0.4683 (best 0.4700)", "stage": "Tuning the fair test"}
+{"at": "2026-11-10T13:31:08.465+00:00", "level": "info", "message": "2026-11-10 16:31:08,464 Trial 33/40: average_precision=0.4615 (best 0.4700)", "stage": "Tuning the fair test"}
+{"at": "2026-11-10T13:31:38.615+00:00", "level": "info", "message": "2026-11-10 16:31:38,614 Trial 34/40: average_precision=0.4536 (best 0.4700)", "stage": "Tuning the fair test"}
+{"at": "2026-11-10T13:32:12.862+00:00", "level": "info", "message": "2026-11-10 16:32:12,861 Trial 35/40: average_precision=0.4643 (best 0.4700)", "stage": "Tuning the fair test"}
+{"at": "2026-11-10T13:32:42.157+00:00", "level": "info", "message": "2026-11-10 16:32:42,156 Trial 36/40: average_precision=0.4593 (best 0.4700)", "stage": "Tuning the fair test"}
+{"at": "2026-11-10T13:33:06.943+00:00", "level": "info", "message": "2026-11-10 16:33:06,943 Trial 37/40: average_precision=0.4672 (best 0.4700)", "stage": "Tuning the fair test"}
+{"at": "2026-11-10T13:33:23.782+00:00", "level": "info", "message": "2026-11-10 16:33:23,781 Trial 38/40: average_precision=0.4540 (best 0.4700)", "stage": "Tuning the fair test"}
+{"at": "2026-11-10T13:33:35.457+00:00", "level": "info", "message": "2026-11-10 16:33:35,456 Trial 39/40: average_precision=0.3835 (best 0.4700)", "stage": "Tuning the fair test"}
+{"at": "2026-11-10T13:34:04.006+00:00", "level": "info", "message": "2026-11-10 16:34:04,004 Trial 40/40: average_precision=0.4575 (best 0.4700)", "stage": "Tuning the fair test"}
+{"at": "2026-11-10T13:34:04.025+00:00", "level": "info", "message": "2026-11-10 16:34:04,006 Best CV average_precision: 0.4700 with {'n_estimators': 500, 'learning_rate': 0.13962563737015762, 'max_depth': 9, 'min_child_weight': 14.594768942966839, 'subsample': 0.8391599915244341, 'colsample_bytree': 0.9453119645161818, 'gamma': 0.4424625102595975, 'reg_alpha': 0.006080390190296602, 'reg_lambda': 0.01410251717517135, 'scale_pos_weight': 1.6506606615265287}", "stage": "Tuning the fair test"}
+{"at": "2026-11-10T13:34:45.898+00:00", "level": "info", "message": "fair test: PR-AUC 0.4801, recall 0.4114, precision 0.5210", "stage": "Fair test scored"}
+{"at": "2026-11-10T13:36:09.236+00:00", "level": "info", "message": "No resampling: PR-AUC 0.5032 \u00b1 0.0100", "stage": "Resampling grid"}
+{"at": "2026-11-10T13:37:02.414+00:00", "level": "info", "message": "SMOTE 0.2: PR-AUC 0.4974 \u00b1 0.0158", "stage": "Resampling grid"}
+{"at": "2026-11-10T13:38:06.956+00:00", "level": "info", "message": "SMOTE 0.35: PR-AUC 0.4848 \u00b1 0.0171", "stage": "Resampling grid"}
+{"at": "2026-11-10T13:39:11.290+00:00", "level": "info", "message": "SMOTE 0.5: PR-AUC 0.4683 \u00b1 0.0265", "stage": "Resampling grid"}
+{"at": "2026-11-10T13:40:26.937+00:00", "level": "info", "message": "SMOTE 1.0: PR-AUC 0.4337 \u00b1 0.0306", "stage": "Resampling grid"}
+{"at": "2026-11-10T13:41:30.058+00:00", "level": "info", "message": "SMOTE+ENN 0.2: PR-AUC 0.4474 \u00b1 0.0167", "stage": "Resampling grid"}
+{"at": "2026-11-10T13:42:56.277+00:00", "level": "info", "message": "SMOTE+ENN 0.5 (proposed setting): PR-AUC 0.4247 \u00b1 0.0221", "stage": "Resampling grid"}
+{"at": "2026-11-10T13:44:53.876+00:00", "level": "info", "message": "SMOTE+ENN 1.0: PR-AUC 0.4001 \u00b1 0.0244", "stage": "Resampling grid"}
+{"at": "2026-11-10T13:46:19.697+00:00", "level": "info", "message": "SMOTE+ENN 0.5, ENN k = 5: PR-AUC 0.4215 \u00b1 0.0200", "stage": "Resampling grid"}
+{"at": "2026-11-10T13:47:49.831+00:00", "level": "info", "message": "SMOTE-Tomek 0.5: PR-AUC 0.4686 \u00b1 0.0247", "stage": "Resampling grid"}
+{"at": "2026-11-10T13:48:55.147+00:00", "level": "info", "message": "Borderline-SMOTE 0.5: PR-AUC 0.4714 \u00b1 0.0166", "stage": "Resampling grid"}
+{"at": "2026-11-10T13:49:59.797+00:00", "level": "info", "message": "ADASYN 0.5: PR-AUC 0.4548 \u00b1 0.0361", "stage": "Resampling grid"}
+{"at": "2026-11-10T13:50:23.673+00:00", "level": "info", "message": "Random undersampling 0.5: PR-AUC 0.4733 \u00b1 0.0121", "stage": "Resampling grid"}
+{"at": "2026-11-10T13:50:25.247+00:00", "level": "info", "message": "wrote fig-5-21-resampling-sensitivity", "stage": "Resampling grid"}
+{"at": "2026-11-10T13:50:25.845+00:00", "level": "info", "message": "Run succeeded after 1955 s"}

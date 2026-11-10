@@ -1,0 +1,167 @@
+{
+  "threads": [
+    1,
+    2,
+    4,
+    8,
+    12
+  ],
+  "seed": 42,
+  "hyperparameters_from": "artifacts/tuning.json of the seeding training run",
+  "runs": [
+    {
+      "threads": 1,
+      "pipelines": {
+        "xgboost": {
+          "best_iteration": 385,
+          "validation_pr_auc": 0.5012596617871564,
+          "test_pr_auc": 0.5132430995088875,
+          "test_auc": 0.8519245757473054
+        },
+        "proposed": {
+          "best_iteration": 446,
+          "validation_pr_auc": 0.45620214210573445,
+          "test_pr_auc": 0.4650884393681286,
+          "test_auc": 0.8343002702472846
+        }
+      }
+    },
+    {
+      "threads": 2,
+      "pipelines": {
+        "xgboost": {
+          "best_iteration": 398,
+          "validation_pr_auc": 0.5006032396993306,
+          "test_pr_auc": 0.5098346265489515,
+          "test_auc": 0.8530904852392177
+        },
+        "proposed": {
+          "best_iteration": 445,
+          "validation_pr_auc": 0.4524596262103632,
+          "test_pr_auc": 0.47422440074782113,
+          "test_auc": 0.8386164202199298
+        }
+      }
+    },
+    {
+      "threads": 4,
+      "pipelines": {
+        "xgboost": {
+          "best_iteration": 316,
+          "validation_pr_auc": 0.501785126783325,
+          "test_pr_auc": 0.5138133728189593,
+          "test_auc": 0.853246934172128
+        },
+        "proposed": {
+          "best_iteration": 283,
+          "validation_pr_auc": 0.4516274030791162,
+          "test_pr_auc": 0.4669206930659934,
+          "test_auc": 0.8357008531385623
+        }
+      }
+    },
+    {
+      "threads": 8,
+      "pipelines": {
+        "xgboost": {
+          "best_iteration": 400,
+          "validation_pr_auc": 0.4998642540137548,
+          "test_pr_auc": 0.5152983136497258,
+          "test_auc": 0.8540723371630001
+        },
+        "proposed": {
+          "best_iteration": 403,
+          "validation_pr_auc": 0.44395387927039986,
+          "test_pr_auc": 0.4683461039102883,
+          "test_auc": 0.8340505231677704
+        }
+      }
+    },
+    {
+      "threads": 12,
+      "pipelines": {
+        "xgboost": {
+          "best_iteration": 393,
+          "validation_pr_auc": 0.501711010233695,
+          "test_pr_auc": 0.5178410350933603,
+          "test_auc": 0.8542376716336821
+        },
+        "proposed": {
+          "best_iteration": 447,
+          "validation_pr_auc": 0.4498977109828938,
+          "test_pr_auc": 0.46844021715772843,
+          "test_auc": 0.8388515696302474
+        }
+      }
+    }
+  ],
+  "summary": {
+    "xgboost": {
+      "test_pr_auc": {
+        "min": 0.5098346265489515,
+        "max": 0.5178410350933603,
+        "range": 0.008006408544408816,
+        "mean": 0.514006089523977,
+        "sd": 0.0029324498100917135
+      },
+      "test_auc": {
+        "min": 0.8519245757473054,
+        "max": 0.8542376716336821,
+        "range": 0.002313095886376737,
+        "mean": 0.8533144007910668,
+        "sd": 0.0009237424105263837
+      },
+      "validation_pr_auc": {
+        "min": 0.4998642540137548,
+        "max": 0.501785126783325,
+        "range": 0.0019208727695702033,
+        "mean": 0.5010446585034524,
+        "sd": 0.0008103625166906629
+      },
+      "best_iteration": [
+        385,
+        398,
+        316,
+        400,
+        393
+      ],
+      "identical_scores_between_thread_counts": false,
+      "max_abs_score_difference": 0.199349,
+      "mean_abs_score_difference": 0.012506070956576463
+    },
+    "proposed": {
+      "test_pr_auc": {
+        "min": 0.4650884393681286,
+        "max": 0.47422440074782113,
+        "range": 0.009135961379692525,
+        "mean": 0.46860397084999195,
+        "sd": 0.0034232633759619497
+      },
+      "test_auc": {
+        "min": 0.8340505231677704,
+        "max": 0.8388515696302474,
+        "range": 0.004801046462477032,
+        "mean": 0.8363039272807589,
+        "sd": 0.0023072860225724742
+      },
+      "validation_pr_auc": {
+        "min": 0.44395387927039986,
+        "max": 0.45620214210573445,
+        "range": 0.012248262835334589,
+        "mean": 0.45082815232970147,
+        "sd": 0.0044805587288394505
+      },
+      "best_iteration": [
+        446,
+        445,
+        283,
+        403,
+        447
+      ],
+      "identical_scores_between_thread_counts": false,
+      "max_abs_score_difference": 0.309962,
+      "mean_abs_score_difference": 0.017485889907174323
+    }
+  },
+  "reading": "Same data, split, hyperparameters, seed and library versions; only the thread count differs. The range is the numerical noise floor of results that depend on a tuned XGBoost fit."
+}

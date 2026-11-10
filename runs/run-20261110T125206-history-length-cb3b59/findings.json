@@ -1,0 +1,36 @@
+{
+  "run_id": "run-20261110T125206-history-length-cb3b59",
+  "experiment_id": "history.length",
+  "findings_sha256": "454a049be57615ac4deb0d6362723f8940af1136a172f7f856a8f1183a350a97",
+  "eligible_to_verify": true,
+  "eligibility_reasons": [],
+  "checks": [
+    {
+      "finding_id": "F-history-3",
+      "reported": 0.274,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.26587856662040726,
+      "difference": -0.008121433379592757,
+      "outcome": "discrepant"
+    },
+    {
+      "finding_id": "F-history-12",
+      "reported": 0.319,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.31580971256109963,
+      "difference": -0.0031902874389003744,
+      "outcome": "discrepant"
+    },
+    {
+      "finding_id": "F-history-24",
+      "reported": 0.396,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.40612004396075296,
+      "difference": 0.010120043960752945,
+      "outcome": "discrepant"
+    }
+  ]
+}

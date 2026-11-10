@@ -1,0 +1,21 @@
+id: numerics.threads
+version: 1
+title: Numerical noise floor - the tuned XGBoost pipelines at different thread counts
+protocol: exploratory
+phase: new
+kind: robustness
+summary: >
+  Refits the two tuned XGBoost pipelines with identical data, split, hyperparameters, seed and
+  library versions, changing only the number of CPU threads. Added after the first rerun, when
+  these pipelines did not reproduce bit for bit although everything upstream of them did. The
+  spread it measures is the smallest difference between two runs that can be given any meaning.
+command: ["scripts/numerical_variability.py"]
+needs: [train.full]
+expected_minutes: 12
+pipelines: [xgboost, proposed]
+thesis: ["Reproducibility"]
+leakage_controls:
+  - Test customers are scored for reporting only; nothing is selected with them.
+outputs: [artifacts/numerical_variability.json]
+progress:
+  - {pattern: "^threads \\d+:", stage: "Thread counts", span: [0.05, 0.97], count: 5}

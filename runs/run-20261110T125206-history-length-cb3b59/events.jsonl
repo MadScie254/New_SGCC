@@ -1,0 +1,10 @@
+{"at": "2026-11-10T13:14:52.114+00:00", "level": "info", "message": "Run started: Detection quality by length of meter history", "stage": "start"}
+{"at": "2026-11-10T13:14:52.853+00:00", "level": "info", "message": "Dataset sgcc_full.csv sha256 99f8fd315626b1f7... (matches the registered release)"}
+{"at": "2026-11-10T13:15:20.368+00:00", "level": "info", "message": "last 3 months (91 days): PR-AUC 0.2659, recall 0.3487", "stage": "History windows"}
+{"at": "2026-11-10T13:15:34.598+00:00", "level": "info", "message": "last 6 months (183 days): PR-AUC 0.2935, recall 0.3210", "stage": "History windows"}
+{"at": "2026-11-10T13:15:56.926+00:00", "level": "info", "message": "last 12 months (365 days): PR-AUC 0.3158, recall 0.3303", "stage": "History windows"}
+{"at": "2026-11-10T13:16:28.543+00:00", "level": "info", "message": "last 18 months (549 days): PR-AUC 0.3409, recall 0.3192", "stage": "History windows"}
+{"at": "2026-11-10T13:17:04.947+00:00", "level": "info", "message": "last 24 months (730 days): PR-AUC 0.4061, recall 0.4151", "stage": "History windows"}
+{"at": "2026-11-10T13:17:48.577+00:00", "level": "info", "message": "last 34 months (1034 days): PR-AUC 0.5138, recall 0.4428", "stage": "History windows"}
+{"at": "2026-11-10T13:17:49.866+00:00", "level": "info", "message": "wrote fig-5-24-history-length", "stage": "History windows"}
+{"at": "2026-11-10T13:17:50.391+00:00", "level": "info", "message": "Run succeeded after 178 s"}

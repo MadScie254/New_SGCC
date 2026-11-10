@@ -1,0 +1,90 @@
+{
+  "run_id": "run-20261110T125206-stats-significance-2f4a3c",
+  "experiment_id": "stats.significance",
+  "findings_sha256": "454a049be57615ac4deb0d6362723f8940af1136a172f7f856a8f1183a350a97",
+  "eligible_to_verify": true,
+  "eligibility_reasons": [],
+  "checks": [
+    {
+      "finding_id": "F-sig-xgb-prauc",
+      "reported": -0.051,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": -0.04689267975296585,
+      "difference": 0.004107320247034148,
+      "outcome": "discrepant"
+    },
+    {
+      "finding_id": "F-sig-xgb-prauc-lo",
+      "reported": -0.076,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": -0.07098877096109292,
+      "difference": 0.005011229038907078,
+      "outcome": "discrepant"
+    },
+    {
+      "finding_id": "F-sig-xgb-prauc-hi",
+      "reported": -0.027,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": -0.022678642566710015,
+      "difference": 0.004321357433289985,
+      "outcome": "discrepant"
+    },
+    {
+      "finding_id": "F-sig-xgb-recall",
+      "reported": 0.028,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.009225092250922495,
+      "difference": -0.018774907749077505,
+      "outcome": "discrepant"
+    },
+    {
+      "finding_id": "F-sig-xgb-recall-p",
+      "reported": 0.31,
+      "tolerance": 0.02,
+      "decimals": 2,
+      "observed": 0.624937506249375,
+      "difference": 0.31493750624937505,
+      "outcome": "discrepant"
+    },
+    {
+      "finding_id": "F-sig-default-prauc",
+      "reported": -0.026,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": -0.02070057518107704,
+      "difference": 0.005299424818922958,
+      "outcome": "discrepant"
+    },
+    {
+      "finding_id": "F-sig-default-p",
+      "reported": 0.07,
+      "tolerance": 0.02,
+      "decimals": 2,
+      "observed": 0.14438556144385561,
+      "difference": 0.07438556144385561,
+      "outcome": "discrepant"
+    },
+    {
+      "finding_id": "F-sig-rf-prauc",
+      "reported": 0.05,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.05551816560864237,
+      "difference": 0.005518165608642364,
+      "outcome": "discrepant"
+    },
+    {
+      "finding_id": "F-sig-lr-prauc",
+      "reported": 0.148,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.15544178132614817,
+      "difference": 0.0074417813261481724,
+      "outcome": "discrepant"
+    }
+  ]
+}

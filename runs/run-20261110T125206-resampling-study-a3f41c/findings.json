@@ -1,0 +1,45 @@
+{
+  "run_id": "run-20261110T125206-resampling-study-a3f41c",
+  "experiment_id": "resampling.study",
+  "findings_sha256": "454a049be57615ac4deb0d6362723f8940af1136a172f7f856a8f1183a350a97",
+  "eligible_to_verify": true,
+  "eligibility_reasons": [],
+  "checks": [
+    {
+      "finding_id": "F-fair-prauc",
+      "reported": 0.504,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.4801452256603038,
+      "difference": -0.023854774339696183,
+      "outcome": "discrepant"
+    },
+    {
+      "finding_id": "F-grid-none",
+      "reported": 0.507,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.5031579118694589,
+      "difference": -0.003842088130541099,
+      "outcome": "discrepant"
+    },
+    {
+      "finding_id": "F-grid-smote-1",
+      "reported": 0.445,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.43370091080804374,
+      "difference": -0.011299089191956269,
+      "outcome": "discrepant"
+    },
+    {
+      "finding_id": "F-grid-smoteenn-1",
+      "reported": 0.411,
+      "tolerance": 0.002,
+      "decimals": 3,
+      "observed": 0.40012986887107915,
+      "difference": -0.010870131128920824,
+      "outcome": "discrepant"
+    }
+  ]
+}

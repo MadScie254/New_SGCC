@@ -1,0 +1,20 @@
+id: deep.baseline_splits
+version: 1
+title: Wide & Deep CNN on the five other random splits
+protocol: original
+phase: documented_extension
+kind: deep_learning
+summary: >
+  Trains the CNN on the five other stratified splits used by the robustness study (seeds 1 to 5)
+  and sets its results beside standard XGBoost on the same splits.
+command: ["scripts/deep_baseline.py", "--splits"]
+needs: [train.full, robustness.splits, deep.baseline]
+needs_torch: true
+expected_minutes: 60
+pipelines: [wide_deep_cnn, xgboost]
+thesis: [RQ4, "Fig 5.25"]
+leakage_controls:
+  - Early stopping, calibration and the threshold use the validation customers of each split.
+outputs: [artifacts/deep_baseline.json]
+progress:
+  - {pattern: "^seed \\d+: PR-AUC", stage: "CNN on other splits", span: [0.05, 0.97], count: 5}

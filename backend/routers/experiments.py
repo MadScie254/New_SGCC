@@ -14,6 +14,7 @@ from pydantic import BaseModel, ConfigDict, Field
 from backend.dependencies.auth import User, require_supervisor
 from backend.services import db
 from backend.services import experiments as service
+from src.registry import conclusions as conclusion_checks
 
 router = APIRouter(prefix="/api", tags=["experiments"])
 
@@ -88,6 +89,12 @@ def withdraw(run_id: str, user: User = Depends(require_supervisor)) -> None:
 @router.get("/findings")
 def findings() -> Dict[str, Any]:
     return service.ledger()
+
+
+@router.get("/conclusions")
+def conclusions() -> Dict[str, Any]:
+    """Whether each qualitative conclusion of the study holds in the reported record and in the newest rerun (post hoc checks)."""
+    return conclusion_checks.evaluate()
 
 
 @router.get("/registry/status")
