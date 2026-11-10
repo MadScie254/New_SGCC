@@ -115,7 +115,7 @@ export function ThresholdStudioPage() {
       <div className="grid grid-cols-1 gap-4 xl:grid-cols-[1.3fr_1fr]">
         <Card label="Precision and recall" className="flex flex-col gap-3 p-[22px]">
           <CardHeader title="Trade-off on validation customers" subtitle="Click the chart to jump to a threshold."
-            action={<Legend items={[{ color: "#2346C8", label: "Hit rate (precision)", line: true }, { color: "#E0873A", label: "Thefts caught (recall)", line: true }]} />} />
+            action={<Legend items={[{ color: "#38BDF8", label: "Hit rate (precision)", line: true }, { color: "#F5A524", label: "Thefts caught (recall)", line: true }]} />} />
           <TradeoffChart points={points} index={index} onPick={setIndex} trainedThreshold={trained} />
           {hasValue ? (
             <>

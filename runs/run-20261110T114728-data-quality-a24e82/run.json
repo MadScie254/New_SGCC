@@ -5,18 +5,18 @@
   "experiment_sha256": "14eed24e494217babab9d2284fa07792fbbfe097aaaf973907177f65a1521b9b",
   "title": "Data quality checklist (proposal Appendix A.1)",
   "protocol": "original",
-  "state": "running",
+  "state": "succeeded",
   "created_at": "2026-11-10T11:47:28+00:00",
   "created_by": "reproduction",
   "started_at": "2026-11-10T11:47:28+00:00",
-  "finished_at": null,
-  "runtime_seconds": null,
+  "finished_at": "2026-11-10T11:49:31+00:00",
+  "runtime_seconds": 123.2,
   "retry_of": null,
   "seeded_from": [],
   "parameters": {},
   "progress": {
-    "stage": "Preparing the workspace",
-    "fraction": 0.0
+    "stage": "Finished",
+    "fraction": 1.0
   },
   "runner_pid": 25672,
   "command": [
@@ -61,5 +61,20 @@
     "files": 41
   },
   "findings_sha256": "454a049be57615ac4deb0d6362723f8940af1136a172f7f856a8f1183a350a97",
-  "child_pid": 29092
+  "child_pid": 29092,
+  "exit_code": 0,
+  "error": null,
+  "outputs": {
+    "artifacts/data_quality.json": {
+      "sha256": "64d95101e9514ff0f3d1265dc8c248a6e5f523d5b0b15fa4a0c24a0e98786383",
+      "bytes": 1851
+    },
+    "docs/data-quality.md": {
+      "sha256": "84d8800c37047393d55181bf824301ee9a415968ef6e9c66ab76a2666f97c8cc",
+      "bytes": 3257
+    }
+  },
+  "eligible_to_verify": true,
+  "eligibility_reasons": [],
+  "fingerprints": {}
 }

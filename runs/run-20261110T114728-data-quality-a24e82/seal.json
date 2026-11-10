@@ -1,0 +1,13 @@
+{
+  "run_id": "run-20261110T114728-data-quality-a24e82",
+  "sealed_at": "2026-11-10T11:49:42+00:00",
+  "files": {
+    "run.json": "2c0ea8843d0cdfecf7b38406f47da68f0a163a72bc7f99cab5bdc0c825d16f18",
+    "events.jsonl": "5574d9e3580b8120f34acab61087cd403d6529d1f59031a4cb42c812fe355fc2",
+    "findings.json": "429999b2ab772dca0c41a9800ee38df5d33760fa7618cccaecec99ec13a7e3af",
+    "workspace/artifacts/data_quality.json": "64d95101e9514ff0f3d1265dc8c248a6e5f523d5b0b15fa4a0c24a0e98786383",
+    "workspace/config.yaml": "76fc1519d61e78b56c712ac60413211186ed83bc9b5bf0a64be84287e2ca12cc",
+    "workspace/docs/data-quality.md": "84d8800c37047393d55181bf824301ee9a415968ef6e9c66ab76a2666f97c8cc"
+  },
+  "seal_sha256": "b6992c1ce1f4fa2d72584ec776b030f969dbe4557235851fac196cd294d038cb"
+}

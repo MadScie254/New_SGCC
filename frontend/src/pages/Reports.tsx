@@ -80,7 +80,7 @@ function DatasetResult({ dataset }: { dataset: Dataset }) {
         </thead>
         <tbody>
           {s.top.slice(0, 5).map((row) => (
-            <tr key={row.customer_id} className="h-9 border-b border-[#F1EFEA]">
+            <tr key={row.customer_id} className="h-9 border-b border-[#18212F]">
               <td className="max-w-0 truncate font-mono text-xs" title={row.customer_id}>{row.customer_id}</td>
               <td><TierBadge tier={row.risk_tier} /></td>
               <td className="text-right font-mono tabular">{fmtNum(row.probability)}</td>

@@ -1,2 +1,35 @@
 {"at": "2026-11-10T11:47:28.567+00:00", "level": "info", "message": "Run started: Data quality checklist (proposal Appendix A.1)", "stage": "start"}
 {"at": "2026-11-10T11:47:30.906+00:00", "level": "info", "message": "Dataset sgcc_full.csv sha256 99f8fd315626b1f7... (matches the registered release)"}
+{"at": "2026-11-10T11:49:31.075+00:00", "level": "info", "message": "{", "stage": "Starting"}
+{"at": "2026-11-10T11:49:31.079+00:00", "level": "info", "message": "  \"completeness\": {", "stage": "Starting"}
+{"at": "2026-11-10T11:49:31.083+00:00", "level": "info", "message": "    \"missing_cells\": 11233528,", "stage": "Starting"}
+{"at": "2026-11-10T11:49:31.086+00:00", "level": "info", "message": "    \"missing_percent\": 25.64,", "stage": "Starting"}
+{"at": "2026-11-10T11:49:31.089+00:00", "level": "info", "message": "    \"customers_complete\": 0,", "stage": "Starting"}
+{"at": "2026-11-10T11:49:31.092+00:00", "level": "info", "message": "    \"customers_without_readings\": 5,", "stage": "Starting"}
+{"at": "2026-11-10T11:49:31.095+00:00", "level": "info", "message": "    \"customers_over_10pct_missing\": 21375,", "stage": "Starting"}
+{"at": "2026-11-10T11:49:31.098+00:00", "level": "info", "message": "    \"theft_customers_over_10pct_missing\": 2240,", "stage": "Starting"}
+{"at": "2026-11-10T11:49:31.100+00:00", "level": "info", "message": "    \"missing_percent_honest\": 25.1,", "stage": "Starting"}
+{"at": "2026-11-10T11:49:31.102+00:00", "level": "info", "message": "    \"missing_percent_theft\": 31.47,", "stage": "Starting"}
+{"at": "2026-11-10T11:49:31.104+00:00", "level": "info", "message": "    \"labels_missing\": 0", "stage": "Starting"}
+{"at": "2026-11-10T11:49:31.106+00:00", "level": "info", "message": "  },", "stage": "Starting"}
+{"at": "2026-11-10T11:49:31.109+00:00", "level": "info", "message": "  \"class_distribution\": {", "stage": "Starting"}
+{"at": "2026-11-10T11:49:31.112+00:00", "level": "info", "message": "    \"honest\": 38757,", "stage": "Starting"}
+{"at": "2026-11-10T11:49:31.114+00:00", "level": "info", "message": "    \"theft\": 3615,", "stage": "Starting"}
+{"at": "2026-11-10T11:49:31.116+00:00", "level": "info", "message": "    \"theft_percent\": 8.53,", "stage": "Starting"}
+{"at": "2026-11-10T11:49:31.118+00:00", "level": "info", "message": "    \"imbalance_ratio\": 10.72,", "stage": "Starting"}
+{"at": "2026-11-10T11:49:31.121+00:00", "level": "info", "message": "    \"expected\": {", "stage": "Starting"}
+{"at": "2026-11-10T11:49:31.124+00:00", "level": "info", "message": "      \"customers\": 42372,", "stage": "Starting"}
+{"at": "2026-11-10T11:49:31.126+00:00", "level": "info", "message": "      \"theft\": 3615,", "stage": "Starting"}
+{"at": "2026-11-10T11:49:31.128+00:00", "level": "info", "message": "      \"honest\": 38757,", "stage": "Starting"}
+{"at": "2026-11-10T11:49:31.130+00:00", "level": "info", "message": "      \"start\": \"2014-01-01\",", "stage": "Starting"}
+{"at": "2026-11-10T11:49:31.132+00:00", "level": "info", "message": "      \"end\": \"2016-10-31\"", "stage": "Starting"}
+{"at": "2026-11-10T11:49:31.134+00:00", "level": "info", "message": "    }", "stage": "Starting"}
+{"at": "2026-11-10T11:49:31.137+00:00", "level": "info", "message": "  },", "stage": "Starting"}
+{"at": "2026-11-10T11:49:31.140+00:00", "level": "info", "message": "  \"outliers\": {", "stage": "Starting"}
+{"at": "2026-11-10T11:49:31.143+00:00", "level": "info", "message": "    \"negative\": 0,", "stage": "Starting"}
+{"at": "2026-11-10T11:49:31.145+00:00", "level": "info", "message": "    \"above_10000_kwh\": 260,", "stage": "Starting"}
+{"at": "2026-11-10T11:49:31.148+00:00", "level": "info", "message": "    \"customers_with_zero_runs_over_30_days\": 11652,", "stage": "Starting"}
+{"at": "2026-11-10T11:49:31.150+00:00", "level": "info", "message": "    \"cells_beyond_3_sd\": 413570", "stage": "Starting"}
+{"at": "2026-11-10T11:49:31.152+00:00", "level": "info", "message": "  }", "stage": "Starting"}
+{"at": "2026-11-10T11:49:31.154+00:00", "level": "info", "message": "}", "stage": "Starting"}
+{"at": "2026-11-10T11:49:41.989+00:00", "level": "info", "message": "Run succeeded after 123 s"}

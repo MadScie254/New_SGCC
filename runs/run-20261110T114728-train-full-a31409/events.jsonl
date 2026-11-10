@@ -1,0 +1,14 @@
+{"at": "2026-11-10T11:49:42.250+00:00", "level": "info", "message": "Run started: Full training run - the seven pipelines on the study's split", "stage": "start"}
+{"at": "2026-11-10T11:49:43.102+00:00", "level": "info", "message": "Dataset sgcc_full.csv sha256 99f8fd315626b1f7... (matches the registered release)"}
+{"at": "2026-11-10T11:50:06.780+00:00", "level": "info", "message": "2026-11-10 14:50:06,779 INFO __main__: XGBoost device: cpu", "stage": "Starting"}
+{"at": "2026-11-10T11:50:08.037+00:00", "level": "info", "message": "2026-11-10 14:50:08,036 INFO src.data_loader: Loading data from C:\\Users\\MadScie254\\Documents\\GitHub\\New_SGCC\\data\\sgcc_full.csv...", "stage": "Starting"}
+{"at": "2026-11-10T11:50:23.636+00:00", "level": "info", "message": "2026-11-10 14:50:23,635 INFO src.data_loader: Loaded 42372 customers x 1034 days (25.6% missing)", "stage": "Starting"}
+{"at": "2026-11-10T11:50:39.007+00:00", "level": "info", "message": "2026-11-10 14:50:39,007 INFO __main__: Cleaning: {'customers': 42372, 'days': 1034, 'cells': 43812648, 'missing_cells': 11233528, 'negative_replaced': 0, 'capped_above_limit': 260, 'outliers_replaced': 413571, 'short_gap_cells_interpolated': 290195, 'long_gap_cells_filled': 10938163, 'customers_without_readings': 5, 'customers_with_long_zero_runs': 12807}", "stage": "Cleaning series"}
+{"at": "2026-11-10T11:51:40.344+00:00", "level": "info", "message": "2026-11-10 14:51:40,342 INFO __main__: Feature matrix: 42372 customers x 87 features", "stage": "Building features"}
+{"at": "2026-11-10T11:51:40.413+00:00", "level": "info", "message": "2026-11-10 14:51:40,412 INFO __main__: Split: 29660 train / 6356 validation / 6356 test", "stage": "Splitting customers"}
+{"at": "2026-11-10T11:52:31.115+00:00", "level": "info", "message": "2026-11-10 14:52:31,114 INFO src.modeling: Tuning XGBoost (smote_enn): 40 trials, 5-fold CV on average_precision", "stage": "Splitting customers"}
+{"at": "2026-11-10T11:52:58.945+00:00", "level": "info", "message": "2026-11-10 14:52:58,944 INFO src.modeling: Trial 1/40: average_precision=0.4345 (best 0.4345)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T11:53:11.563+00:00", "level": "info", "message": "2026-11-10 14:53:11,562 INFO src.modeling: Trial 2/40: average_precision=0.4080 (best 0.4345)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T11:53:43.314+00:00", "level": "info", "message": "2026-11-10 14:53:43,313 INFO src.modeling: Trial 3/40: average_precision=0.3813 (best 0.4345)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T11:53:59.604+00:00", "level": "info", "message": "2026-11-10 14:53:59,602 INFO src.modeling: Trial 4/40: average_precision=0.3300 (best 0.4345)", "stage": "Optuna tuning"}
+{"at": "2026-11-10T11:54:05.696+00:00", "level": "info", "message": "2026-11-10 14:54:05,694 INFO src.modeling: Trial 5/40: average_precision=0.3477 (best 0.4345)", "stage": "Optuna tuning"}

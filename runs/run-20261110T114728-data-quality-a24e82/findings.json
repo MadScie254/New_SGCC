@@ -1,0 +1,81 @@
+{
+  "run_id": "run-20261110T114728-data-quality-a24e82",
+  "experiment_id": "data.quality",
+  "findings_sha256": "454a049be57615ac4deb0d6362723f8940af1136a172f7f856a8f1183a350a97",
+  "eligible_to_verify": true,
+  "eligibility_reasons": [],
+  "checks": [
+    {
+      "finding_id": "F-data-customers",
+      "reported": 42372,
+      "tolerance": 0.0,
+      "decimals": 0,
+      "observed": 42372.0,
+      "difference": 0.0,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-data-days",
+      "reported": 1034,
+      "tolerance": 0.0,
+      "decimals": 0,
+      "observed": 1034.0,
+      "difference": 0.0,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-data-theft",
+      "reported": 3615,
+      "tolerance": 0.0,
+      "decimals": 0,
+      "observed": 3615.0,
+      "difference": 0.0,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-data-honest",
+      "reported": 38757,
+      "tolerance": 0.0,
+      "decimals": 0,
+      "observed": 38757.0,
+      "difference": 0.0,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-data-missing",
+      "reported": 25.64,
+      "tolerance": 0.005,
+      "decimals": 2,
+      "observed": 25.64,
+      "difference": 0.0,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-data-over10",
+      "reported": 21375,
+      "tolerance": 0.0,
+      "decimals": 0,
+      "observed": 21375.0,
+      "difference": 0.0,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-data-missing-theft",
+      "reported": 31.5,
+      "tolerance": 0.05,
+      "decimals": 1,
+      "observed": 31.47,
+      "difference": -0.030000000000001137,
+      "outcome": "exact"
+    },
+    {
+      "finding_id": "F-data-missing-honest",
+      "reported": 25.1,
+      "tolerance": 0.05,
+      "decimals": 1,
+      "observed": 25.1,
+      "difference": 0.0,
+      "outcome": "exact"
+    }
+  ]
+}

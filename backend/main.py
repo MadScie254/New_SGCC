@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import asyncio
+import importlib
 import logging
 import os
 import uuid
@@ -22,6 +23,7 @@ from backend.services.data import ModelUnavailable, get_pipeline_spec
 from backend.services.datasets import DatasetError, DatasetInUseError, UploadTooLargeError, purge_expired_datasets
 from backend.services.errors import NotFoundError
 from backend.services.experiments import RegistryError
+from backend.services.research_data import ResearchDataUnavailable
 from backend.services.model import FeatureInputError, get_trained_model, integrity_problems
 from backend.services.operations import CasePermissionError, CaseTransitionError, PipelineBusyError, run_scoring_pipeline
 from backend.services.reports import ReportsUnavailable, purge_expired_reports, reports_status
@@ -79,8 +81,8 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(
-    title="GridSentinel API",
-    version="2.0.0",
+    title="GridSentinel X API",
+    version="3.0.0",
     lifespan=lifespan,
     # Interactive docs expose the whole API surface; keep them to development.
     docs_url="/api/docs" if IS_DEVELOPMENT else None,
@@ -114,6 +116,18 @@ CORE_ROUTERS = (model, research, customers, cases, pipeline, predict, datasets, 
 for module in CORE_ROUTERS:
     app.include_router(module.router, dependencies=[Depends(current_user)])
 
+# GridSentinel X research workspaces. Each is one module in backend/routers; a workspace that is
+# not installed is simply absent from the API (the console shows it as unavailable).
+EXTENSION_ROUTERS = ("observatory", "imbalance", "deeplab", "statistics", "xai", "twin", "defense", "exports")
+for name in EXTENSION_ROUTERS:
+    try:
+        extension = importlib.import_module(f"backend.routers.{name}")
+    except ModuleNotFoundError as exc:
+        if exc.name != f"backend.routers.{name}":
+            raise
+        continue
+    app.include_router(extension.router, dependencies=[Depends(current_user)])
+
 
 @app.get("/api/health", response_model=Health)
 def health():
@@ -132,6 +146,11 @@ def health():
 @app.exception_handler(NotFoundError)
 async def not_found(request: Request, exc: NotFoundError):
     return JSONResponse(status_code=404, content={"detail": str(exc)})
+
+
+@app.exception_handler(ResearchDataUnavailable)
+async def research_data_unavailable(request: Request, exc: ResearchDataUnavailable):
+    return JSONResponse(status_code=503, content={"detail": str(exc)})
 
 
 @app.exception_handler(RegistryError)

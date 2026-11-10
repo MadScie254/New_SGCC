@@ -82,7 +82,7 @@ export function CommandCenterPage() {
         </div>
         <ol className="m-0 grid flex-1 list-none grid-cols-1 gap-2.5 p-0 sm:grid-cols-5">
           {(lastRun?.stages ?? []).map((stage) => (
-            <li key={stage.key} className="flex min-w-0 items-center gap-2.5 rounded-lg border border-line bg-[#FAFAF8] px-3 py-2.5">
+            <li key={stage.key} className="flex min-w-0 items-center gap-2.5 rounded-lg border border-line bg-[#0D1320] px-3 py-2.5">
               {lastRun?.status === "failed" ? <XCircle className="h-[18px] w-[18px] shrink-0 text-risk" aria-hidden /> : <CheckCircle2 className="h-[18px] w-[18px] shrink-0 text-cobalt" aria-hidden />}
               <div className="flex min-w-0 flex-col">
                 <span className="flex items-baseline justify-between gap-2 text-[13px] font-medium">{stage.name}<span className="font-mono text-[11px] font-normal text-ink-3">{fmtSeconds(stage.seconds)}</span></span>
@@ -117,7 +117,7 @@ export function CommandCenterPage() {
               </thead>
               <tbody>
                 {queue.data?.items.map((item) => (
-                  <tr key={item.customer_id} className="group h-[52px] cursor-pointer border-b border-[#F1EFEA] hover:bg-surface-alt" onClick={() => navigate(`/cases/${item.customer_id}`)}>
+                  <tr key={item.customer_id} className="group h-[52px] cursor-pointer border-b border-[#18212F] hover:bg-surface-alt" onClick={() => navigate(`/cases/${item.customer_id}`)}>
                     <td className="pl-[22px] font-mono text-xs text-ink-3">{item.rank}</td>
                     <td className="font-mono text-[13px]">
                       <Link to={`/cases/${item.customer_id}`} className="hover:text-cobalt" onClick={(e) => e.stopPropagation()}>{shortId(item.customer_id)}</Link>
@@ -125,7 +125,7 @@ export function CommandCenterPage() {
                     <td className="pr-4">
                       <span className="flex items-center gap-2.5">
                         <span className="hidden h-1.5 w-20 overflow-hidden rounded-full bg-tint 2xl:flex">
-                          <span className="block h-full" style={{ width: `${item.risk_score * 100}%`, background: item.risk_tier === "high" ? "#B93C15" : "#E0873A" }} />
+                          <span className="block h-full" style={{ width: `${item.risk_score * 100}%`, background: item.risk_tier === "high" ? "#F2685C" : "#F5A524" }} />
                         </span>
                         <span className="w-10 text-right font-mono text-[13px] tabular">{item.risk_score.toFixed(3)}</span>
                         <TierBadge tier={item.risk_tier} />
@@ -148,7 +148,7 @@ export function CommandCenterPage() {
           <Card label="Risk distribution" className="flex flex-col gap-3.5 px-[22px] py-5">
             <CardHeader title="Risk distribution" action={<span className="text-xs text-ink-3">log scale</span>} />
             {dist.data ? <RiskHistogram edges={dist.data.edges} total={dist.data.counts} threshold={dist.data.threshold} /> : <Skeleton className="h-[170px]" />}
-            <Legend items={[{ color: "#E0873A", label: "At or above τ" }, { color: "#C4C9D2", label: "Below τ" }]} />
+            <Legend items={[{ color: "#F5A524", label: "At or above τ" }, { color: "#3B4A5E", label: "Below τ" }]} />
           </Card>
           <Card label="What the threshold means" className="flex flex-1 flex-col gap-3.5 px-[22px] py-5">
             <CardHeader title={m ? `What τ ${m.threshold.toFixed(3)} means` : "What the threshold means"}

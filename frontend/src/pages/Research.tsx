@@ -12,13 +12,13 @@ import { ConfusionGrid, Legend, ReliabilityChart, RiskHistogram, TradeoffChart }
 
 // Validated categorical slots in fixed order; identity only, every value is also printed.
 const PIPELINE_COLORS: Record<string, string> = {
-  proposed: "#2a78d6",
+  proposed: "#4C9BE8",
   xgboost: "#eb6834",
   xgboost_default: "#1baf7a",
   random_forest_smote: "#eda100",
   logistic_regression_smote: "#e87ba4",
-  wide_deep_cnn: "#6b6a66",
-  hybrid: "#0f766e",
+  wide_deep_cnn: "#8494A8",
+  hybrid: "#2DD4BF",
 };
 
 const SCORE_COLUMNS = [
@@ -106,7 +106,7 @@ export function ResearchPage() {
       <div className="grid grid-cols-1 gap-4 xl:grid-cols-[1.3fr_1fr]">
         <Card label="Precision and recall on the test customers" className="flex flex-col gap-3 p-[22px]">
           <CardHeader title="Precision and recall by threshold" subtitle="Test customers; click to read another threshold. The threshold in use was chosen on validation."
-            action={<Legend items={[{ color: "#2346C8", label: "Precision", line: true }, { color: "#E0873A", label: "Recall", line: true }]} />} />
+            action={<Legend items={[{ color: "#38BDF8", label: "Precision", line: true }, { color: "#F5A524", label: "Recall", line: true }]} />} />
           {curve.data && index !== null ? (
             <TradeoffChart points={curve.data.points} index={index} onPick={setIndex} trainedThreshold={curve.data.threshold} />
           ) : <Skeleton className="h-64" />}
@@ -118,7 +118,7 @@ export function ResearchPage() {
           {dist.data ? (
             <RiskHistogram edges={dist.data.edges} total={dist.data.honest.map((h, i) => h + dist.data.theft[i])} theft={dist.data.theft} threshold={dist.data.threshold} height={120} />
           ) : <Skeleton className="h-[140px]" />}
-          <Legend items={[{ color: "#C4C9D2", label: "Honest" }, { color: "#B93C15", label: "Theft" }]} />
+          <Legend items={[{ color: "#3B4A5E", label: "Honest" }, { color: "#F2685C", label: "Theft" }]} />
         </Card>
       </div>
 
@@ -142,12 +142,12 @@ export function ResearchPage() {
               </thead>
               <tbody>
                 {rows.map((row) => (
-                  <tr key={row.model} className="h-11 border-b border-[#F1EFEA]">
+                  <tr key={row.model} className="h-11 border-b border-[#18212F]">
                     <td>
                       <span className="flex items-center gap-2">
                         <span className="h-2.5 w-2.5 shrink-0 rounded-full" style={{ background: PIPELINE_COLORS[row.model] }} aria-hidden />
                         <span className="font-medium">{row.label}</span>
-                        {row.served ? <span className="rounded-full bg-ink px-2 py-0.5 text-[11px] font-medium text-white">in service</span> : null}
+                        {row.served ? <span className="rounded-full bg-cobalt px-2 py-0.5 text-[11px] font-medium text-night">in service</span> : null}
                       </span>
                     </td>
                     {SCORE_COLUMNS.map((c) => (
@@ -180,7 +180,7 @@ export function ResearchPage() {
           <div className="grid grid-cols-1 gap-6 xl:grid-cols-[380px_1fr]">
             <div className="flex flex-col gap-2">
               <ReliabilityChart raw={calibration.data.reliability.raw ?? []} calibrated={calibration.data.reliability.platt ?? []} />
-              <Legend items={[{ color: "#E0873A", label: "Raw score", line: true }, { color: "#2346C8", label: "Calibrated (Platt)", line: true }, { color: "#D9D6CE", label: "Perfect calibration", line: true }]} />
+              <Legend items={[{ color: "#F5A524", label: "Raw score", line: true }, { color: "#38BDF8", label: "Calibrated (Platt)", line: true }, { color: "#2A3648", label: "Perfect calibration", line: true }]} />
               <span className="text-xs text-ink-3">Observed theft rate against predicted probability, pipeline in service.</span>
             </div>
             <div className="overflow-x-auto">
@@ -198,7 +198,7 @@ export function ResearchPage() {
                 </thead>
                 <tbody>
                   {calibration.data.pipelines.map((row) => (
-                    <tr key={row.model} className="h-10 border-b border-[#F1EFEA]">
+                    <tr key={row.model} className="h-10 border-b border-[#18212F]">
                       <td className="font-medium">{row.label}</td>
                       <td className="text-right font-mono tabular text-ink-2">{row.test_raw.brier.toFixed(4)}</td>
                       <td className="text-right font-mono tabular">{row.test_platt.brier.toFixed(4)}</td>
@@ -235,7 +235,7 @@ export function ResearchPage() {
                 </thead>
                 <tbody>
                   {stages.map((s) => (
-                    <tr key={s.name} className="h-10 border-b border-[#F1EFEA]">
+                    <tr key={s.name} className="h-10 border-b border-[#18212F]">
                       <td className="font-medium">{s.name}</td>
                       <td className="text-right font-mono tabular">{fmtInt(s.counts.honest)}</td>
                       <td className="text-right font-mono tabular">{fmtInt(s.counts.theft)}</td>
