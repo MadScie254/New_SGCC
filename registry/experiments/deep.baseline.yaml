@@ -1,0 +1,24 @@
+id: deep.baseline
+version: 1
+title: Wide & Deep CNN baseline on the study's split
+protocol: original
+phase: documented_extension
+kind: deep_learning
+summary: >
+  Trains the Wide & Deep CNN (wide dense layer on the 1,036-day series; three 3x3 convolutions
+  on the 148-week by 7-day image with a missing-reading channel) with a class-weighted loss and
+  early stopping on validation PR-AUC, then compares it with standard XGBoost by paired bootstrap.
+command: ["scripts/deep_baseline.py"]
+needs: [train.full]
+needs_torch: true
+expected_minutes: 8
+pipelines: [wide_deep_cnn, xgboost]
+thesis: [RQ4, "Fig 5.25"]
+leakage_controls:
+  - Per-customer scaling uses only that customer's own readings.
+  - Early stopping, calibration and the threshold use validation customers.
+outputs: [artifacts/deep_baseline.json, artifacts/predictions/extensions_test.csv.gz]
+progress:
+  - {pattern: "^epoch \\d+:", stage: "Training the CNN", span: [0.05, 0.8], count: 30}
+  - {pattern: "^test: PR-AUC", stage: "Scored", fraction: 0.85}
+  - {pattern: "resamples$", stage: "Bootstrap", span: [0.85, 0.98], count: 10}

@@ -1,0 +1,22 @@
+id: resampling.study
+version: 1
+title: SMOTE+ENN on raw readings, and the resampling sensitivity grid
+protocol: original
+phase: documented_extension
+kind: ablation
+summary: >
+  Separates the two things the proposed pipeline changes. SMOTE+ENN is applied to raw readings,
+  tuned and scored like the other pipelines (the "fair test"), and a grid of ratios, ENN
+  neighbourhoods and resampling variants is cross-validated with standard XGBoost's settings.
+command: ["scripts/resampling_study.py"]
+needs: [train.full]
+expected_minutes: 30
+thesis: [SO1, RQ2, "Fig 5.21"]
+leakage_controls:
+  - The fair test is tuned on training customers, calibrated and thresholded on validation, and scored on test once.
+  - The grid uses the development customers only.
+outputs: [artifacts/resampling_study.json, artifacts/predictions/extensions_test.csv.gz]
+progress:
+  - {pattern: "Trial \\d+/\\d+", stage: "Tuning the fair test", span: [0.05, 0.5], count: 40}
+  - {pattern: "^fair test:", stage: "Fair test scored", fraction: 0.55}
+  - {pattern: "PR-AUC \\d\\.\\d+ ± ", stage: "Resampling grid", span: [0.55, 0.97], count: 13}

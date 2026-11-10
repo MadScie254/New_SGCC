@@ -1,0 +1,23 @@
+id: hybrid.splits
+version: 1
+title: The hybrid ensemble on six random splits, with paired tests on the study's split
+protocol: original
+phase: documented_extension
+kind: deep_learning
+summary: >
+  Rebuilds the hybrid (CNN weight chosen on validation PR-AUC over a 0.05 grid, Platt
+  recalibration, F1 threshold on validation) on six stratified splits and tests it against its
+  two parts on the study's split by paired bootstrap and McNemar's exact test.
+command: ["scripts/hybrid_study.py"]
+needs: [train.full]
+needs_torch: true
+expected_minutes: 40
+pipelines: [hybrid, wide_deep_cnn, xgboost]
+thesis: [RQ4, "Fig 5.26"]
+leakage_controls:
+  - The blend weight, both calibrations and the threshold are chosen on validation customers of each split.
+  - XGBoost hyperparameters come from the seed-42 training customers, so the other splits are not independent of tuning.
+outputs: [artifacts/hybrid_study.json]
+progress:
+  - {pattern: "^seed \\d+:", stage: "Hybrid on six splits", span: [0.05, 0.85], count: 6}
+  - {pattern: "resamples$", stage: "Bootstrap", span: [0.85, 0.98], count: 10}

@@ -1,0 +1,21 @@
+id: nested.cv
+version: 1
+title: Nested cross-validation of the whole hybrid procedure
+protocol: original
+phase: documented_extension
+kind: robustness
+summary: >
+  Repeats everything (Optuna tuning, CNN training, blend weight, calibration, threshold) inside
+  five outer folds of all 42,372 customers, so each customer is scored once by models that never
+  saw them. Addresses the concern that the hybrid was designed after seeing a test result.
+command: ["scripts/nested_cv.py"]
+needs: [train.full]
+needs_torch: true
+expected_minutes: 110
+pipelines: [hybrid, wide_deep_cnn, xgboost]
+thesis: ["Fig 5.27"]
+leakage_controls:
+  - Every choice is made inside the outer-training customers of each fold; the outer-test fold is scored once.
+outputs: [artifacts/nested_cv.json]
+progress:
+  - {pattern: "^fold \\d+: w=", stage: "Outer folds", span: [0.02, 0.98], count: 5}

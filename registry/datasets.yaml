@@ -1,0 +1,39 @@
+# GridSentinel X - Registered datasets
+#
+# A run under the original protocol must read the file whose SHA-256 is recorded here; a run on
+# any other file is recorded with its own fingerprint and can never verify a reported finding.
+
+datasets:
+  sgcc_full:
+    title: SGCC electricity-theft dataset (full release)
+    file: data/sgcc_full.csv
+    sha256: 99f8fd315626b1f729a9a03a97cb52ed097ab4d43e5771e21554c9e0c369b9b7
+    bytes: 175194613
+    kind: authentic
+    labelled: true
+    customers: 42372
+    days: 1034
+    theft: 3615
+    honest: 38757
+    first_date: "2014-01-01"
+    last_date: "2016-10-31"
+    absent_dates: ["2016-09-18"]
+    source: >
+      Released by the State Grid Corporation of China with Zheng et al. (2018). Downloaded by
+      scripts/download_data.py from the public mirror github.com/henryRDlab/ElectricityTheftDetection
+      (a split zip), and checked against the size and SHA-256 above, which are the ones the original
+      study recorded for its training data (artifacts/pipeline.json, provenance.data_sha256).
+    caveats:
+      - The research proposal names a Kaggle copy as the source; whether that copy is byte-identical to this mirror has not been checked.
+      - Labels come from the utility's field inspections and are known to be noisy.
+      - The file has no customer locations and no network topology.
+  sgcc_demo:
+    title: Operational demonstration population (3,000 test customers, labels removed)
+    file: data/sgcc_demo.csv.gz
+    sha256: 9b73fd1a2de7dd2915d5864d8095eb2b82fff1dcaef92b269193c3bed436f1e0
+    kind: authentic
+    labelled: false
+    customers: 3000
+    source: >
+      Written by the original study's training run: a stratified sample of its test customers
+      without the FLAG column. Authentic SGCC readings; used as the population the console scores.

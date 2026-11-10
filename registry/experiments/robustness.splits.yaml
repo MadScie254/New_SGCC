@@ -1,0 +1,20 @@
+id: robustness.splits
+version: 1
+title: Six random splits, and reliance on missing-reading features
+protocol: original
+phase: documented_extension
+kind: robustness
+summary: >
+  Repeats the pipeline comparison on six stratified 70/15/15 splits (seeds 42 and 1 to 5) with
+  the tuned hyperparameters held fixed, and cross-validates standard XGBoost with and without
+  its eight missing-reading features.
+command: ["scripts/robustness.py"]
+needs: [train.full, resampling.study]
+expected_minutes: 15
+thesis: [SO4, RQ4, "Fig 5.22", "Fig 5.23"]
+leakage_controls:
+  - Hyperparameters were tuned once on the seed-42 training customers; on other seeds some of those customers are test customers, so the repeated splits are not independent of tuning (a stated limitation).
+outputs: [artifacts/robustness.json]
+progress:
+  - {pattern: "^seed \\d+ ", stage: "Repeated splits", span: [0.05, 0.75], count: 36}
+  - {pattern: "PR-AUC \\d\\.\\d+ ± ", stage: "Missing-reading variants", span: [0.75, 0.97], count: 4}

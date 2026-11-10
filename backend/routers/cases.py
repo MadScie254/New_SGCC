@@ -1,0 +1,37 @@
+from __future__ import annotations
+
+from typing import Optional
+
+from fastapi import APIRouter, Depends, Query
+
+from backend.dependencies.auth import User, current_user
+from backend.schemas import CaseDetail, CaseList, CaseStatus, CaseUpdate
+from backend.services import db
+from backend.services.operations import get_case, list_cases, update_case
+
+router = APIRouter(prefix="/api/cases", tags=["cases"])
+
+
+@router.get("", response_model=CaseList)
+def cases(
+    status: Optional[CaseStatus] = None,
+    tier: Optional[str] = Query(default=None, pattern="^(high|medium|low)$"),
+    search: Optional[str] = Query(default=None, min_length=1, max_length=64),
+    page: int = Query(default=1, ge=1),
+    page_size: int = Query(default=25, ge=1, le=100),
+):
+    return list_cases(status=status, tier=tier, search=search, page=page, page_size=page_size)
+
+
+@router.get("/{customer_id}", response_model=CaseDetail)
+def case(customer_id: str, user: User = Depends(current_user)):
+    return get_case(customer_id, user.role)
+
+
+@router.patch("/{customer_id}", response_model=CaseDetail)
+def patch_case(customer_id: str, payload: CaseUpdate, user: User = Depends(current_user)):
+    result = update_case(customer_id, user.name, user.role, status=payload.status, note=payload.note,
+                         reason=payload.reason, evidence=payload.evidence)
+    if payload.status is not None:
+        db.audit(user.name, user.role, "case.status", customer_id, f"{payload.status}: {payload.reason or ''}".strip(": "))
+    return result

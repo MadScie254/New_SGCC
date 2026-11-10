@@ -1,0 +1,17 @@
+id: stats.literature
+version: 1
+title: Ranking metrics used in the SGCC literature, and budget value
+protocol: original
+phase: documented_extension
+kind: statistics
+summary: >
+  MAP@100, MAP@200, precision and recall in the top shares of the ranked list, and net value
+  under an example inspection budget, with bootstrap intervals for differences from standard XGBoost.
+command: ["scripts/literature_metrics.py"]
+needs: [train.full, resampling.study, deep.baseline]
+needs_data: false
+expected_minutes: 2
+settings:
+  - {name: resamples, label: Bootstrap resamples, type: int, default: 2000, minimum: 200, maximum: 20000, flag: "--resamples"}
+thesis: [RQ4, "Fig 5.25"]
+outputs: [artifacts/literature_metrics.json]

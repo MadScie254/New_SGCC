@@ -1,0 +1,45 @@
+id: train.full
+version: 1
+title: Full training run - the seven pipelines on the study's split
+protocol: original
+phase: proposed_study
+kind: training
+summary: >
+  The study's training protocol end to end (src.train): clean the series, build the 87 features
+  on raw and cleaned readings, split customers 70/15/15 (stratified, seed 42), tune both XGBoost
+  pipelines with Optuna (40 trials, 5 stratified folds, resampling redone inside every fold), fit
+  the five study pipelines, train the Wide & Deep CNN and the hybrid, calibrate each pipeline on
+  validation, choose thresholds on validation, score the test customers once and publish.
+command: ["-m", "src.train"]
+needs_torch: true
+expected_minutes: 35
+pipelines: [proposed, xgboost, xgboost_default, random_forest_smote, logistic_regression_smote, wide_deep_cnn, hybrid]
+thesis: [SO3, SO4, RQ3, RQ4, "Proposal 3.7-3.11", "Fig 5.1", "Fig 5.2", "Fig 5.11", "Fig 5.14", "Fig 5.15"]
+leakage_controls:
+  - Customers are split before any fitting; no customer is in two splits.
+  - SMOTE and ENN are fitted on training rows only, and again inside every cross-validation fold.
+  - Median imputation is learned from training rows.
+  - Early stopping, Platt calibration, the hybrid weight and every threshold use validation customers only.
+  - Test customers are scored once, after every choice is fixed.
+outputs:
+  - models/xgb_best.ubj
+  - models/sequence.onnx
+  - models/baselines/comparison_results.json
+  - artifacts/pipeline.json
+  - artifacts/metrics.json
+  - artifacts/tuning.json
+  - artifacts/calibration.json
+  - artifacts/resampling.json
+  - artifacts/learning_curves.json
+  - artifacts/sequence.json
+  - artifacts/predictions/validation.csv.gz
+  - artifacts/predictions/test.csv.gz
+progress:
+  - {pattern: "Cleaning:", stage: "Cleaning series", fraction: 0.04}
+  - {pattern: "Feature matrix:", stage: "Building features", fraction: 0.10}
+  - {pattern: "Split:", stage: "Splitting customers", fraction: 0.11}
+  - {pattern: "Trial \\d+/\\d+", stage: "Optuna tuning", span: [0.12, 0.70], count: 80}
+  - {pattern: "validation PR-AUC \\d", stage: "Fitting pipelines", span: [0.70, 0.78], count: 5}
+  - {pattern: "epoch \\d+:", stage: "Training the CNN", span: [0.78, 0.94], count: 30}
+  - {pattern: "Serving ", stage: "Scoring the test customers", fraction: 0.95}
+  - {pattern: "Published \\d+ files", stage: "Publishing", fraction: 0.99}

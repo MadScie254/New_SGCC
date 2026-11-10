@@ -1,0 +1,20 @@
+id: ablation.components
+version: 1
+title: One-change-at-a-time ablation on the development customers
+protocol: original
+phase: proposed_study
+kind: ablation
+summary: >
+  Five-fold cross-validation on the 36,016 training and validation customers, one change at a
+  time: 25 core features against all 87, raw against cleaned readings, SMOTE, SMOTE+ENN, no
+  class weight, default hyperparameters. The test customers are not touched.
+command: ["scripts/ablation.py"]
+needs: [train.full]
+expected_minutes: 25
+thesis: [SO2, SO3, RQ1, RQ3, "Fig 5.6"]
+leakage_controls:
+  - Test customers are excluded before the folds are made.
+  - Resampling is redone inside every fold on its training part only.
+outputs: [artifacts/ablation.json, docs/thesis-figures/fig-5-6-ablation.png]
+progress:
+  - {pattern: "^[A-G]\\. ", stage: "Ablation variants", span: [0.1, 0.95], count: 7}

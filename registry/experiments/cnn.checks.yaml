@@ -1,0 +1,20 @@
+id: cnn.checks
+version: 1
+title: CNN training seeds and the missing-reading channel
+protocol: original
+phase: documented_extension
+kind: explainability
+summary: >
+  Retrains the CNN with five seeds, and without its missing-reading channel (and with September
+  2016 replaced), to measure how much of the hybrid's result depends on the pattern of missing
+  readings rather than on consumption behaviour.
+command: ["scripts/cnn_checks.py"]
+needs: [train.full]
+needs_torch: true
+expected_minutes: 50
+pipelines: [hybrid, wide_deep_cnn, xgboost]
+thesis: ["Fig 5.28", "Shortcut-learning check"]
+outputs: [artifacts/cnn_checks.json]
+progress:
+  - {pattern: "^seed \\d+: cnn", stage: "Training seeds", span: [0.02, 0.6], count: 5}
+  - {pattern: ": cnn \\d\\.\\d+, hybrid", stage: "Missing-reading variants", span: [0.6, 0.98], count: 8}

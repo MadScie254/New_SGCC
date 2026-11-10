@@ -1,0 +1,26 @@
+id: stats.significance
+version: 1
+title: Paired bootstrap and McNemar tests of the five study pipelines
+protocol: original
+phase: proposed_study
+kind: statistics
+summary: >
+  Paired stratified bootstrap of the test customers (thieves and honest customers resampled
+  separately) for every metric and for the difference between the proposed pipeline and each
+  other pipeline, Holm-adjusted across the four comparisons, and McNemar's exact test on the
+  paired flag decisions. Reads saved test predictions; nothing is refitted.
+command: ["scripts/significance.py"]
+needs: [train.full]
+needs_data: false
+expected_minutes: 2
+settings:
+  - {name: resamples, label: Bootstrap resamples, type: int, default: 10000, minimum: 200, maximum: 50000, flag: "--resamples"}
+  - {name: seed, label: Random seed, type: int, default: 42, minimum: 0, maximum: 100000, flag: "--seed"}
+pipelines: [proposed, xgboost, xgboost_default, random_forest_smote, logistic_regression_smote]
+thesis: [SO4, RQ4, "Proposal 3.11", "Fig 5.16"]
+leakage_controls:
+  - Uses only predictions saved by the training run; thresholds are the validation-chosen ones.
+outputs: [artifacts/significance.json]
+progress:
+  - {pattern: "resamples$", stage: "Bootstrap", span: [0.05, 0.95], count: 10}
+  - {pattern: "^wrote ", stage: "Writing", fraction: 0.99}

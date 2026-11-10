@@ -1,0 +1,16 @@
+id: history.length
+version: 1
+title: Detection quality by length of meter history
+protocol: original
+phase: documented_extension
+kind: ablation
+summary: >
+  Standard XGBoost refitted with only the most recent 3, 6, 12, 18, 24 or 34 months of readings,
+  each calibrated and thresholded on validation and scored on the test customers.
+command: ["scripts/history_length.py"]
+needs: [train.full]
+expected_minutes: 8
+thesis: ["Fig 5.24"]
+outputs: [artifacts/history_length.json]
+progress:
+  - {pattern: "^last \\d+ months", stage: "History windows", span: [0.1, 0.97], count: 6}

@@ -1,0 +1,153 @@
+# GridSentinel X - Ledger of reported findings
+#
+# Every number here was typed from the documents of the original study (the sgcc repository at
+# commit 081e814: README.md, docs/proposal-alignment.md, docs/data-quality.md), at the precision
+# those documents print. They are REPORTED findings. A finding becomes VERIFIED only when a sealed
+# rerun of its experiment under the original protocol lands inside the tolerance declared below.
+#
+# The tolerances were written on 2026-11-10, before any rerun in this repository had finished.
+# Changing one after seeing a result would be a protocol violation; the file's SHA-256 is recorded
+# in every run that is checked against it.
+#
+# Outcome of a check:
+#   exact             the rerun value, rounded to the reported decimals, equals the reported value
+#   within_tolerance  |rerun - reported| <= tolerance
+#   discrepant        anything else; both values are kept and the difference is shown
+#
+# Classes and their tolerances:
+#   deterministic  seeded tree, forest and linear models, counts and statistics computed from saved
+#                  predictions. Expected to reproduce exactly; 0.002 allows for floating-point
+#                  summation order on a different CPU and thread count.
+#   stochastic     anything that involves training the CNN. The original study itself reports that
+#                  the hybrid's test PR-AUC varies with the training seed (0.631 +/- 0.011 over five
+#                  seeds) and PyTorch does not promise identical results across builds and CPUs.
+#                  Ranking metrics: 0.03 (about 2.5 reported seed SDs). Metrics at a threshold
+#                  (recall, precision, F1, MCC, G-Mean) move more because the threshold is re-chosen
+#                  on validation: 0.06.
+#   count          integers that must match exactly.
+#   hardware       timings. Recorded, never verified: they depend on the machine.
+
+tolerances:
+  deterministic: 0.002
+  stochastic_ranking: 0.03
+  stochastic_threshold: 0.06
+  count: 0
+
+tables:
+  - id: T1
+    title: Test-set comparison of the seven pipelines (6,356 test customers, 542 theft)
+    source: "README.md results table; docs/proposal-alignment.md section 1"
+    thesis: [SO4, RQ4]
+    experiment: train.full
+    artifact: models/baselines/comparison_results.json
+    decimals: 3
+    columns: [auc, pr_auc, recall, precision, f1, mcc, gmean]
+    column_class: {auc: ranking, pr_auc: ranking, recall: threshold, precision: threshold, f1: threshold, mcc: threshold, gmean: threshold}
+    rows:
+      proposed: {label: "SMOTE+ENN + XGBoost (proposed)", class: deterministic, values: [0.828, 0.462, 0.494, 0.389, 0.435, 0.379, 0.677]}
+      xgboost: {label: "XGBoost, no resampling", class: deterministic, values: [0.850, 0.513, 0.467, 0.487, 0.476, 0.429, 0.667]}
+      xgboost_default: {label: "XGBoost, default settings", class: deterministic, values: [0.839, 0.488, 0.483, 0.439, 0.460, 0.408, 0.675]}
+      random_forest_smote: {label: "Random forest + SMOTE", class: deterministic, values: [0.812, 0.411, 0.432, 0.366, 0.396, 0.336, 0.634]}
+      logistic_regression_smote: {label: "Logistic regression + SMOTE", class: deterministic, values: [0.754, 0.314, 0.371, 0.318, 0.342, 0.277, 0.586]}
+      wide_deep_cnn: {label: "Wide & Deep CNN", class: stochastic, values: [0.880, 0.538, 0.520, 0.516, 0.518, 0.473, 0.705]}
+      hybrid: {label: "Hybrid: CNN + XGBoost", class: stochastic, values: [0.908, 0.617, 0.611, 0.525, 0.564, 0.522, 0.761]}
+
+  - id: T2
+    title: Ablation on the development customers, mean PR-AUC of five folds
+    source: "README.md ablation table"
+    thesis: [SO2, SO3, RQ1, RQ3]
+    experiment: ablation.components
+    artifact: artifacts/ablation.json
+    prefix: [variants]
+    decimals: 3
+    columns: [roc_auc, pr_auc]
+    rows:
+      "A. Raw, 25 core features": {label: "A. Raw readings, 25 core features", class: deterministic, values: [0.829, 0.438]}
+      "B. Raw, all features (standard XGBoost)": {label: "B. Raw readings, all 87 features", class: deterministic, values: [0.854, 0.507]}
+      "C. Cleaned, all features": {label: "C. Cleaned readings, all features", class: deterministic, values: [0.847, 0.492]}
+      "D. Cleaned + SMOTE": {label: "D. Cleaned + SMOTE", class: deterministic, values: [0.830, 0.453]}
+      "E. Cleaned + SMOTE+ENN (proposed)": {label: "E. Cleaned + SMOTE+ENN (proposed)", class: deterministic, values: [0.827, 0.420]}
+      "F. B with scale_pos_weight = 1": {label: "F. B with scale_pos_weight = 1", class: deterministic, values: [0.855, 0.510]}
+      "G. B with default hyperparameters": {label: "G. B with default hyperparameters", class: deterministic, values: [0.832, 0.460]}
+
+findings:
+  # --- The training run -------------------------------------------------------------------
+  - {id: F-split-train, claim: "29,660 training customers", source: "docs/proposal-alignment.md section 4", thesis: ["Proposal 3.4"], experiment: train.full, artifact: artifacts/metrics.json, path: [train_customers], reported: 29660, class: count}
+  - {id: F-split-validation, claim: "6,356 validation customers", source: "docs/proposal-alignment.md section 4", thesis: ["Proposal 3.4"], experiment: train.full, artifact: artifacts/metrics.json, path: [validation_customers], reported: 6356, class: count}
+  - {id: F-split-test, claim: "6,356 test customers", source: "README.md", thesis: ["Proposal 3.4"], experiment: train.full, artifact: artifacts/metrics.json, path: [test_customers], reported: 6356, class: count}
+  - {id: F-features, claim: "The served model reads 87 features", source: "README.md", thesis: ["Proposal 3.8"], experiment: train.full, artifact: artifacts/metrics.json, path: [n_features], reported: 87, class: count}
+  - {id: F-hybrid-weight, claim: "The hybrid is 0.55 x CNN + 0.45 x XGBoost (weight chosen on validation PR-AUC)", source: "README.md, Served model", thesis: [RQ4], experiment: train.full, artifact: models/baselines/comparison_results.json, path: [hybrid, weight_sequence], reported: 0.55, decimals: 2, tolerance: 0.1001, class: stochastic, note: "The weight is chosen on a 0.05 grid; two grid steps either side are accepted."}
+  - {id: F-hybrid-threshold, claim: "Served threshold 0.216 (calibrated probability)", source: "README.md", thesis: [RQ4], experiment: train.full, artifact: artifacts/pipeline.json, path: [threshold], reported: 0.216, decimals: 3, tolerance: 0.08, class: stochastic, note: "Re-chosen on validation by each run; the original study reports 0.216 to 0.381 across six splits."}
+  - {id: F-val-hybrid, claim: "Validation PR-AUC of the hybrid 0.636", source: "README.md, Served model", thesis: [RQ4], experiment: train.full, artifact: artifacts/sequence.json, path: [validation_pr_auc, hybrid], reported: 0.636, decimals: 3, class: stochastic_ranking}
+  - {id: F-val-cnn, claim: "Validation PR-AUC of the CNN 0.561", source: "README.md, Served model", thesis: [RQ4], experiment: train.full, artifact: artifacts/sequence.json, path: [validation_pr_auc, wide_deep_cnn], reported: 0.561, decimals: 3, class: stochastic_ranking}
+  - {id: F-val-xgboost, claim: "Validation PR-AUC of standard XGBoost 0.501", source: "README.md, Served model", thesis: [RQ3], experiment: train.full, artifact: artifacts/sequence.json, path: [validation_pr_auc, xgboost], reported: 0.501, decimals: 3, class: deterministic}
+  - {id: F-hybrid-tp, claim: "At its threshold the hybrid finds 331 of the 542 test thieves", source: "README.md, Served model", thesis: [RQ4], experiment: train.full, artifact: artifacts/metrics.json, path: [confusion_matrix, tp], reported: 331, tolerance: 33, class: stochastic, note: "0.06 of 542 thieves."}
+  - {id: F-hybrid-fp, claim: "with 300 false alarms", source: "README.md, Served model", thesis: [RQ4], experiment: train.full, artifact: artifacts/metrics.json, path: [confusion_matrix, fp], reported: 300, tolerance: 120, class: stochastic, note: "False alarms follow the re-chosen threshold; a wide band is declared and the precision row of T1 is the tighter check."}
+  - {id: F-cv-xgboost, claim: "Best cross-validated PR-AUC of standard XGBoost in tuning (5 folds)", source: "artifacts/tuning.json", thesis: [RQ3], experiment: train.full, artifact: artifacts/tuning.json, path: [xgboost, cv_best_score], reported: 0.505, decimals: 3, class: deterministic}
+  - {id: F-cv-proposed, claim: "Best cross-validated PR-AUC of the proposed pipeline in tuning (5 folds)", source: "artifacts/tuning.json", thesis: [RQ3], experiment: train.full, artifact: artifacts/tuning.json, path: [proposed, cv_best_score], reported: 0.457, decimals: 3, class: deterministic}
+  # --- What SMOTE+ENN does to the training data (Objective 1) ------------------------------
+  - {id: F-enn-honest-removed, claim: "ENN removes 4,539 honest boundary rows", source: "README.md", thesis: [SO1, RQ2], experiment: train.full, artifact: artifacts/resampling.json, path: [smote_enn, counts, honest_removed_by_enn], reported: 4539, class: count}
+  - {id: F-smote-synthetic, claim: "SMOTE creates 11,035 synthetic theft rows", source: "artifacts/resampling.json", thesis: [SO1, RQ2], experiment: train.full, artifact: artifacts/resampling.json, path: [smote, counts, synthetic_created], reported: 11035, class: count}
+  - {id: F-fisher-before, claim: "Mean Fisher ratio before resampling 0.014", source: "README.md", thesis: [SO1, RQ2], experiment: train.full, artifact: artifacts/resampling.json, path: [before, fisher_ratio_mean], reported: 0.014, decimals: 3, class: deterministic}
+  - {id: F-fisher-after, claim: "Mean Fisher ratio after SMOTE+ENN 0.022", source: "README.md", thesis: [SO1, RQ2], experiment: train.full, artifact: artifacts/resampling.json, path: [smote_enn, diagnostics, fisher_ratio_mean], reported: 0.022, decimals: 3, class: deterministic}
+  - {id: F-noise-before, claim: "90% of theft rows have honest-majority neighbours before resampling", source: "README.md", thesis: [SO1, RQ2], experiment: train.full, artifact: artifacts/resampling.json, path: [before, boundary_noise_theft], reported: 0.90, decimals: 2, tolerance: 0.01, class: deterministic}
+  - {id: F-noise-after, claim: "23% after SMOTE+ENN", source: "README.md", thesis: [SO1, RQ2], experiment: train.full, artifact: artifacts/resampling.json, path: [smote_enn, diagnostics, boundary_noise_theft], reported: 0.23, decimals: 2, tolerance: 0.01, class: deterministic}
+  # --- Calibration -----------------------------------------------------------------------
+  - {id: F-ece-proposed-raw, claim: "Proposed pipeline, test ECE before calibration 0.093", source: "README.md, Calibration", thesis: ["Proposal 3.10 (added)"], experiment: train.full, artifact: artifacts/calibration.json, path: [pipelines, proposed, test, raw, ece], reported: 0.093, decimals: 3, class: deterministic}
+  - {id: F-ece-proposed-platt, claim: "and 0.007 after Platt scaling fitted on validation", source: "README.md, Calibration", thesis: ["Proposal 3.10 (added)"], experiment: train.full, artifact: artifacts/calibration.json, path: [pipelines, proposed, test, platt, ece], reported: 0.007, decimals: 3, class: deterministic}
+  - {id: F-brier-proposed-raw, claim: "Proposed pipeline, test Brier score before calibration 0.080", source: "README.md, Calibration", thesis: ["Proposal 3.10 (added)"], experiment: train.full, artifact: artifacts/calibration.json, path: [pipelines, proposed, test, raw, brier], reported: 0.080, decimals: 3, class: deterministic}
+  - {id: F-brier-proposed-platt, claim: "and 0.060 after", source: "README.md, Calibration", thesis: ["Proposal 3.10 (added)"], experiment: train.full, artifact: artifacts/calibration.json, path: [pipelines, proposed, test, platt, brier], reported: 0.060, decimals: 3, class: deterministic}
+  - {id: F-ece-xgboost-raw, claim: "Standard XGBoost, test ECE before calibration 0.010", source: "README.md, Calibration", thesis: ["Proposal 3.10 (added)"], experiment: train.full, artifact: artifacts/calibration.json, path: [pipelines, xgboost, test, raw, ece], reported: 0.010, decimals: 3, class: deterministic}
+  - {id: F-ece-xgboost-platt, claim: "and 0.007 after", source: "README.md, Calibration", thesis: ["Proposal 3.10 (added)"], experiment: train.full, artifact: artifacts/calibration.json, path: [pipelines, xgboost, test, platt, ece], reported: 0.007, decimals: 3, class: deterministic}
+  - {id: F-ece-hybrid-raw, claim: "Hybrid, test ECE before its final calibration 0.025", source: "README.md, Calibration", thesis: [RQ4], experiment: train.full, artifact: artifacts/calibration.json, path: [pipelines, hybrid, test, raw, ece], reported: 0.025, decimals: 3, tolerance: 0.015, class: stochastic}
+  - {id: F-ece-hybrid-platt, claim: "and 0.004 after", source: "README.md, Calibration", thesis: [RQ4], experiment: train.full, artifact: artifacts/calibration.json, path: [pipelines, hybrid, test, platt, ece], reported: 0.004, decimals: 3, tolerance: 0.01, class: stochastic}
+  - {id: F-brier-hybrid-platt, claim: "Hybrid, test Brier score after calibration 0.049", source: "README.md, Calibration", thesis: [RQ4], experiment: train.full, artifact: artifacts/calibration.json, path: [pipelines, hybrid, test, platt, brier], reported: 0.049, decimals: 3, tolerance: 0.005, class: stochastic}
+  # --- Significance of the five study pipelines ------------------------------------------------
+  - {id: F-sig-xgb-prauc, claim: "Proposed minus standard XGBoost, PR-AUC -0.051", source: "README.md, Significance", thesis: [SO4, RQ4], experiment: stats.significance, artifact: artifacts/significance.json, path: [comparisons, xgboost, pr_auc, difference], reported: -0.051, decimals: 3, class: deterministic}
+  - {id: F-sig-xgb-prauc-lo, claim: "95% interval lower bound -0.076", source: "README.md, Significance", thesis: [SO4, RQ4], experiment: stats.significance, artifact: artifacts/significance.json, path: [comparisons, xgboost, pr_auc, ci_low], reported: -0.076, decimals: 3, class: deterministic}
+  - {id: F-sig-xgb-prauc-hi, claim: "95% interval upper bound -0.027", source: "README.md, Significance", thesis: [SO4, RQ4], experiment: stats.significance, artifact: artifacts/significance.json, path: [comparisons, xgboost, pr_auc, ci_high], reported: -0.027, decimals: 3, class: deterministic}
+  - {id: F-sig-xgb-recall, claim: "Proposed minus standard XGBoost, recall +0.028 (not significant)", source: "README.md, Significance", thesis: [SO4, RQ4], experiment: stats.significance, artifact: artifacts/significance.json, path: [comparisons, xgboost, recall, difference], reported: 0.028, decimals: 3, class: deterministic}
+  - {id: F-sig-xgb-recall-p, claim: "Holm-adjusted p for that recall difference 0.31", source: "README.md, Significance", thesis: [SO4, RQ4], experiment: stats.significance, artifact: artifacts/significance.json, path: [comparisons, xgboost, recall, p_holm], reported: 0.31, decimals: 2, tolerance: 0.02, class: deterministic}
+  - {id: F-sig-default-prauc, claim: "Proposed minus default XGBoost, PR-AUC -0.026", source: "README.md, Significance", thesis: [SO4, RQ4], experiment: stats.significance, artifact: artifacts/significance.json, path: [comparisons, xgboost_default, pr_auc, difference], reported: -0.026, decimals: 3, class: deterministic}
+  - {id: F-sig-default-p, claim: "Holm-adjusted p for that difference 0.07", source: "README.md, Significance", thesis: [SO4, RQ4], experiment: stats.significance, artifact: artifacts/significance.json, path: [comparisons, xgboost_default, pr_auc, p_holm], reported: 0.07, decimals: 2, tolerance: 0.02, class: deterministic}
+  - {id: F-sig-rf-prauc, claim: "Proposed minus random forest + SMOTE, PR-AUC +0.050", source: "README.md, Significance", thesis: [SO4, RQ4], experiment: stats.significance, artifact: artifacts/significance.json, path: [comparisons, random_forest_smote, pr_auc, difference], reported: 0.050, decimals: 3, class: deterministic}
+  - {id: F-sig-lr-prauc, claim: "Proposed minus logistic regression + SMOTE, PR-AUC +0.148", source: "README.md, Significance", thesis: [SO4, RQ4], experiment: stats.significance, artifact: artifacts/significance.json, path: [comparisons, logistic_regression_smote, pr_auc, difference], reported: 0.148, decimals: 3, class: deterministic}
+  # --- Resampling study ------------------------------------------------------------------
+  - {id: F-fair-prauc, claim: "SMOTE+ENN on raw readings, tuned: test PR-AUC 0.504", source: "README.md, Stress tests", thesis: [SO1, RQ2], experiment: resampling.study, artifact: artifacts/resampling_study.json, path: [fair_test, result, metrics, pr_auc], reported: 0.504, decimals: 3, class: deterministic}
+  - {id: F-grid-none, claim: "Resampling grid, no resampling: CV PR-AUC 0.507", source: "README.md, Stress tests", thesis: [SO1, RQ2], experiment: resampling.study, artifact: artifacts/resampling_study.json, path: [grid, variants, "No resampling", pr_auc], reported: 0.507, decimals: 3, class: deterministic}
+  - {id: F-grid-smote-1, claim: "SMOTE at ratio 1.0: 0.445", source: "README.md, Stress tests", thesis: [SO1, RQ2], experiment: resampling.study, artifact: artifacts/resampling_study.json, path: [grid, variants, "SMOTE 1.0", pr_auc], reported: 0.445, decimals: 3, class: deterministic}
+  - {id: F-grid-smoteenn-1, claim: "SMOTE+ENN at ratio 1.0: 0.411", source: "README.md, Stress tests", thesis: [SO1, RQ2], experiment: resampling.study, artifact: artifacts/resampling_study.json, path: [grid, variants, "SMOTE+ENN 1.0", pr_auc], reported: 0.411, decimals: 3, class: deterministic}
+  # --- Robustness -------------------------------------------------------------------------
+  - {id: F-splits-first, claim: "Standard XGBoost is first on PR-AUC on all six random splits", source: "README.md, Stress tests", thesis: [SO4, RQ4], experiment: robustness.splits, artifact: artifacts/robustness.json, path: [splits, ranked_first_on_pr_auc, xgboost], reported: 6, class: count}
+  - {id: F-miss-all, claim: "CV PR-AUC with all features 0.507", source: "README.md, Stress tests", thesis: ["Shortcut-learning check"], experiment: robustness.splits, artifact: artifacts/robustness.json, path: [missingness, variants, "All features (served model's inputs)", pr_auc], reported: 0.507, decimals: 3, class: deterministic}
+  - {id: F-miss-without, claim: "0.468 without the eight missing-reading features", source: "README.md, Stress tests", thesis: ["Shortcut-learning check"], experiment: robustness.splits, artifact: artifacts/robustness.json, path: [missingness, variants, "Without missing-reading features", pr_auc], reported: 0.468, decimals: 3, class: deterministic}
+  - {id: F-miss-behaviour, claim: "0.400 from consumption behaviour alone", source: "README.md, Stress tests", thesis: ["Shortcut-learning check"], experiment: robustness.splits, artifact: artifacts/robustness.json, path: [missingness, variants, "Consumption behaviour only", pr_auc], reported: 0.400, decimals: 3, class: deterministic}
+  - {id: F-miss-only, claim: "0.333 from the missing-reading features alone", source: "README.md, Stress tests", thesis: ["Shortcut-learning check"], experiment: robustness.splits, artifact: artifacts/robustness.json, path: [missingness, variants, "Missing-reading features only", pr_auc], reported: 0.333, decimals: 3, class: deterministic}
+  # --- History length ------------------------------------------------------------------------
+  - {id: F-history-3, claim: "Test PR-AUC with the last 3 months 0.274", source: "README.md, Stress tests", thesis: ["Fig 5.24"], experiment: history.length, artifact: artifacts/history_length.json, path: [windows, "3", pr_auc], reported: 0.274, decimals: 3, class: deterministic}
+  - {id: F-history-12, claim: "12 months 0.319", source: "README.md, Stress tests", thesis: ["Fig 5.24"], experiment: history.length, artifact: artifacts/history_length.json, path: [windows, "12", pr_auc], reported: 0.319, decimals: 3, class: deterministic}
+  - {id: F-history-24, claim: "24 months 0.396", source: "README.md, Stress tests", thesis: ["Fig 5.24"], experiment: history.length, artifact: artifacts/history_length.json, path: [windows, "24", pr_auc], reported: 0.396, decimals: 3, class: deterministic}
+  # --- Deep baseline and hybrid -------------------------------------------------------------
+  - {id: F-cnn-prauc, claim: "Wide & Deep CNN, test PR-AUC 0.538 on the study's split", source: "README.md, Stress tests", thesis: [RQ4], experiment: deep.baseline, artifact: artifacts/deep_baseline.json, path: [result, metrics, pr_auc], reported: 0.538, decimals: 3, class: stochastic_ranking}
+  - {id: F-cnn-params, claim: "The CNN has 299,866 parameters", source: "README.md, Served model", thesis: [RQ4], experiment: deep.baseline, artifact: artifacts/deep_baseline.json, path: [architecture, parameters], reported: 299866, class: count}
+  - {id: F-hybrid-splits-mean, claim: "Hybrid PR-AUC on six random splits, mean 0.633", source: "README.md, Served model", thesis: [RQ4], experiment: hybrid.splits, artifact: artifacts/hybrid_study.json, path: [summary, hybrid, mean, pr_auc], reported: 0.633, decimals: 3, tolerance: 0.015, class: stochastic, note: "A mean of six runs; half the single-run tolerance."}
+  - {id: F-hybrid-splits-wins, claim: "The hybrid has the higher PR-AUC than standard XGBoost on all six splits", source: "README.md, Served model", thesis: [RQ4], experiment: hybrid.splits, artifact: artifacts/hybrid_study.json, path: [hybrid_higher_pr_auc_than, xgboost], reported: 6, class: count}
+  - {id: F-hybrid-vs-xgb, claim: "Hybrid minus standard XGBoost on the study's split, PR-AUC +0.104", source: "README.md, Served model", thesis: [RQ4], experiment: hybrid.splits, artifact: artifacts/hybrid_study.json, path: [served_split, comparisons, xgboost, pr_auc, difference], reported: 0.104, decimals: 3, class: stochastic_ranking}
+  - {id: F-nested-hybrid, claim: "Nested cross-validation, hybrid PR-AUC 0.629 (mean of five outer folds)", source: "README.md, Checks of the served hybrid", thesis: ["Fig 5.27"], experiment: nested.cv, artifact: artifacts/nested_cv.json, path: [summary, per_model, hybrid, mean, pr_auc], reported: 0.629, decimals: 3, tolerance: 0.015, class: stochastic, note: "A mean of five folds."}
+  - {id: F-nested-xgboost, claim: "Nested cross-validation, XGBoost PR-AUC 0.507", source: "README.md, Checks of the served hybrid", thesis: ["Fig 5.27"], experiment: nested.cv, artifact: artifacts/nested_cv.json, path: [summary, per_model, xgboost, mean, pr_auc], reported: 0.507, decimals: 3, class: deterministic}
+  - {id: F-nested-wins, claim: "The hybrid is best on all five outer folds", source: "README.md, Checks of the served hybrid", thesis: ["Fig 5.27"], experiment: nested.cv, artifact: artifacts/nested_cv.json, path: [summary, hybrid_higher_pr_auc_than, xgboost], reported: 5, class: count}
+  # --- Reliance on missing readings -----------------------------------------------------------
+  - {id: F-seeds-hybrid, claim: "Across five CNN seeds the hybrid scores 0.631 on the test customers (mean)", source: "README.md, Checks of the served hybrid", thesis: ["Fig 5.28"], experiment: cnn.checks, artifact: artifacts/cnn_checks.json, path: [seed_summary, hybrid, pr_auc, mean], reported: 0.631, decimals: 3, tolerance: 0.015, class: stochastic, note: "A mean of five seeds."}
+  - {id: F-nomask-cnn, claim: "Without its missing-reading channel the CNN falls to 0.335", source: "README.md, Checks of the served hybrid", thesis: ["Shortcut-learning check"], experiment: cnn.checks, artifact: artifacts/cnn_checks.json, path: [variants, no_mask, cnn, pr_auc], reported: 0.335, decimals: 3, class: stochastic_ranking}
+  - {id: F-nomask-hybrid, claim: "and the hybrid to 0.525", source: "README.md, Checks of the served hybrid", thesis: ["Shortcut-learning check"], experiment: cnn.checks, artifact: artifacts/cnn_checks.json, path: [variants, no_mask, hybrid, pr_auc], reported: 0.525, decimals: 3, class: stochastic_ranking}
+  - {id: F-behaviour-hybrid, claim: "With no missing-reading information in either part the hybrid reaches 0.433", source: "README.md, Checks of the served hybrid", thesis: ["Shortcut-learning check"], experiment: cnn.checks, artifact: artifacts/cnn_checks.json, path: [variants, no_mask_no_september, hybrid_behaviour_only, pr_auc], reported: 0.433, decimals: 3, class: stochastic_ranking}
+  - {id: F-behaviour-xgboost, claim: "against 0.404 for XGBoost alone", source: "README.md, Checks of the served hybrid", thesis: ["Shortcut-learning check"], experiment: cnn.checks, artifact: artifacts/cnn_checks.json, path: [xgboost_behaviour_only, pr_auc], reported: 0.404, decimals: 3, class: deterministic}
+  # --- The data ---------------------------------------------------------------------------
+  - {id: F-data-customers, claim: "42,372 customers", source: "docs/data-quality.md", thesis: ["Proposal 3.4"], experiment: data.quality, artifact: artifacts/data_quality.json, path: [integrity, customers], reported: 42372, class: count}
+  - {id: F-data-days, claim: "1,034 daily columns (2016-09-18 is absent from the release)", source: "docs/proposal-alignment.md section 4", thesis: ["Proposal 3.4"], experiment: data.quality, artifact: artifacts/data_quality.json, path: [integrity, days], reported: 1034, class: count}
+  - {id: F-data-theft, claim: "3,615 theft-labelled customers", source: "docs/data-quality.md", thesis: ["Proposal 3.4"], experiment: data.quality, artifact: artifacts/data_quality.json, path: [class_distribution, theft], reported: 3615, class: count}
+  - {id: F-data-honest, claim: "38,757 honest-labelled customers", source: "docs/data-quality.md", thesis: ["Proposal 3.4"], experiment: data.quality, artifact: artifacts/data_quality.json, path: [class_distribution, honest], reported: 38757, class: count}
+  - {id: F-data-missing, claim: "25.64% of customer-days are missing", source: "docs/proposal-alignment.md section 4", thesis: ["Proposal 3.6"], experiment: data.quality, artifact: artifacts/data_quality.json, path: [completeness, missing_percent], reported: 25.64, decimals: 2, tolerance: 0.005, class: deterministic}
+  - {id: F-data-over10, claim: "21,375 customers miss more than 10% of days", source: "docs/proposal-alignment.md section 4", thesis: ["Proposal 3.7"], experiment: data.quality, artifact: artifacts/data_quality.json, path: [completeness, customers_over_10pct_missing], reported: 21375, class: count}
+  - {id: F-data-missing-theft, claim: "Theft customers miss 31.5% of days", source: "docs/proposal-alignment.md section 4", thesis: ["Proposal 3.6"], experiment: data.quality, artifact: artifacts/data_quality.json, path: [completeness, missing_percent_theft], reported: 31.5, decimals: 1, tolerance: 0.05, class: deterministic}
+  - {id: F-data-missing-honest, claim: "honest customers 25.1%", source: "docs/proposal-alignment.md section 4", thesis: ["Proposal 3.6"], experiment: data.quality, artifact: artifacts/data_quality.json, path: [completeness, missing_percent_honest], reported: 25.1, decimals: 1, tolerance: 0.05, class: deterministic}

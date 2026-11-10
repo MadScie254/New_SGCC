@@ -1,0 +1,115 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+# Anchored so frontend/src/lib/ is not ignored
+/lib/
+/lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+.venv-*/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Model artifacts (only the served model and baseline summary are committed)
+models/**
+!models/xgb_best.ubj
+!models/sequence.onnx
+!models/baselines/
+!models/baselines/comparison_results.json
+
+# Generated artifacts: the files the API reads and the thesis evidence are committed;
+# runtime state (artifacts/state) and quick runs (artifacts/quick) are not.
+artifacts/**
+!artifacts/manifest.json
+!artifacts/pipeline.json
+!artifacts/calibration.json
+!artifacts/predictions/
+!artifacts/predictions/validation.csv.gz
+!artifacts/predictions/test.csv.gz
+!artifacts/metrics.json
+!artifacts/feature_importance.csv
+!artifacts/best_params.json
+!artifacts/tuning.json
+!artifacts/learning_curves.json
+!artifacts/resampling.json
+!artifacts/preprocessing_log.json
+!artifacts/significance.json
+!artifacts/ablation.json
+!artifacts/data_quality.json
+# Extension studies (scripts/resampling_study.py, robustness.py, literature_metrics.py,
+# history_length.py, deep_baseline.py)
+!artifacts/resampling_study.json
+!artifacts/robustness.json
+!artifacts/literature_metrics.json
+!artifacts/history_length.json
+!artifacts/deep_baseline.json
+!artifacts/hybrid_study.json
+!artifacts/sequence.json
+!artifacts/nested_cv.json
+!artifacts/cnn_checks.json
+!artifacts/predictions/extensions_validation.csv.gz
+!artifacts/predictions/extensions_test.csv.gz
+
+# Data: the full dataset is downloaded (scripts/download_data.py); only the
+# unlabelled operational population the API scores is committed.
+data/**
+!data/sgcc_demo.csv.gz
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+*.err
+logs/
+
+# Local debug output (API probes, health snapshots)
+*.tmp.json
+
+# Environment
+.env
+.env.local
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Frontend build output
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/*.tsbuildinfo
+frontend/playwright-report/
+frontend/test-results/

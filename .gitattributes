@@ -1,2 +1,10 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# Git LFS is not used: the repository's LFS budget is exhausted and the
+# committed model and demo data are small enough for plain git.
+*.ubj binary
+*.gz binary
+*.pdf binary
+
+# Published model files are checked against artifacts/manifest.json by SHA-256,
+# so git must never rewrite their line endings (core.autocrlf on Windows would).
+artifacts/** -text
+models/** -text

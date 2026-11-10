@@ -1,0 +1,13 @@
+id: data.quality
+version: 1
+title: Data quality checklist (proposal Appendix A.1)
+protocol: original
+phase: proposed_study
+kind: data
+summary: >
+  Counts customers, days, absent dates, duplicate identifiers, missing cells by class, implausible
+  readings and zero runs in the released file, and the action log of the cleaning step.
+command: ["scripts/data_quality.py"]
+expected_minutes: 3
+thesis: ["Proposal 3.6", "Appendix A.1"]
+outputs: [artifacts/data_quality.json, docs/data-quality.md]

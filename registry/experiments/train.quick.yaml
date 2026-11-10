@@ -1,0 +1,20 @@
+id: train.quick
+version: 1
+title: Quick training run - a quarter of the customers, five trials
+protocol: exploratory
+phase: new
+kind: training
+summary: >
+  The same code path as the full training run on a stratified 25% sample with 5 Optuna trials
+  and 3 folds. It exists to check that the pipeline runs; its numbers are not study results and
+  can never verify a reported finding.
+command: ["-m", "src.train", "--quick"]
+needs_torch: true
+expected_minutes: 6
+pipelines: [proposed, xgboost, xgboost_default, random_forest_smote, logistic_regression_smote, wide_deep_cnn, hybrid]
+outputs: [artifacts/quick/artifacts/metrics.json]
+progress:
+  - {pattern: "Feature matrix:", stage: "Building features", fraction: 0.15}
+  - {pattern: "Trial \\d+/\\d+", stage: "Optuna tuning", span: [0.2, 0.6], count: 10}
+  - {pattern: "epoch \\d+:", stage: "Training the CNN", span: [0.65, 0.95], count: 30}
+  - {pattern: "Published \\d+ files", stage: "Publishing", fraction: 0.99}
