@@ -57,7 +57,7 @@ export function Button({ variant = "secondary", busy, className, children, ...pr
       disabled={props.disabled || busy}
       className={cn(
         "inline-flex h-11 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-lg px-4 text-sm font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-55",
-        variant === "primary" && "bg-ink text-white hover:bg-[#2A2E36]",
+        variant === "primary" && "bg-cobalt text-night hover:bg-[#7DD3FC]",
         variant === "secondary" && "border border-line bg-surface text-ink hover:border-ink-3",
         variant === "ghost" && "text-ink-2 hover:bg-tint hover:text-ink",
         className,
@@ -71,7 +71,7 @@ export function Button({ variant = "secondary", busy, className, children, ...pr
 
 export function Segmented<T extends string>({ value, options, onChange, label }: { value: T; options: Array<{ value: T; label: ReactNode }>; onChange: (value: T) => void; label: string }) {
   return (
-    <div role="radiogroup" aria-label={label} className="flex gap-1 rounded-xl bg-[#E9E7E1] p-1">
+    <div role="radiogroup" aria-label={label} className="flex gap-1 rounded-xl bg-[#0D1320] p-1">
       {options.map((option) => (
         <button
           key={option.value}
@@ -81,7 +81,7 @@ export function Segmented<T extends string>({ value, options, onChange, label }:
           onClick={() => onChange(option.value)}
           className={cn(
             "h-9 rounded-[9px] px-4 text-[13px] font-medium transition-colors",
-            value === option.value ? "bg-surface text-ink shadow-[0_1px_2px_rgba(20,22,27,0.12)]" : "text-ink-2 hover:text-ink",
+            value === option.value ? "bg-surface text-ink shadow-[0_0_0_1px_rgba(56,189,248,0.35)]" : "text-ink-2 hover:text-ink",
           )}
         >
           {option.label}
@@ -99,7 +99,7 @@ export function Pill({ active, children, onClick }: { active?: boolean; children
       onClick={onClick}
       className={cn(
         "h-9 rounded-full border px-3.5 text-[13px] transition-colors",
-        active ? "border-ink bg-ink text-white" : "border-line bg-surface text-ink hover:border-ink-3",
+        active ? "border-ink bg-cobalt text-night" : "border-line bg-surface text-ink hover:border-ink-3",
       )}
     >
       {children}
@@ -113,7 +113,7 @@ export function TierBadge({ tier, solid }: { tier: string; solid?: boolean }) {
     <span
       className={cn(
         "inline-flex items-center rounded-full px-2.5 py-1 text-xs font-semibold",
-        tier === "high" && (solid ? "bg-risk text-white" : "bg-risk-bg text-risk-text"),
+        tier === "high" && (solid ? "bg-risk text-night" : "bg-risk-bg text-risk-text"),
         tier === "medium" && "bg-amber-bg text-amber-ink",
         tier === "low" && "bg-tint text-ink-2",
       )}

@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  color-scheme: light;
+  color-scheme: dark;
 }
 
 html,
@@ -17,8 +17,8 @@ body,
 body {
   margin: 0;
   font-family: "IBM Plex Sans", system-ui, sans-serif;
-  background: #f3f2ee;
-  color: #14161b;
+  background: #080d17;
+  color: #e6edf5;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -39,13 +39,13 @@ select {
 }
 
 :focus-visible {
-  outline: 2px solid #2346c8;
+  outline: 2px solid #38bdf8;
   outline-offset: 2px;
 }
 
 ::selection {
-  background: #e8edfb;
-  color: #14161b;
+  background: #0b2a3e;
+  color: #e6edf5;
 }
 
 .tabular {
@@ -53,7 +53,7 @@ select {
 }
 
 input[type="range"].studio-range {
-  accent-color: #14161b;
+  accent-color: #38bdf8;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -63,4 +63,20 @@ input[type="range"].studio-range {
     animation: none !important;
     transition: none !important;
   }
+}
+
+/* Scrollbars and form controls on dark surfaces */
+* {
+  scrollbar-color: #1e293a transparent;
+}
+
+input,
+select,
+textarea {
+  color-scheme: dark;
+}
+
+.gsx-grid-bg {
+  background-image: linear-gradient(rgba(56, 189, 248, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(56, 189, 248, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
 }
