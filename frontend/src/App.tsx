@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, type ReactElement } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { AppShell } from "@/layouts/AppShell";
 import { Skeleton } from "@/components/ui";
@@ -13,7 +13,7 @@ import { SettingsPage } from "@/pages/Settings";
 
 // Research workspaces load on demand: the operations console stays small, and the 3D twin's
 // rendering libraries are only downloaded when that page is opened.
-const lab = <T extends string>(load: () => Promise<Record<T, () => JSX.Element>>, name: T) =>
+const lab = <T extends string>(load: () => Promise<Record<T, () => ReactElement>>, name: T) =>
   lazy(async () => ({ default: (await load())[name] }));
 
 const ResearchOverviewPage = lab(() => import("@/pages/lab/ResearchOverview"), "ResearchOverviewPage");

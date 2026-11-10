@@ -16,7 +16,7 @@
   "parameters": {},
   "progress": {
     "stage": "Optuna tuning",
-    "fraction": 0.178
+    "fraction": 0.236
   },
   "runner_pid": 25672,
   "command": [

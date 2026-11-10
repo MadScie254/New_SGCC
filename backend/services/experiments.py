@@ -66,12 +66,21 @@ def integrity(run_id: str, fresh: bool = False) -> Dict[str, Any]:
 
 
 def evidence(record: Dict[str, Any]) -> str:
-    """reported | verified | exploratory | executed, for a run as a whole."""
-    if record.get("state") == "reported":
+    """
+    How a run's results must be labelled: reported (the published record), pending (not finished),
+    executed (original protocol, eligible to verify findings), recomputed (original protocol on the
+    published predictions) or exploratory (anything else, including failed and changed-settings runs).
+    """
+    state = record.get("state")
+    if state == "reported":
         return "reported"
-    if record.get("protocol") != "original" or not record.get("eligible_to_verify"):
-        return "exploratory" if record.get("protocol") != "original" or record.get("lineage") != "reported-inputs" else "recomputed"
-    return "executed"
+    if state in ("queued", "running"):
+        return "pending"
+    if record.get("protocol") == "original" and record.get("eligible_to_verify"):
+        return "executed"
+    if record.get("protocol") == "original" and record.get("lineage") == "reported-inputs" and state == "succeeded":
+        return "recomputed"
+    return "exploratory"
 
 
 def summarise(record: Dict[str, Any], with_integrity: bool = True) -> Dict[str, Any]:
