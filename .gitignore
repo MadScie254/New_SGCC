@@ -113,3 +113,7 @@ frontend/.vite/
 frontend/*.tsbuildinfo
 frontend/playwright-report/
 frontend/test-results/
+
+# GridSentinel X: run workspaces are large and are the machine's own record, not source.
+# The reported record is re-importable with `python -m src.registry.baseline`.
+runs/
