@@ -20,7 +20,7 @@ export function Figure({ title, ariaLabel, viewBox, legend, minWidth = 680, chil
     <figure className="m-0 flex flex-col gap-2">
       <figcaption className="text-[13px] font-medium text-ink">{title}</figcaption>
       {legend ? <p className="m-0 text-[11px] text-ink-3">{legend}</p> : null}
-      <div className="-mx-1 overflow-x-auto px-1">
+      <div className="w-full overflow-x-auto">
         <svg viewBox={viewBox} role="img" aria-label={ariaLabel} className="h-auto w-full"
           style={{ minWidth: `${minWidth}px` }} preserveAspectRatio="xMidYMid meet">
           {children}
