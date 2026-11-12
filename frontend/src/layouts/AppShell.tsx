@@ -60,7 +60,7 @@ function Logo() {
       </svg>
       <div className="flex flex-col">
         <span className="font-display text-lg font-semibold text-ink">GridSentinel <span className="text-cobalt">X</span></span>
-        <span className="text-[10px] uppercase tracking-[0.12em] text-night-muted">Research &amp; investigation</span>
+        <span className="text-[10px] uppercase tracking-[0.12em] text-rail-muted">Research &amp; investigation</span>
       </div>
     </div>
   );
@@ -78,11 +78,11 @@ function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
       <nav aria-label="Primary" className="flex flex-col gap-5">
         {NAV_GROUPS.map((group) => (
           <div key={group.title} className="flex flex-col gap-0.5">
-            <span className="px-3 pb-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-night-muted">{group.title}</span>
+            <span className="px-3 pb-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-rail-muted">{group.title}</span>
             {group.items.map(({ to, label, icon: Icon, end }) => (
               <NavLink key={to} to={to} end={end} onClick={onNavigate}
                 className={({ isActive }) => cn("flex items-center gap-3 rounded-lg border-l-2 px-3 py-2 text-[13px] transition-colors",
-                  isActive ? "border-cobalt bg-night-2 font-medium text-ink" : "border-transparent text-night-text hover:bg-night-2/60 hover:text-ink")}>
+                  isActive ? "border-cobalt bg-rail-2 font-medium text-ink shadow-card" : "border-transparent text-rail-text hover:bg-rail-2/70 hover:text-ink")}>
                 <Icon className="h-4 w-4 shrink-0" strokeWidth={1.7} aria-hidden />
                 {label}
               </NavLink>
@@ -91,23 +91,23 @@ function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
         ))}
       </nav>
       <div className="mt-auto flex flex-col gap-3">
-        <div className="flex flex-col gap-2 rounded-lg border border-night-line px-3 py-3.5">
-          <span className="text-[11px] uppercase tracking-[0.08em] text-night-muted">Model in service</span>
+        <div className="flex flex-col gap-2 rounded-lg border border-rail-line px-3 py-3.5">
+          <span className="text-[11px] uppercase tracking-[0.08em] text-rail-muted">Model in service</span>
           <span className="font-mono text-[13px] text-ink">{metrics.data?.pipeline ?? "…"} v{metrics.data?.model_version ?? "…"}</span>
-          <span className="text-xs text-night-muted">
+          <span className="text-xs text-rail-muted">
             τ {metrics.data ? metrics.data.threshold.toFixed(3) : "…"} · {metrics.data ? metrics.data.customers_monitored.toLocaleString() : "…"} customers
           </span>
-          <span className="flex items-center gap-2 text-xs text-night-muted">
+          <span className="flex items-center gap-2 text-xs text-rail-muted">
             <Activity className={cn("h-3.5 w-3.5", lastRun?.status === "succeeded" ? "text-ok" : "text-amber")} aria-hidden />
             {lastRun ? `Scored ${fmtRelative(lastRun.finished_at)}` : "No scoring run yet"}
           </span>
         </div>
         <NavLink to="/admin" onClick={onNavigate}
-          className={({ isActive }) => cn("flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm", isActive ? "bg-night-2 text-ink" : "text-night-text hover:text-ink")}>
+          className={({ isActive }) => cn("flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm", isActive ? "bg-rail-2 text-ink shadow-card" : "text-rail-text hover:text-ink")}>
           <Settings className="h-[18px] w-[18px]" strokeWidth={1.7} aria-hidden />
           <span className="flex flex-col">
             System administration
-            {me.data ? <span className="text-[11px] text-night-muted">{me.data.name} · {me.data.role}</span> : null}
+            {me.data ? <span className="text-[11px] text-rail-muted">{me.data.name} · {me.data.role}</span> : null}
           </span>
         </NavLink>
       </div>
@@ -151,7 +151,7 @@ export function AppShell({ children }: { children: ReactNode }) {
 
   return (
     <div className="flex min-h-screen bg-ground text-ink">
-      <div className="hidden w-[264px] shrink-0 border-r border-night-line bg-night lg:block">
+      <div className="hidden w-[264px] shrink-0 border-r border-rail-line bg-rail lg:block">
         <aside className="sticky top-0 h-screen">
           <SidebarContent />
         </aside>
@@ -160,8 +160,8 @@ export function AppShell({ children }: { children: ReactNode }) {
       {open ? (
         <div className="fixed inset-0 z-40 lg:hidden" role="dialog" aria-modal="true" aria-label="Navigation" onKeyDown={trapFocus}>
           <div aria-hidden className="absolute inset-0 bg-black/40" onClick={() => setOpen(false)} />
-          <aside ref={drawer} className="relative h-full w-[280px] overflow-y-auto bg-night">
-            <button type="button" aria-label="Close navigation" onClick={() => setOpen(false)} className="absolute right-3 top-3 flex h-11 w-11 items-center justify-center text-night-text">
+          <aside ref={drawer} className="relative h-full w-[280px] overflow-y-auto bg-rail">
+            <button type="button" aria-label="Close navigation" onClick={() => setOpen(false)} className="absolute right-3 top-3 flex h-11 w-11 items-center justify-center text-rail-text">
               <X className="h-5 w-5" aria-hidden />
             </button>
             <SidebarContent onNavigate={() => setOpen(false)} />

@@ -142,12 +142,12 @@ export function ResearchPage() {
               </thead>
               <tbody>
                 {rows.map((row) => (
-                  <tr key={row.model} className="h-11 border-b border-[#18212F]">
+                  <tr key={row.model} className="h-11 border-b border-line-soft">
                     <td>
                       <span className="flex items-center gap-2">
                         <span className="h-2.5 w-2.5 shrink-0 rounded-full" style={{ background: PIPELINE_COLORS[row.model] }} aria-hidden />
                         <span className="font-medium">{row.label}</span>
-                        {row.served ? <span className="rounded-full bg-cobalt px-2 py-0.5 text-[11px] font-medium text-night">in service</span> : null}
+                        {row.served ? <span className="rounded-full bg-cobalt px-2 py-0.5 text-[11px] font-medium text-on-accent">in service</span> : null}
                       </span>
                     </td>
                     {SCORE_COLUMNS.map((c) => (
@@ -198,7 +198,7 @@ export function ResearchPage() {
                 </thead>
                 <tbody>
                   {calibration.data.pipelines.map((row) => (
-                    <tr key={row.model} className="h-10 border-b border-[#18212F]">
+                    <tr key={row.model} className="h-10 border-b border-line-soft">
                       <td className="font-medium">{row.label}</td>
                       <td className="text-right font-mono tabular text-ink-2">{row.test_raw.brier.toFixed(4)}</td>
                       <td className="text-right font-mono tabular">{row.test_platt.brier.toFixed(4)}</td>
@@ -235,7 +235,7 @@ export function ResearchPage() {
                 </thead>
                 <tbody>
                   {stages.map((s) => (
-                    <tr key={s.name} className="h-10 border-b border-[#18212F]">
+                    <tr key={s.name} className="h-10 border-b border-line-soft">
                       <td className="font-medium">{s.name}</td>
                       <td className="text-right font-mono tabular">{fmtInt(s.counts.honest)}</td>
                       <td className="text-right font-mono tabular">{fmtInt(s.counts.theft)}</td>

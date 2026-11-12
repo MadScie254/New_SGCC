@@ -44,7 +44,7 @@ export function ImportanceBars({ features, max }: { features: FeatureImportance[
       title="Mean |SHAP| per feature (log-odds of the XGBoost part)"
       ariaLabel={`Feature importance. ${rows[0]?.label ?? "No feature"} moves the score most, at ${rows[0]?.mean_abs_shap.toFixed(3) ?? "0"} log-odds on average. ${missingCount} of the ${rows.length} strongest features describe missing readings rather than consumption.`}
       viewBox={`0 0 ${W} ${H}`}
-      legend="amber: a missing-reading feature · cyan: a consumption feature"
+      legend="amber: a missing-reading feature · blue: a consumption feature"
     >
       {[0, 0.25, 0.5, 0.75, 1].map((t) => (
         <g key={t}>
@@ -92,7 +92,7 @@ export function BeeswarmPlot({ features }: { features: BeeswarmFeature[] }) {
   return (
     <Figure
       title="How each feature pushed the score, customer by customer"
-      ariaLabel={`Beeswarm of SHAP values for the ${features.length} strongest features. Dots right of the centre line raised that customer's score, dots left lowered it. Colour runs from low feature value in dark blue to high in pale cyan.`}
+      ariaLabel={`Beeswarm of SHAP values for the ${features.length} strongest features. Dots right of the centre line raised that customer's score, dots left lowered it. Colour runs from low feature value in pale blue to high in deep navy.`}
       viewBox={`0 0 ${W} ${H}`}
       legend="grey dots: the feature had no value for that customer"
     >

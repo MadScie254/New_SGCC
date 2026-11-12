@@ -1,34 +1,36 @@
-// Chart colours for GridSentinel X, tuned for the dark surfaces in tailwind.config.js.
-// Class colours are fixed across the whole console so a reader never has to relearn them.
+// Chart colours for GridSentinel X, tuned for the white surfaces in tailwind.config.js.
+// Class colours are fixed across the whole console so a reader never has to relearn them:
+// honest-labelled is always the steel blue, theft-labelled always the red, missing readings
+// always the ochre, and anything simulated always the violet.
 
 export const palette = {
-  honest: "#5B9BD5", // honest-labelled customers
-  theft: "#F2685C", // theft-labelled customers
-  missing: "#F5A524", // missing readings
-  synthetic: "#A78BFA", // anything simulated or SMOTE-generated
-  removed: "#6F8196", // rows removed by ENN
-  accent: "#38BDF8",
-  electric: "#3B82F6",
-  ok: "#34D399",
-  ink: "#E6EDF5",
-  ink2: "#A3B2C5",
-  ink3: "#7386A0",
-  grid: "#1E293A",
-  axis: "#2A3648",
-  surface: "#0F1624",
-  tint: "#172030",
+  honest: "#3E86C4", // honest-labelled customers
+  theft: "#C73B22", // theft-labelled customers
+  missing: "#D08700", // missing readings
+  synthetic: "#7C5CD6", // anything simulated or SMOTE-generated
+  removed: "#8795A8", // rows removed by ENN
+  accent: "#0D5BB9",
+  electric: "#1D6FD0",
+  ok: "#0F7045",
+  ink: "#141B26",
+  ink2: "#4D5A6B",
+  ink3: "#6B7A8D",
+  grid: "#E5EAF1",
+  axis: "#C2CCD9",
+  surface: "#FFFFFF",
+  tint: "#EDF1F6",
 } as const;
 
 // One colour per pipeline, in the order the study lists them.
 export const pipelineColors: Record<string, string> = {
-  proposed: "#F5A524",
-  xgboost: "#38BDF8",
-  xgboost_default: "#7386A0",
-  random_forest_smote: "#34D399",
-  logistic_regression_smote: "#E879A6",
-  wide_deep_cnn: "#A78BFA",
-  hybrid: "#F2685C",
-  xgboost_smote_enn_raw: "#EAB308",
+  proposed: "#B5700A",
+  xgboost: "#0D5BB9",
+  xgboost_default: "#6B7A8D",
+  random_forest_smote: "#0F7045",
+  logistic_regression_smote: "#A53A72",
+  wide_deep_cnn: "#7C5CD6",
+  hybrid: "#C73B22",
+  xgboost_smote_enn_raw: "#7E6A12",
 };
 
 export const pipelineLabels: Record<string, string> = {
@@ -46,15 +48,18 @@ export function pipelineColor(name: string): string {
   return pipelineColors[name] ?? palette.ink3;
 }
 
-/** Sequential ramp for heatmaps on a dark background: t in [0, 1] -> rgb string. */
+/**
+ * Sequential ramp for heatmaps on a white background: t in [0, 1] -> rgb string.
+ * Light to dark, so a higher value is a heavier mark and the page still reads when printed.
+ */
 export function heat(t: number): string {
   const x = Math.max(0, Math.min(1, t));
   const stops = [
-    [11, 17, 29],
-    [14, 52, 84],
-    [20, 110, 160],
-    [56, 189, 248],
-    [224, 242, 254],
+    [206, 223, 239],
+    [150, 189, 221],
+    [84, 143, 197],
+    [28, 92, 157],
+    [10, 45, 85],
   ];
   const scaled = x * (stops.length - 1);
   const i = Math.min(Math.floor(scaled), stops.length - 2);

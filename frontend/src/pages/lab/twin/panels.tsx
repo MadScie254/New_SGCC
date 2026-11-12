@@ -125,7 +125,7 @@ export function WindowSparkline({ values, dates, label, height = 64 }: {
   return (
     <div className="flex flex-col gap-1">
       <svg viewBox={`0 0 1000 ${height}`} className="w-full" style={{ height }} preserveAspectRatio="none" role="img" aria-label={label}>
-        {gaps.map(([a, b]) => <rect key={a} x={a * step} y={0} width={(b - a) * step} height={height} fill="#3A2A10" />)}
+        {gaps.map(([a, b]) => <rect key={a} x={a * step} y={0} width={(b - a) * step} height={height} fill={palette.missing} opacity={0.18} />)}
         <path d={path} fill="none" stroke={palette.accent} strokeWidth={1.4} vectorEffect="non-scaling-stroke" />
       </svg>
       <div className="flex justify-between font-mono text-[10px] text-ink-3">
@@ -384,7 +384,7 @@ function BalanceBars({ rows, onSelect }: { rows: Array<{ id: string; supplied: n
         <button key={row.id} type="button" onClick={() => onSelect(row.id)} className="group grid grid-cols-[4.5rem_minmax(0,1fr)_6.5rem] items-center gap-2 text-left text-[12px]">
           <span className="font-mono text-ink-2 group-hover:text-ink">{row.id}</span>
           <span className="relative h-4 rounded-[3px] bg-tint">
-            <span className="absolute left-0 top-0 h-4 rounded-[3px]" style={{ width: `${(row.supplied / peak) * 100}%`, background: "#24405C" }} />
+            <span className="absolute left-0 top-0 h-4 rounded-[3px]" style={{ width: `${(row.supplied / peak) * 100}%`, background: palette.removed }} />
             <span className="absolute left-0 top-0 h-4 rounded-[3px]" style={{ width: `${(row.metered / peak) * 100}%`, background: palette.accent }} />
             {row.gap > 0.02 * row.supplied ? (
               <span

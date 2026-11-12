@@ -64,7 +64,7 @@ function GlobalTab({ seed, top }: { seed: number; top: number }) {
           tone="risk"
           hint={`${missingFeatures.length} of the ${data.features.length} strongest features`}
         />
-        <Stat label="Strongest feature" value={<span className="text-[22px] leading-tight">{data.features[0]?.label ?? "–"}</span>}
+        <Stat label="Strongest feature" value={<span className="font-sans text-[20px] leading-tight">{data.features[0]?.label ?? "–"}</span>}
           hint={`mean |SHAP| ${num(data.features[0]?.mean_abs_shap, 3)} log-odds`} />
       </div>
 
@@ -463,7 +463,7 @@ function ShortcutTab({ customerId }: { customerId: string | null }) {
                 />
                 <Stat
                   label="Median missing, theft vs honest"
-                  value={<span className="text-[30px]">{pct(profile.data!.by_class.theft.median, 0)} / {pct(profile.data!.by_class.honest.median, 0)}</span>}
+                  value={<span className="text-[28px]">{pct(profile.data!.by_class.theft.median, 0)} / {pct(profile.data!.by_class.honest.median, 0)}</span>}
                   hint={`${profile.data!.by_class.theft.complete_records.toLocaleString()} theft-labelled and ${profile.data!.by_class.honest.complete_records.toLocaleString()} honest-labelled customers have a complete record`}
                 />
               </div>
@@ -582,7 +582,6 @@ export function XaiCenterPage() {
   return (
     <>
       <PageHeader
-        eyebrow="GridSentinel X"
         title="Explainability centre"
         description="What moves the detector's score, for the whole study split and for one customer at a time — and whether what moves it is consumption behaviour or the fact that a meter stopped reporting."
       />

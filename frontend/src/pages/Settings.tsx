@@ -88,7 +88,7 @@ export function SettingsPage() {
                 </thead>
                 <tbody>
                   {audit.data.map((entry, i) => (
-                    <tr key={`${entry.at}-${i}`} className="h-9 border-b border-[#18212F]">
+                    <tr key={`${entry.at}-${i}`} className="h-9 border-b border-line-soft">
                       <td className="whitespace-nowrap pr-3 text-xs text-ink-3">{fmtDateTime(entry.at)}</td>
                       <td className="pr-3">{entry.actor} <span className="text-xs text-ink-3">{entry.role}</span></td>
                       <td className="pr-3 font-mono text-xs">{entry.action}</td>

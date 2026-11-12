@@ -89,7 +89,7 @@ export function CasesPage() {
             </thead>
             <tbody>
               {cases.data?.items.map((item) => (
-                <tr key={item.customer_id} className="h-14 cursor-pointer border-b border-[#18212F] hover:bg-surface-alt" onClick={() => navigate(`/cases/${item.customer_id}`)}>
+                <tr key={item.customer_id} className="h-14 cursor-pointer border-b border-line-soft hover:bg-surface-alt" onClick={() => navigate(`/cases/${item.customer_id}`)}>
                   <td className="pl-[22px] font-mono text-xs text-ink-3">{item.rank}</td>
                   <td className="font-mono text-[13px]">
                     <Link to={`/cases/${item.customer_id}`} onClick={(e) => e.stopPropagation()} className="hover:text-cobalt" title={item.customer_id}>{shortId(item.customer_id, 16)}</Link>

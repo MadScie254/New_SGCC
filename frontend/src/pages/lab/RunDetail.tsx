@@ -46,10 +46,10 @@ function LiveLog({ runId, live }: { runId: string; live: boolean }) {
         <span>{events.length.toLocaleString()} events{live ? " · updating every 2 s" : ""}</span>
         <label className="flex items-center gap-2"><input type="checkbox" checked={follow} onChange={(e) => setFollow(e.target.checked)} /> Follow the end</label>
       </div>
-      <div ref={box} tabIndex={0} role="log" aria-label="Run output" className="h-[360px] overflow-auto rounded-lg border border-line bg-night p-3 font-mono text-[11.5px] leading-relaxed">
+      <div ref={box} tabIndex={0} role="log" aria-label="Run output" className="h-[360px] overflow-auto rounded-lg border border-line gsx-console bg-console p-3 font-mono text-[11.5px] leading-relaxed">
         {events.length === 0 ? <span className="text-ink-3">{query.isLoading ? "Loading…" : "No output yet."}</span> : events.map((e) => (
-          <div key={e.seq} className={cn("whitespace-pre-wrap break-words", e.level === "error" ? "text-risk-text" : e.level === "warning" ? "text-amber-ink" : "text-night-text")}>
-            <span className="select-none text-night-muted">{e.at.slice(11, 19)} </span>{e.message}
+          <div key={e.seq} className={cn("whitespace-pre-wrap break-words", e.level === "error" ? "text-risk-text" : e.level === "warning" ? "text-amber-ink" : "text-console-text")}>
+            <span className="select-none text-console-muted">{e.at.slice(11, 19)} </span>{e.message}
           </div>
         ))}
       </div>
@@ -85,7 +85,7 @@ function Files({ title, files, runId, readable }: { title: string; files: Record
       </div>
       {open ? (
         file.isLoading ? <Skeleton className="h-40 w-full" /> : file.isError ? <ApiError error={file.error} /> : (
-          <pre tabIndex={0} aria-label={`Contents of ${open}`} className="m-0 max-h-96 overflow-auto rounded-lg border border-line bg-night p-3 text-[11.5px] leading-relaxed text-night-text">
+          <pre tabIndex={0} aria-label={`Contents of ${open}`} className="m-0 max-h-96 overflow-auto rounded-lg border border-line gsx-console bg-console p-3 text-[11.5px] leading-relaxed text-console-text">
             {file.data?.json != null ? JSON.stringify(file.data.json, null, 2).slice(0, 60_000) : (file.data?.text ?? "").slice(0, 60_000)}
           </pre>
         )
@@ -216,7 +216,7 @@ export function RunDetailPage() {
           </dl>
           {r.fingerprints?.hyperparameters ? (
             <details className="text-[13px]"><summary className="cursor-pointer text-cobalt">Tuned hyperparameters</summary>
-              <pre className="m-0 mt-2 overflow-auto rounded-lg border border-line bg-night p-3 text-[11.5px] text-night-text">{JSON.stringify(r.fingerprints.hyperparameters, null, 2)}</pre>
+              <pre className="m-0 mt-2 overflow-auto rounded-lg border border-line gsx-console bg-console p-3 text-[11.5px] text-console-text">{JSON.stringify(r.fingerprints.hyperparameters, null, 2)}</pre>
             </details>
           ) : null}
         </Card>

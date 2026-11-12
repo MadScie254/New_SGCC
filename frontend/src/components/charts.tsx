@@ -2,11 +2,13 @@ import { useMemo, useState } from "react";
 import type { Reading, Reason, ReliabilityBin } from "@/lib/api";
 import { fmtInt, fmtNum, fmtPct } from "@/lib/format";
 import { cn } from "@/lib/cn";
+import { palette } from "@/lib/palette";
 
-const RISK = "#F2685C";
-const COBALT = "#38BDF8";
-const AMBER = "#F5A524";
-const NEUTRAL = "#3B4A5E";
+// The console's fixed meanings, so a bar here means what it means on every other page.
+const RISK = palette.theft;
+const COBALT = palette.accent;
+const AMBER = palette.missing;
+const NEUTRAL = palette.removed;
 
 // ---------------------------------------------------------------------------
 // Risk histogram (log scale); with `theft`, the true-theft share of each bar is shaded
@@ -24,7 +26,7 @@ export function RiskHistogram({ edges, total, theft, threshold, height = 150 }: 
 
   return (
     <div className="flex flex-col gap-2">
-      <div className="relative flex items-end gap-1 border-b border-[#2A3648]" style={{ height }} onMouseLeave={() => setHover(null)}>
+      <div className="relative flex items-end gap-1 border-b border-line" style={{ height }} onMouseLeave={() => setHover(null)}>
         {total.map((count, i) => {
           const barHeight = scale(count);
           const theftHeight = theft && count ? (barHeight * theft[i]) / count : 0;
@@ -167,16 +169,16 @@ export function ConsumptionChart({ points, height = 240 }: { points: Reading[]; 
           setHover(Math.max(0, Math.min(values.length - 1, index)));
         }}>
         {gaps.map(([a, b]) => (
-          <rect key={a} x={a * step} y={0} width={(b - a) * step} height={height} fill="#3A1614" />
+          <rect key={a} x={a * step} y={0} width={(b - a) * step} height={height} fill={palette.tint} />
         ))}
-        <line x1={0} y1={height - 0.5} x2={width} y2={height - 0.5} stroke="#2A3648" />
+        <line x1={0} y1={height - 0.5} x2={width} y2={height - 0.5} stroke={palette.axis} />
         {mode === "monthly"
           ? months.map((m, i) => m.value === null ? null : (
             <rect key={m.key} x={i * step + step * 0.14} width={step * 0.72} y={y(m.value)} height={height - y(m.value)}
-              fill={hover === i ? "#7DD3FC" : COBALT} rx={2} />
+              fill={hover === i ? palette.electric : COBALT} rx={2} />
           ))
           : <path d={dailyPath} fill="none" stroke={COBALT} strokeWidth={1.2} vectorEffect="non-scaling-stroke" />}
-        {hover !== null ? <line x1={(hover + 0.5) * step} x2={(hover + 0.5) * step} y1={0} y2={height} stroke="#E6EDF5" strokeDasharray="3 3" vectorEffect="non-scaling-stroke" /> : null}
+        {hover !== null ? <line x1={(hover + 0.5) * step} x2={(hover + 0.5) * step} y1={0} y2={height} stroke={palette.ink} strokeDasharray="3 3" vectorEffect="non-scaling-stroke" /> : null}
       </svg>
       <div className="flex justify-between font-mono text-[11px] text-ink-3">
         <span>{first}</span>
@@ -265,7 +267,7 @@ export function WeekEffectsChart({ weeks, height = 120 }: { weeks: WeekEffectPoi
     <div className="flex flex-col gap-1.5">
       <svg viewBox={`0 0 ${W} ${height - 14}`} className="h-auto w-full" role="img"
         aria-label="Effect of each week of readings on the sequence model's score: bars above the line raised it, below lowered it">
-        <line x1={0} x2={W} y1={mid} y2={mid} stroke="#2A3648" />
+        <line x1={0} x2={W} y1={mid} y2={mid} stroke={palette.axis} />
         {weeks.map((w, i) => {
           const h = Math.abs(y(w.effect));
           const up = w.effect >= 0;
@@ -309,24 +311,24 @@ export function TradeoffChart({ points, index, onPick, trainedThreshold }: { poi
         const svgX = ((event.clientX - rect.left) / rect.width) * W;
         onPick(Math.max(0, Math.min(points.length - 1, Math.round(((svgX - L) / (R - L)) * (points.length - 1)))));
       }}>
-      {[1, 0.5].map((v) => <line key={v} x1={L} x2={R} y1={y(v)} y2={y(v)} stroke="#18212F" />)}
-      <line x1={L} x2={R} y1={B} y2={B} stroke="#2A3648" />
+      {[1, 0.5].map((v) => <line key={v} x1={L} x2={R} y1={y(v)} y2={y(v)} stroke={palette.grid} />)}
+      <line x1={L} x2={R} y1={B} y2={B} stroke={palette.axis} />
       {[["1.0", 1], ["0.5", 0.5], ["0", 0]].map(([t, v]) => (
-        <text key={t} x={L - 8} y={y(v as number) + 4} textAnchor="end" fontSize="11" fill="#6F8196" fontFamily="IBM Plex Mono, monospace">{t}</text>
+        <text key={t} x={L - 8} y={y(v as number) + 4} textAnchor="end" fontSize="11" fill={palette.ink3} fontFamily="IBM Plex Mono, monospace">{t}</text>
       ))}
-      <text x={L} y={H - 16} fontSize="11" fill="#6F8196" fontFamily="IBM Plex Mono, monospace">τ {points[0].threshold.toFixed(2)}</text>
-      <text x={R} y={H - 16} textAnchor="end" fontSize="11" fill="#6F8196" fontFamily="IBM Plex Mono, monospace">{points[points.length - 1].threshold.toFixed(2)}</text>
+      <text x={L} y={H - 16} fontSize="11" fill={palette.ink3} fontFamily="IBM Plex Mono, monospace">τ {points[0].threshold.toFixed(2)}</text>
+      <text x={R} y={H - 16} textAnchor="end" fontSize="11" fill={palette.ink3} fontFamily="IBM Plex Mono, monospace">{points[points.length - 1].threshold.toFixed(2)}</text>
       {trainedIndex >= 0 ? (
         <g>
-          <line x1={x(trainedIndex)} x2={x(trainedIndex)} y1={T} y2={B} stroke="#5B6B80" strokeDasharray="2 4" />
-          <text x={x(trainedIndex) + 4} y={B - 6} fontSize="10" fill="#6F8196" fontFamily="IBM Plex Sans, sans-serif">trained</text>
+          <line x1={x(trainedIndex)} x2={x(trainedIndex)} y1={T} y2={B} stroke={palette.ink3} strokeDasharray="2 4" />
+          <text x={x(trainedIndex) + 4} y={B - 6} fontSize="10" fill={palette.ink3} fontFamily="IBM Plex Sans, sans-serif">trained</text>
         </g>
       ) : null}
       <polyline points={line("precision")} fill="none" stroke={COBALT} strokeWidth="2.5" strokeLinejoin="round" />
       <polyline points={line("recall")} fill="none" stroke={AMBER} strokeWidth="2.5" strokeLinejoin="round" />
-      <line x1={x(index)} x2={x(index)} y1={T - 6} y2={B} stroke="#E6EDF5" strokeWidth="1.5" strokeDasharray="4 4" />
-      {p.precision !== null ? <circle cx={x(index)} cy={y(p.precision)} r="6" fill={COBALT} stroke="#fff" strokeWidth="2" /> : null}
-      <circle cx={x(index)} cy={y(p.recall)} r="6" fill={AMBER} stroke="#fff" strokeWidth="2" />
+      <line x1={x(index)} x2={x(index)} y1={T - 6} y2={B} stroke={palette.ink} strokeWidth="1.5" strokeDasharray="4 4" />
+      {p.precision !== null ? <circle cx={x(index)} cy={y(p.precision)} r="6" fill={COBALT} stroke={palette.surface} strokeWidth="2" /> : null}
+      <circle cx={x(index)} cy={y(p.recall)} r="6" fill={AMBER} stroke={palette.surface} strokeWidth="2" />
     </svg>
   );
 }
@@ -347,15 +349,15 @@ export function NetValueChart({ points, index }: { points: Array<{ threshold: nu
   const money = (v: number) => (Math.abs(v) >= 1e6 ? `${(v / 1e6).toFixed(1)}M` : Math.abs(v) >= 1e3 ? `${(v / 1e3).toFixed(0)}k` : v.toFixed(0));
   return (
     <svg viewBox={`0 0 ${W} ${H}`} className="w-full" role="img" aria-label={`Expected net value by threshold; highest at τ ${points[best].threshold.toFixed(2)}`}>
-      <line x1={L} x2={R} y1={y(0)} y2={y(0)} stroke="#2A3648" />
+      <line x1={L} x2={R} y1={y(0)} y2={y(0)} stroke={palette.axis} />
       {[hi, lo].map((v) => (
-        <text key={v} x={L - 8} y={y(v) + 4} textAnchor="end" fontSize="11" fill="#6F8196" fontFamily="IBM Plex Mono, monospace">{money(v)}</text>
+        <text key={v} x={L - 8} y={y(v) + 4} textAnchor="end" fontSize="11" fill={palette.ink3} fontFamily="IBM Plex Mono, monospace">{money(v)}</text>
       ))}
       <polyline points={points.map((p, i) => `${x(i).toFixed(1)},${y(p.net_value).toFixed(1)}`).join(" ")} fill="none" stroke={COBALT} strokeWidth="2.5" />
-      <line x1={x(best)} x2={x(best)} y1={T} y2={B} stroke="#5B6B80" strokeDasharray="2 4" />
-      <text x={x(best) + 4} y={T + 10} fontSize="10" fill="#6F8196" fontFamily="IBM Plex Sans, sans-serif">best τ {points[best].threshold.toFixed(2)}</text>
-      <line x1={x(index)} x2={x(index)} y1={T} y2={B} stroke="#E6EDF5" strokeWidth="1.5" strokeDasharray="4 4" />
-      <circle cx={x(index)} cy={y(points[index].net_value)} r="5" fill={COBALT} stroke="#fff" strokeWidth="2" />
+      <line x1={x(best)} x2={x(best)} y1={T} y2={B} stroke={palette.ink3} strokeDasharray="2 4" />
+      <text x={x(best) + 4} y={T + 10} fontSize="10" fill={palette.ink3} fontFamily="IBM Plex Sans, sans-serif">best τ {points[best].threshold.toFixed(2)}</text>
+      <line x1={x(index)} x2={x(index)} y1={T} y2={B} stroke={palette.ink} strokeWidth="1.5" strokeDasharray="4 4" />
+      <circle cx={x(index)} cy={y(points[index].net_value)} r="5" fill={COBALT} stroke={palette.surface} strokeWidth="2" />
     </svg>
   );
 }
@@ -371,16 +373,16 @@ export function ReliabilityChart({ raw, calibrated }: { raw: ReliabilityBin[]; c
   const path = (bins: ReliabilityBin[]) => bins.map((b) => `${x(b.mean_predicted).toFixed(1)},${y(b.observed_rate).toFixed(1)}`).join(" ");
   return (
     <svg viewBox={`0 0 ${W} ${H}`} className="w-full max-w-[420px]" role="img" aria-label="Reliability diagram: observed theft rate against predicted probability">
-      <line x1={x(0)} y1={y(0)} x2={x(1)} y2={y(1)} stroke="#2A3648" strokeDasharray="4 4" />
-      <line x1={L} x2={R} y1={B} y2={B} stroke="#2A3648" />
-      <line x1={L} x2={L} y1={T} y2={B} stroke="#2A3648" />
+      <line x1={x(0)} y1={y(0)} x2={x(1)} y2={y(1)} stroke={palette.axis} strokeDasharray="4 4" />
+      <line x1={L} x2={R} y1={B} y2={B} stroke={palette.axis} />
+      <line x1={L} x2={L} y1={T} y2={B} stroke={palette.axis} />
       {[0, 0.5, 1].map((v) => (
         <g key={v}>
-          <text x={x(v)} y={B + 16} textAnchor="middle" fontSize="11" fill="#6F8196" fontFamily="IBM Plex Mono, monospace">{v}</text>
-          <text x={L - 8} y={y(v) + 4} textAnchor="end" fontSize="11" fill="#6F8196" fontFamily="IBM Plex Mono, monospace">{v}</text>
+          <text x={x(v)} y={B + 16} textAnchor="middle" fontSize="11" fill={palette.ink3} fontFamily="IBM Plex Mono, monospace">{v}</text>
+          <text x={L - 8} y={y(v) + 4} textAnchor="end" fontSize="11" fill={palette.ink3} fontFamily="IBM Plex Mono, monospace">{v}</text>
         </g>
       ))}
-      <text x={(L + R) / 2} y={H - 2} textAnchor="middle" fontSize="11" fill="#9FB0C3">predicted probability</text>
+      <text x={(L + R) / 2} y={H - 2} textAnchor="middle" fontSize="11" fill={palette.ink2}>predicted probability</text>
       <polyline points={path(raw)} fill="none" stroke={AMBER} strokeWidth="2" />
       {raw.map((b) => <circle key={`r${b.low}`} cx={x(b.mean_predicted)} cy={y(b.observed_rate)} r="3.5" fill={AMBER} />)}
       <polyline points={path(calibrated)} fill="none" stroke={COBALT} strokeWidth="2.5" />
@@ -402,9 +404,9 @@ export function Gauge({ value, threshold }: { value: number; threshold: number }
   return (
     <div className="flex flex-col items-center">
       <svg width="240" height="136" viewBox="0 0 240 136" aria-hidden>
-        <path d="M20 120 A100 100 0 0 1 220 120" fill="none" stroke="#18212F" strokeWidth="16" strokeLinecap="round" />
+        <path d="M20 120 A100 100 0 0 1 220 120" fill="none" stroke={palette.grid} strokeWidth="16" strokeLinecap="round" />
         <path d={`M20 120 A100 100 0 0 1 ${ex.toFixed(1)} ${ey.toFixed(1)}`} fill="none" stroke={color} strokeWidth="16" strokeLinecap="round" />
-        <line x1={t1x} y1={t1y} x2={t2x} y2={t2y} stroke="#E6EDF5" strokeWidth="2" />
+        <line x1={t1x} y1={t1y} x2={t2x} y2={t2y} stroke={palette.ink} strokeWidth="2" />
       </svg>
       <span className="-mt-16 font-display text-5xl font-medium leading-none tabular">{fmtNum(value)}</span>
     </div>

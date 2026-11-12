@@ -7,7 +7,7 @@ import {
   METRIC_LABELS, getCurvesFor, getStatCalibration, getStatCompare, getStatLimitations, getStatPipelines,
   getStatRanked, getStatRuns, getStatSignificance, getStatStability,
 } from "@/lib/api/statistics";
-import { pipelineColor } from "@/lib/palette";
+import { palette, pipelineColor } from "@/lib/palette";
 import { cn } from "@/lib/cn";
 
 const METRICS = ["pr_auc", "auc", "recall", "precision", "f1", "mcc", "gmean"] as const;
@@ -48,7 +48,7 @@ function MetricsTab({ run, split }: { run: string; split: string }) {
                   <span className="inline-flex items-center gap-2">
                     <span aria-hidden className="h-2.5 w-2.5 rounded-sm" style={{ background: pipelineColor(row.pipeline) }} />
                     {row.label}
-                    {row.served ? <span className="rounded-full bg-cobalt px-2 py-0.5 text-[10px] font-semibold text-night">served</span> : null}
+                    {row.served ? <span className="rounded-full bg-cobalt px-2 py-0.5 text-[10px] font-semibold text-on-accent">served</span> : null}
                   </span>
                 </td>
                 {METRICS.map((m) => (
@@ -127,7 +127,7 @@ function CalibrationTab({ run, split, pipelines }: { run: string; split: string;
                   {([["ece", "Expected calibration error"], ["ece_equal_mass", "ECE (equal-count bins)"], ["brier", "Brier score"], ["log_loss", "Log loss"], ["mean_predicted", "Mean predicted probability"], ["observed_rate", "Observed theft rate"]] as const).map(([key, label]) => (
                     <tr key={key} className="border-b border-line-soft">
                       <td className="py-2 pr-4">{label}</td>
-                      <td className="py-2 pr-4 text-right font-mono tabular" style={{ color: "#F5A524" }}>{num(query.data!.raw[key], 4)}</td>
+                      <td className="py-2 pr-4 text-right font-mono tabular" style={{ color: palette.missing }}>{num(query.data!.raw[key], 4)}</td>
                       <td className="py-2 pr-4 text-right font-mono tabular text-cobalt-ink">{num(query.data!.calibrated[key], 4)}</td>
                       <td className="py-2 text-right font-mono tabular text-ink-3">
                         {key === "observed_rate" ? "–" : `${query.data!.calibrated[key] - query.data!.raw[key] > 0 ? "+" : ""}${(query.data!.calibrated[key] - query.data!.raw[key]).toFixed(4)}`}
@@ -140,7 +140,7 @@ function CalibrationTab({ run, split, pipelines }: { run: string; split: string;
             </div>
           </div>
           <SourceNote status={query.data!.provenance.status} runId={query.data!.provenance.run_id}>
-            {query.data!.provenance.note} Amber is the model's raw score, cyan the probability after Platt scaling.
+            {query.data!.provenance.note} Amber is the model's raw score, blue the probability after Platt scaling.
           </SourceNote>
         </>
       )}

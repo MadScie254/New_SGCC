@@ -71,15 +71,28 @@ Read this before adding a workspace. It is short on purpose.
 - Data access: add `src/lib/api/<name>.ts` with typed functions built on `httpGet` / `httpPost`
   from `src/lib/http.ts`. Use `useQuery` / `useMutation`. Show `Skeleton` while loading,
   `ApiError` on failure and `Empty` when there is nothing (all in `src/components/ui.tsx`).
-- Design: scientific instrumentation on dark navy and charcoal. Use the Tailwind tokens in
-  `tailwind.config.js` (`ground`, `surface`, `tint`, `line`, `ink`, `ink-2`, `ink-3`, `cobalt`,
-  `electric`, `risk`, `amber`, `ok`, `violet`); no new hex colours in class names. Typography:
-  `font-display` for headings, `font-mono tabular` for numbers. Cards are `Card` with
-  `p-5`/`p-6`; pages start with `PageHeader`. No decorative gradients, glows, emoji or
-  generic "AI dashboard" tiles. Dense, legible, calm.
+- Design: a technical report on cool paper. White surfaces that lift by value rather than
+  shadow, hairline rules, ink-dark type. Use the Tailwind tokens in `tailwind.config.js`
+  (`ground`, `surface`, `surface-alt`, `tint`, `line`, `line-soft`, `ink`, `ink-2`, `ink-3`,
+  `cobalt`, `electric`, `risk`, `amber`, `ok`, `violet`); no new hex colours in class names.
+  Three token families carry a specific job and are not interchangeable: `on-accent` is text
+  drawn on a filled accent, `rail-*` is the navigation rail, and `console-*` is machine output
+  (run logs, saved JSON) which keeps a dark surface because it is quoted, not authored. The
+  digital twin's 3D canvas is a viewport and stays dark for the same reason.
+- Colour is rationed. Structure — navigation, buttons, focus — uses ink and `cobalt`. Every
+  other colour carries a meaning fixed across the whole console: honest-labelled, theft-labelled,
+  missing readings, simulated. Never spend a meaning colour on decoration.
+- Typography says what a thing is: `font-display` (IBM Plex Serif) for headings, the sans for
+  prose, `font-mono tabular` for every measured quantity. A `Stat` whose value is words, not a
+  number, overrides to `font-sans`.
+- Cards are `Card` with `p-5`/`p-6`; pages start with `PageHeader`. Pass `eyebrow` only when it
+  carries real context (a count, a threshold, a parent link) — never the product name, which the
+  rail already shows, and never as a tracked-out all-caps label. No decorative gradients, glows,
+  emoji or generic "AI dashboard" tiles. Dense, legible, calm.
 - Charts: SVG or canvas written for the data (see `src/components/charts.tsx`), helped by
   `d3-scale`, `d3-shape`, `d3-array`. Put reusable ones in `src/components/viz/<Name>.tsx`.
-  Chart colours come from `src/lib/palette.ts`. Every chart has axis labels with units, a title or
+  Chart colours come from `src/lib/palette.ts`, which is tuned for white surfaces. Every chart has
+  axis labels with units, a title or
   caption, `role="img"` with an `aria-label` that states the finding, and a `SourceNote`.
   Honest-labelled is `palette.honest`, theft-labelled is `palette.theft`, everywhere.
 - Every control changes something real. No dead buttons, no placeholder tabs.

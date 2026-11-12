@@ -70,7 +70,7 @@ export function DigitalTwinPage() {
   return (
     <>
       <PageHeader
-        eyebrow="GridSentinel X · workspace 6"
+        eyebrow="Simulated network · no SGCC location or topology data exists"
         title="3D digital twin"
         description={
           <>

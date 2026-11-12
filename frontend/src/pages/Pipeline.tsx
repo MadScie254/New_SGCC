@@ -38,7 +38,7 @@ function StageCard({ index, name, seconds, share, selected, state, onClick }: {
   return (
     <button type="button" onClick={onClick} aria-pressed={selected}
       className={cn("flex min-h-[124px] w-full flex-col items-start gap-2 rounded-xl p-3.5 text-left transition-colors",
-        selected ? "border-[1.5px] border-cobalt bg-cobalt-soft" : "border border-line bg-[#0D1320] hover:border-ink-3")}>
+        selected ? "border-[1.5px] border-cobalt bg-cobalt-soft" : "border border-line bg-surface-alt hover:border-ink-3")}>
       <span className="flex w-full items-center justify-between">
         <span className="font-mono text-[11px] text-ink-3">{String(index + 1).padStart(2, "0")}</span>
         {running ? <Loader2 className="h-4 w-4 animate-spin text-cobalt" aria-label="running" />
@@ -125,7 +125,7 @@ export function PipelinePage() {
             <div key={`${mode}-${stage.name}`} className="flex flex-1 items-center gap-2">
               <StageCard index={i} name={stage.name} seconds={stage.seconds} share={Math.sqrt((stage.seconds ?? 0) / maxSeconds)}
                 selected={i === selectedIndex} state={stage.state} onClick={() => setPicked((p) => ({ ...p, [mode]: i }))} />
-              {i < stages.length - 1 ? <ArrowRight className="hidden h-3.5 w-3.5 shrink-0 text-[#5B6B80] lg:block" aria-hidden /> : null}
+              {i < stages.length - 1 ? <ArrowRight className="hidden h-3.5 w-3.5 shrink-0 text-ink-3 lg:block" aria-hidden /> : null}
             </div>
           ))}
           {stages.length === 0 ? (training.isLoading ? <Skeleton className="h-[124px] w-full" /> : <Empty title="No training record" message="artifacts/metrics.json has no stage timings." />) : null}
@@ -145,14 +145,14 @@ export function PipelinePage() {
             </div>
           ) : (
             <>
-              <div className="rounded-lg bg-night px-4 py-3.5 font-mono text-xs leading-relaxed text-night-text">
+              <div className="rounded-lg gsx-console bg-console px-4 py-3.5 font-mono text-xs leading-relaxed text-console-text">
                 {training.data ? (
                   <>
                     <div>model v{training.data.model_version ?? "—"} · {training.data.n_trials ?? "—"} trials · CV {training.data.cv_metric ?? "—"} {fmtNum(training.data.cv_best_score)} (mean of {training.data.cv_fold_scores?.length ?? "—"} folds)</div>
                     <div>serving: {training.data.pipeline_label ?? "—"} · trained on {training.data.device ?? "cpu"}</div>
                     <div>train {fmtInt(training.data.train_customers)} · validation {fmtInt(training.data.validation_customers)} · test {fmtInt(training.data.test_customers)} customers · {training.data.n_features ?? "—"} features</div>
                     <div>code {training.data.provenance.code?.commit?.slice(0, 10) ?? "unknown"} · data sha256 {training.data.provenance.data_sha256?.slice(0, 12) ?? "unknown"}</div>
-                    <div className="mt-2 text-night-muted">best params: {Object.entries(training.data.best_params).map(([k, v]) => `${k}=${+v.toPrecision(3)}`).join(", ") || "—"}</div>
+                    <div className="mt-2 text-console-muted">best params: {Object.entries(training.data.best_params).map(([k, v]) => `${k}=${+v.toPrecision(3)}`).join(", ") || "—"}</div>
                   </>
                 ) : training.isError ? "Training record unavailable." : "…"}
               </div>
@@ -191,7 +191,7 @@ export function PipelinePage() {
                 </thead>
                 <tbody>
                   {runs.data.slice(0, 8).map((run) => (
-                    <tr key={run.run_id} className="h-10 border-b border-[#18212F]">
+                    <tr key={run.run_id} className="h-10 border-b border-line-soft">
                       <td className="flex h-10 items-center gap-2">
                         {run.status === "succeeded" ? <CheckCircle2 className="h-4 w-4 text-cobalt" aria-label="succeeded" /> : <XCircle className="h-4 w-4 text-risk" aria-label={run.status} />}
                         {fmtDateTime(run.finished_at)}
