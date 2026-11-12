@@ -11,11 +11,16 @@ import { scene, type DayState, type NetworkIndex } from "./shared";
 
 type Controls = ComponentRef<typeof OrbitControls>;
 
-function homeView(index: NetworkIndex): { target: THREE.Vector3; position: THREE.Vector3 } {
+const VIEW_DIRECTION = new THREE.Vector3(0.12, 0.66, 0.74).normalize();
+
+/** Frame the whole network for the canvas as it is now: a short, wide canvas needs a longer lens. */
+function homeView(index: NetworkIndex, fov: number, aspect: number): { target: THREE.Vector3; position: THREE.Vector3 } {
   const cx = (index.extent.x[0] + index.extent.x[1]) / 2;
   const cz = (index.extent.z[0] + index.extent.z[1]) / 2;
   const span = Math.max(index.extent.x[1] - index.extent.x[0], index.extent.z[1] - index.extent.z[0], 200);
-  return { target: new THREE.Vector3(cx, 0, cz), position: new THREE.Vector3(cx + span * 0.08, span * 0.72, cz + span * 0.85) };
+  const distance = (span / 2) / Math.tan((fov * Math.PI) / 360) / Math.max(Math.min(aspect, 1.6), 0.5) * 1.1;
+  const target = new THREE.Vector3(cx, 0, cz);
+  return { target, position: target.clone().add(VIEW_DIRECTION.clone().multiplyScalar(distance)) };
 }
 
 /** Orbit, pan and zoom with sensible limits, plus animated "reset view" and "focus on selection". */
@@ -25,17 +30,26 @@ function Rig({ index, focus, focusToken, resetToken }: {
   const controls = useRef<Controls>(null);
   const camera = useThree((s) => s.camera);
   const invalidate = useThree((s) => s.invalidate);
-  const home = useMemo(() => homeView(index), [index]);
+  const size = useThree((s) => s.size);
+  const fov = (camera as THREE.PerspectiveCamera).fov ?? 42;
+  const home = useMemo(
+    () => homeView(index, fov, size.width / Math.max(size.height, 1)),
+    [index, fov, size.width, size.height],
+  );
   const wanted = useRef({ target: home.target.clone(), position: home.position.clone(), active: false });
 
+  // Place the camera once per network: a canvas resize must not throw away the reader's own view.
+  const placedFor = useRef<NetworkIndex | null>(null);
   useEffect(() => {
+    if (placedFor.current === index) return;
+    placedFor.current = index;
     camera.position.copy(home.position);
     if (controls.current) {
       controls.current.target.copy(home.target);
       controls.current.update();
     }
     wanted.current = { target: home.target.clone(), position: home.position.clone(), active: false };
-  }, [camera, home]);
+  }, [camera, home, index]);
 
   useEffect(() => {
     if (resetToken === 0) return;
