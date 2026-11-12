@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { ShieldCheck } from "lucide-react";
@@ -10,7 +10,7 @@ import { useIsSupervisor } from "@/lib/me";
 import { fmtDateTime, fmtNum, fmtSeconds } from "@/lib/format";
 import { cn } from "@/lib/cn";
 
-function Field({ label, children, mono }: { label: string; children: React.ReactNode; mono?: boolean }) {
+function Field({ label, children, mono }: { label: string; children: ReactNode; mono?: boolean }) {
   return (
     <div className="flex min-w-0 flex-col gap-0.5">
       <dt className="text-xs text-ink-3">{label}</dt>

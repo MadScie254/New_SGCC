@@ -1,5 +1,5 @@
 // Side panels: the keyboard-reachable asset list, the asset inspector, and the aggregate energy view.
-import { useMemo, useState } from "react";
+import { useMemo, useState, type ReactNode } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Crosshair } from "lucide-react";
 import { ApiError, Button, Card, CardHeader, Skeleton, TierBadge } from "@/components/ui";
@@ -18,7 +18,7 @@ import { CATEGORY_CLASS, CATEGORY_LABEL, KIND_LABEL, SELECTABLE, describeRating,
 // Shared bits
 // ---------------------------------------------------------------------------
 
-export function Row({ label, children }: { label: string; children: React.ReactNode }) {
+export function Row({ label, children }: { label: string; children: ReactNode }) {
   return (
     <div className="flex items-baseline justify-between gap-4 border-b border-line-soft py-1.5 last:border-0">
       <span className="text-[13px] text-ink-2">{label}</span>

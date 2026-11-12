@@ -1,4 +1,4 @@
-import { useId } from "react";
+import { useId, type ReactNode } from "react";
 import { palette, pipelineColor } from "@/lib/palette";
 import type { Curve } from "@/lib/api/statistics";
 
@@ -7,7 +7,7 @@ const H = 300;
 const M = { top: 14, right: 14, bottom: 44, left: 52 };
 
 function Frame({ title, xLabel, yLabel, children, ariaLabel }: {
-  title: string; xLabel: string; yLabel: string; children: React.ReactNode; ariaLabel: string;
+  title: string; xLabel: string; yLabel: string; children: ReactNode; ariaLabel: string;
 }) {
   const ticks = [0, 0.25, 0.5, 0.75, 1];
   const x = (v: number) => M.left + v * (W - M.left - M.right);
