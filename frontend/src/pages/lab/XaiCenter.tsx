@@ -195,7 +195,7 @@ function CustomerPicker({ chosen, onPick }: { chosen: string | null; onPick: (id
                     <span aria-hidden className="h-2 w-2 rounded-full"
                       style={{ background: customer.label === 1 ? palette.theft : palette.honest }} />
                     <span className="font-mono">{customer.customer_id}</span>
-                    <span className="text-ink-3">{pct(customer.probability, 0)}</span>
+                    <span className="opacity-70">{pct(customer.probability, 0)}</span>
                   </span>
                 </Pill>
               ))}

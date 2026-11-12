@@ -1,33 +1,11 @@
 // Charts for the explainability workspace: SHAP importance, beeswarm, one customer's
 // log-odds contributions, and the missing-reading distributions behind the shortcut question.
 // Colours come from src/lib/palette.ts so a class means the same thing on every page.
-import type { ReactNode } from "react";
+import { Figure } from "@/components/viz/figure";
 import { heat, palette } from "@/lib/palette";
 import type { BeeswarmFeature, Contribution, FeatureImportance, MissingnessProfile } from "@/lib/api/xai";
 
 const pct = (v: number, digits = 1) => `${(v * 100).toFixed(digits)}%`;
-
-/**
- * A titled SVG figure with an aria-label that states the finding, not the chart type.
- * The legend is HTML above the plot so it never collides with an axis, and the plot keeps a
- * legible minimum width: on a phone it scrolls inside its card rather than shrinking to nothing.
- */
-function Figure({ title, ariaLabel, viewBox, legend, minWidth = 680, children }: {
-  title: string; ariaLabel: string; viewBox: string; legend?: ReactNode; minWidth?: number; children: ReactNode;
-}) {
-  return (
-    <figure className="m-0 flex flex-col gap-2">
-      <figcaption className="text-[13px] font-medium text-ink">{title}</figcaption>
-      {legend ? <p className="m-0 text-[11px] text-ink-3">{legend}</p> : null}
-      <div className="-mx-1 overflow-x-auto px-1">
-        <svg viewBox={viewBox} role="img" aria-label={ariaLabel} className="h-auto w-full"
-          style={{ minWidth: `${minWidth}px` }} preserveAspectRatio="xMidYMid meet">
-          {children}
-        </svg>
-      </div>
-    </figure>
-  );
-}
 
 // ---------------------------------------------------------------------------
 // Global importance: mean |SHAP| per feature
